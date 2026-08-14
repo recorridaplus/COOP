@@ -71,6 +71,23 @@ body {
     color: #ffffff;
 }
 
+.logo-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.version-badge {
+    background: rgba(56, 189, 248, 0.18);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
 .subtitle {
     font-size: 0.9rem;
     color: var(--text-muted);
