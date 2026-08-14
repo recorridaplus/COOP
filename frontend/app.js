@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let allDiscrepancies = [];
+    let isProcessing = false;
 
     const searchInput = document.getElementById("searchFilter");
     const spSelect = document.getElementById("supermarketFilter");
@@ -7,7 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("discrepanciesGrid");
     const emptyState = document.getElementById("emptyState");
     const resultsCount = document.getElementById("resultsCount");
-    const btnRun = document.getElementById("btnRun");
+    
+    const btnRunFast = document.getElementById("btnRunFast");
+    const btnRunFull = document.getElementById("btnRunFull");
+    const spinnerContainer = document.getElementById("spinnerContainer");
+    const spinnerLabel = document.getElementById("spinnerLabel");
 
     async function loadReportData() {
         try {
@@ -111,24 +116,73 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    // Event listeners
-    searchInput.addEventListener("input", renderDiscrepancies);
-    spSelect.addEventListener("change", renderDiscrepancies);
-    alertSelect.addEventListener("change", renderDiscrepancies);
+    function setProcessingState(active, labelText = "Procesando...") {
+        isProcessing = active;
+        btnRunFast.disabled = active;
+        btnRunFull.disabled = active;
 
-    btnRun.addEventListener("click", async () => {
-        btnRun.disabled = true;
-        btnRun.innerText = "⏳ Ejecutando...";
+        if (active) {
+            spinnerLabel.innerText = labelText;
+            spinnerContainer.classList.remove("hidden");
+        } else {
+            spinnerContainer.classList.add("hidden");
+        }
+    }
+
+    // Acciones de los botones
+    btnRunFast.addEventListener("click", async () => {
+        if (isProcessing) return;
+        setProcessingState(true, "Re-comparando datos...");
         try {
             await fetch("/api/run-comparison", { method: "POST" });
             await loadReportData();
         } catch (e) {
-            alert("Error ejecutando comparación.");
+            alert("Error ejecutando re-comparación rápida.");
         } finally {
-            btnRun.disabled = false;
-            btnRun.innerText = "🔄 Re-evaluar Ahora";
+            setProcessingState(false);
         }
     });
+
+    btnRunFull.addEventListener("click", async () => {
+        if (isProcessing) return;
+        setProcessingState(true, "Iniciando recorrido completo...");
+
+        try {
+            const startResp = await fetch("/api/run-full-rescrape", { method: "POST" });
+            const startData = await startResp.json();
+
+            if (startData.status === "started" || startData.status === "busy") {
+                // Poll de estado cada 3 segundos hasta finalizar
+                const pollInterval = setInterval(async () => {
+                    try {
+                        const statusResp = await fetch("/api/status");
+                        const statusData = await statusResp.json();
+
+                        if (statusData.is_running) {
+                            spinnerLabel.innerText = statusData.current_step || "Scrapeando supermercados...";
+                        } else {
+                            clearInterval(pollInterval);
+                            await loadReportData();
+                            setProcessingState(false);
+                        }
+                    } catch (err) {
+                        clearInterval(pollInterval);
+                        setProcessingState(false);
+                    }
+                }, 3000);
+            } else {
+                setProcessingState(false);
+            }
+        } catch (e) {
+            alert("Error iniciando el recorrido completo.");
+            setProcessingState(false);
+        }
+    });
+
+    // Event listeners de filtros
+    searchInput.addEventListener("input", renderDiscrepancies);
+    spSelect.addEventListener("change", renderDiscrepancies);
+    alertSelect.addEventListener("change", renderDiscrepancies);
 
     // Cargar inicial
     loadReportData();

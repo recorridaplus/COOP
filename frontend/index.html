@@ -19,16 +19,26 @@
                     <p class="subtitle">Monitoreo de Fidelidad de Catálogo Conaprole vs. Supermercados</p>
                 </div>
             </div>
-            <div class="actions">
-                <button id="btnRun" class="btn btn-primary">
-                    <span class="icon">🔄</span> Re-evaluar Ahora
-                </button>
-                <a href="/api/export/excel" class="btn btn-secondary">
-                    <span class="icon">📊</span> Exportar Excel
-                </a>
-                <a href="/api/export/pdf" class="btn btn-secondary">
-                    <span class="icon">📄</span> Exportar PDF
-                </a>
+            <div class="actions-wrapper">
+                <div id="spinnerContainer" class="spinner-container hidden">
+                    <span class="spinner"></span>
+                    <span id="spinnerLabel" class="spinner-label">Procesando...</span>
+                </div>
+
+                <div class="actions">
+                    <button id="btnRunFast" class="btn btn-primary" title="Re-evalúa coincidencias y alertas sobre los datos actuales en segundos">
+                        <span class="icon">🔄</span> Re-evaluar Rápido
+                    </button>
+                    <button id="btnRunFull" class="btn btn-accent" title="Ejecuta un nuevo scraping completo de todos los supermercados">
+                        <span class="icon">🚀</span> Recorrido Completo
+                    </button>
+                    <a href="/api/export/excel" class="btn btn-secondary">
+                        <span class="icon">📊</span> Excel
+                    </a>
+                    <a href="/api/export/pdf" class="btn btn-secondary">
+                        <span class="icon">📄</span> PDF
+                    </a>
+                </div>
             </div>
         </div>
     </header>

@@ -14,6 +14,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from comparator.matcher import run_matching
 from reporter.excel_reporter import export_to_excel
 from reporter.pdf_reporter import export_to_pdf
+from scraper.conaprole_scraper import scrape_conaprole
+from scraper.vtex_scraper import run_vtex_scrapers
+from scraper.gdu_scraper import scrape_and_save_gdu
 
 app = FastAPI(title="COOP — Comparador de Catálogo Conaprole", version="1.0.0")
 
@@ -30,7 +33,13 @@ FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 CONAPROLE_PATH = DATA_DIR / "conaprole_catalog.json"
 REPORT_PATH = DATA_DIR / "latest_comparison_report.json"
 
-# Servir archivos estáticos del frontend
+# Estado global del scraping completo
+scraping_status = {
+    "is_running": False,
+    "current_step": "Idle",
+    "last_completed": None
+}
+
 app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
 @app.get("/")
@@ -50,7 +59,6 @@ def get_conaprole_catalog():
 @app.get("/api/report")
 def get_latest_report():
     if not REPORT_PATH.exists():
-        # Si no existe reporte aún, generar uno preliminar
         try:
             return run_matching(compare_images_flag=False)
         except Exception as e:
@@ -59,13 +67,47 @@ def get_latest_report():
     with open(REPORT_PATH, encoding="utf-8") as f:
         return json.load(f)
 
+@app.get("/api/status")
+def get_scraping_status():
+    return scraping_status
+
 @app.post("/api/run-comparison")
-def trigger_comparison(background_tasks: BackgroundTasks):
+def trigger_comparison():
+    """Ejecuta únicamente el motor de re-comparación rápida sobre los datos actuales."""
     try:
         report = run_matching(compare_images_flag=False)
-        return {"status": "ok", "message": "Comparación completada.", "summary": report.get("matches_summary")}
+        return {"status": "ok", "message": "Re-comparación rápida completada.", "summary": report.get("matches_summary")}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+def _execute_full_rescrape_task():
+    global scraping_status
+    scraping_status["is_running"] = True
+    try:
+        scraping_status["current_step"] = "Scrapeando supermercados (VTEX)..."
+        run_vtex_scrapers("conaprole")
+
+        scraping_status["current_step"] = "Scrapeando supermercados (GDU)..."
+        scrape_and_save_gdu("conaprole")
+
+        scraping_status["current_step"] = "Ejecutando motor de matching e imágenes..."
+        run_matching(compare_images_flag=False)
+
+        scraping_status["current_step"] = "Finalizado"
+    except Exception as e:
+        scraping_status["current_step"] = f"Error: {e}"
+    finally:
+        scraping_status["is_running"] = False
+
+@app.post("/api/run-full-rescrape")
+def trigger_full_rescrape(background_tasks: BackgroundTasks):
+    """Dispara el recorrido completo de scraping de supermercados y re-comparación."""
+    global scraping_status
+    if scraping_status["is_running"]:
+        return {"status": "busy", "message": "Ya hay un recorrido completo en ejecución.", "step": scraping_status["current_step"]}
+
+    background_tasks.add_task(_execute_full_rescrape_task)
+    return {"status": "started", "message": "Recorrido completo iniciado en segundo plano."}
 
 @app.get("/api/export/excel")
 def download_excel():
