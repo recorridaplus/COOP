@@ -1,0 +1,11 @@
+.env
+data/conaprole_catalog.json
+data/supermarkets/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+reports/
+*.pdf
+*.xlsx
