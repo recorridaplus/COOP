@@ -2,15 +2,11 @@
 matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
 
 Reglas avanzadas:
-1. Validación estricta de Presentación/Tamaño (Volumen en ml, Peso en g, Unidades).
-   Un producto de 250 ml NUNCA se empareja con uno de 1 Litro (son packagings distintos).
-2. Umbral de similitud de nombre mínimo del 90%.
-3. Normalización de nombres.
-4. Evaluación paralela ultrarrápida de imágenes (PNG Alpha Compositing + Trim + 256x256 pHash).
-5. Clasificación exacta de insignias:
-   - 🔴 APOCRYPHAL_IMAGE: Foto casera/propia del CM
-   - 🟡 DIFFERENT_IMAGE: Otra versión oficial de la foto
-   - 📝 NAME_DISCREPANCY: Redacción del nombre con ligera diferencia
+1. Si la imagen coincide (status == 'MATCH', pHash <= 12) y el nombre es compatible (>= 90%), es una COINCIDENCIA PERFECTA (no genera discrepancia).
+2. Discrepancias reales reportadas:
+   - 🔴 APOCRYPHAL_IMAGE: Foto casera/propia tomada en tienda por el CM.
+   - 🟡 DIFFERENT_IMAGE: Foto de catálogo pero otra versión/diseño diferente.
+   - 📝 NAME_DISCREPANCY: Nombre con baja similitud sin coincidencia de foto.
 """
 
 import json
@@ -57,10 +53,8 @@ CATEGORY_KEYWORDS = {
 }
 
 def extract_presentation(name: str) -> dict | None:
-    """Extrae y normaliza la presentación/tamaño del producto (volumen en ml, peso en g, o unidades)."""
     text = name.lower()
     
-    # 1. Litros / mililitros / cc
     match_l = re.search(r'(\d+(?:[.,]\d+)?)\s*(l|lt|litro|litros)\b', text)
     if match_l:
         val = float(match_l.group(1).replace(',', '.'))
@@ -70,7 +64,6 @@ def extract_presentation(name: str) -> dict | None:
     if match_ml:
         return {"type": "volume_ml", "value": int(match_ml.group(1))}
 
-    # 2. Kilos / gramos / gr
     match_kg = re.search(r'(\d+(?:[.,]\d+)?)\s*(kg|kilo|kilos)\b', text)
     if match_kg:
         val = float(match_kg.group(1).replace(',', '.'))
@@ -80,7 +73,6 @@ def extract_presentation(name: str) -> dict | None:
     if match_g:
         return {"type": "weight_g", "value": int(match_g.group(1))}
 
-    # 3. Unidades (ej. x 3, 6 un)
     match_un = re.search(r'(?:x\s*(\d+)|(\d+)\s*un\b|(\d+)\s*unidades\b)', text)
     if match_un:
         val = match_un.group(1) or match_un.group(2) or match_un.group(3)
@@ -89,7 +81,6 @@ def extract_presentation(name: str) -> dict | None:
     return None
 
 def are_presentations_compatible(official_name: str, supermarket_name: str) -> bool:
-    """Verifica que si ambos productos especifican un tamaño/presentación, estos sean idénticos."""
     p_off = extract_presentation(official_name)
     p_sup = extract_presentation(supermarket_name)
 
@@ -110,23 +101,19 @@ def is_valid_match_pair(official_name: str, official_category: str, supermarket_
     cat_lower = (official_category or "").lower()
     sup_lower = supermarket_name.lower()
 
-    # 1. Regla de compatibilidad de Presentación/Tamaño (250 ml vs 1 Litro -> NO MATCH)
     if not are_presentations_compatible(official_name, supermarket_name):
         return False
 
-    # 2. Regla de Marca Propia de Supermercado
     for priv in SUPERMARKET_PRIVATE_LABELS:
         if priv in sup_lower and priv not in off_lower:
             return False
 
-    # 3. Regla de Marcas Conaprole y Licencias
     for brand in CONAPROLE_BRANDS:
         in_off = brand in off_lower
         in_sup = brand in sup_lower
         if in_off != in_sup:
             return False
 
-    # 4. Regla de Tipos de Producto incompatibles
     for cat_key, synonyms in CATEGORY_KEYWORDS.items():
         in_sup = any(s in sup_lower for s in synonyms)
         in_off = any(s in off_lower or s in cat_lower for s in synonyms)
@@ -244,7 +231,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
         elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
             discrepancy_type = "DIFFERENT_IMAGE"
             alert_level = "YELLOW"
-        elif score < 96.0:
+        elif not img_cmp and score < 95.0:
             discrepancy_type = "NAME_DISCREPANCY"
             alert_level = "BLUE"
 

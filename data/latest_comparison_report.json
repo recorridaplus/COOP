@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T23:03:13.534612+00:00",
+  "generated_at": "2026-08-14T23:13:14.592867+00:00",
   "total_official_products": 296,
   "supermarkets_analyzed": [
     "Devoto",
@@ -44,72 +44,6 @@
       "alert_level": "YELLOW"
     },
     {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "yogur-fondo-durazno",
-        "name": "Yogur Con Fondo de Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "url": "https://www.conaprole.uy/producto/yogur-fondo-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "url": "https://www.devoto.com.uy/product/yogur-conaprole-fondo-durazno-180-cc/243745"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Con Fondo de Durazno",
-        "supermarket_name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "similarity_score": 90.67
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
-        "name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi/"
-      },
-      "supermarket_product": {
-        "name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "url": "https://www.devoto.com.uy/product/helado-palito-d-fruta-durazno-kiwi-conaprole-60-cc/236736"
-      },
-      "name_comparison": {
-        "official_name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "supermarket_name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "similarity_score": 92.75
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
       "supermarket": "Disco",
       "conaprole_product": {
         "id": "producto-leche-leche-fresca-descremada-pasteurizada",
@@ -141,72 +75,6 @@
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "yogur-fondo-durazno",
-        "name": "Yogur Con Fondo de Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "url": "https://www.conaprole.uy/producto/yogur-fondo-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "url": "https://www.disco.com.uy/product/yogur-conaprole-fondo-durazno-180-cc/243745"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Con Fondo de Durazno",
-        "supermarket_name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "similarity_score": 90.67
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
-        "name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi/"
-      },
-      "supermarket_product": {
-        "name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "url": "https://www.disco.com.uy/product/helado-palito-d-fruta-durazno-kiwi-conaprole-60-cc/236736"
-      },
-      "name_comparison": {
-        "official_name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "supermarket_name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "similarity_score": 92.75
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -376,39 +244,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "requeson-0-lactosa",
-        "name": "Requesón 0% lactosa",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202506/20250610114118_788655509.png",
-        "url": "https://www.conaprole.uy/producto/requeson-0-lactosa/"
-      },
-      "supermarket_product": {
-        "name": "Requeson Conaprole 0% Lactosa 250gr",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177244/7730105009655.jpg?v=638887873659870000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/requeson-conaprole-0-lactosa-250gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Requesón 0% lactosa",
-        "supermarket_name": "Requeson Conaprole 0% Lactosa 250gr",
-        "similarity_score": 94.74
-      },
-      "description_comparison": {
-        "similarity_score": 18.11,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202506/20250610114118_788655509.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177244/7730105009655.jpg?v=638887873659870000",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "queso-rallado-40-grs",
         "name": "Queso Rallado",
         "category": "Quesos",
@@ -438,39 +273,6 @@
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-fontina",
-        "name": "Queso Fontina",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
-      },
-      "supermarket_product": {
-        "name": "Queso Conaprole Fontina Kg .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158157/253431.jpg?v=638402761067570000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-conaprole-fontina-kg/p"
-      },
-      "name_comparison": {
-        "official_name": "Queso Fontina",
-        "supermarket_name": "Queso Conaprole Fontina Kg .",
-        "similarity_score": 90.32
-      },
-      "description_comparison": {
-        "similarity_score": 24.29,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158157/253431.jpg?v=638402761067570000",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -673,39 +475,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "vasito-helado-sinfonia-sabores-super-dulce-leche",
-        "name": "Vasito Helado Sinfonia de Sabores Super dulce de leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
-        "url": "https://www.conaprole.uy/producto/vasito-helado-sinfonia-sabores-super-dulce-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole Sinfonia De Sabores Super Dulce De Leche 25",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-sinfonia-de-sabores-super-dulce-de-leche-25/p"
-      },
-      "name_comparison": {
-        "official_name": "Vasito Helado Sinfonia de Sabores Super dulce de leche",
-        "supermarket_name": "Helado Conaprole Sinfonia De Sabores Super Dulce De Leche 25",
-        "similarity_score": 92.91
-      },
-      "description_comparison": {
-        "similarity_score": 100.0,
-        "status": "official_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 0,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
-        "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-helados-2litros-crema-sabor-vainilla",
         "name": "Helado Crema",
         "category": "Helados",
@@ -772,39 +541,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-jugos-manzana-1l-2",
-        "name": "Jugo de Manzana",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195503_204916589.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzana-1l-2/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Manzana 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-manzana-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo de Manzana",
-        "supermarket_name": "Jugo Conaprole Manzana 250Cc .",
-        "similarity_score": 90.72
-      },
-      "description_comparison": {
-        "similarity_score": 25.32,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195503_204916589.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-jugos-pera-1l",
         "name": "Jugo de Pera",
         "category": "Jugos",
@@ -838,39 +574,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-jugos-durazno-1l",
-        "name": "Jugo de Durazno",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195505_376886939.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-durazno-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Durazno 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-durazno-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo de Durazno",
-        "supermarket_name": "Jugo Conaprole Durazno 250Cc .",
-        "similarity_score": 90.72
-      },
-      "description_comparison": {
-        "similarity_score": 25.16,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195505_376886939.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "jugo-pera-1l",
         "name": "Jugo de Pera 1L",
         "category": "Jugos",
@@ -900,39 +603,6 @@
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-jugos-multifrutas-1l",
-        "name": "Jugo Multifrutas",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195236_1113682261.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-multifrutas-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Multifruta 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-multifruta-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Multifrutas",
-        "supermarket_name": "Jugo Conaprole Multifruta 250Cc .",
-        "similarity_score": 90.91
-      },
-      "description_comparison": {
-        "similarity_score": 18.67,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195236_1113682261.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -1069,39 +739,6 @@
     {
       "supermarket": "Géant",
       "conaprole_product": {
-        "id": "yogur-fondo-durazno",
-        "name": "Yogur Con Fondo de Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "url": "https://www.conaprole.uy/producto/yogur-fondo-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "url": "https://www.geant.com.uy/product/yogur-conaprole-fondo-durazno-180-cc/243745"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Con Fondo de Durazno",
-        "supermarket_name": "Yogur CONAPROLE Fondo Durazno 180 cc",
-        "similarity_score": 90.67
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
         "id": "producto-quesos-procesados-requeson-cremoso-2",
         "name": "Requesón",
         "category": "Quesos",
@@ -1131,57 +768,24 @@
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
-        "name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi/"
-      },
-      "supermarket_product": {
-        "name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "url": "https://www.geant.com.uy/product/helado-palito-d-fruta-durazno-kiwi-conaprole-60-cc/236736"
-      },
-      "name_comparison": {
-        "official_name": "Helado Palito D-Frutta Durazno/Kiwi",
-        "supermarket_name": "Helado palito D'Fruta durazno-kiwi CONAPROLE 60 cc",
-        "similarity_score": 92.75
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
     }
   ],
   "matches_summary": {
     "Devoto": {
-      "matches": 7,
-      "discrepancies": 3
+      "matches": 9,
+      "discrepancies": 1
     },
     "Disco": {
-      "matches": 7,
-      "discrepancies": 3
+      "matches": 9,
+      "discrepancies": 1
     },
     "El Dorado": {
-      "matches": 18,
-      "discrepancies": 25
+      "matches": 24,
+      "discrepancies": 19
     },
     "Géant": {
-      "matches": 6,
-      "discrepancies": 4
+      "matches": 8,
+      "discrepancies": 2
     },
     "TATA": {
       "matches": 0,
