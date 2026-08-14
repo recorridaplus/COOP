@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOP — Monitoreo de Catálogo Conaprole vs. Supermercados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-icon">🐄</span>
+                <div>
+                    <h1>COOP</h1>
+                    <p class="subtitle">Monitoreo de Fidelidad de Catálogo Conaprole vs. Supermercados</p>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="btnRun" class="btn btn-primary">
+                    <span class="icon">🔄</span> Re-evaluar Ahora
+                </button>
+                <a href="/api/export/excel" class="btn btn-secondary">
+                    <span class="icon">📊</span> Exportar Excel
+                </a>
+                <a href="/api/export/pdf" class="btn btn-secondary">
+                    <span class="icon">📄</span> Exportar PDF
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Stats Summary Bar -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Productos Conaprole Analizados</span>
+                <span class="stat-value" id="statTotalOfficial">-</span>
+            </div>
+            <div class="stat-card stat-alert">
+                <span class="stat-label">Discrepancias Totales</span>
+                <span class="stat-value" id="statTotalDiscrepancies">-</span>
+            </div>
+            <div class="stat-card stat-red">
+                <span class="stat-label">🔴 Imágenes Apócrifas (CM)</span>
+                <span class="stat-value" id="statRedAlerts">-</span>
+            </div>
+            <div class="stat-card stat-yellow">
+                <span class="stat-label">🟡 Imágenes Diferentes / Versiones</span>
+                <span class="stat-value" id="statYellowAlerts">-</span>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-bar">
+            <div class="filter-group">
+                <label for="searchFilter">🔍 Buscar Producto:</label>
+                <input type="text" id="searchFilter" placeholder="Ej: Leche, Colet, Muzzarella..." />
+            </div>
+
+            <div class="filter-group">
+                <label for="supermarketFilter">🏪 Supermercado:</label>
+                <select id="supermarketFilter">
+                    <option value="ALL">Todos los Supermercados</option>
+                    <option value="Tienda Inglesa">Tienda Inglesa</option>
+                    <option value="TATA">TATA</option>
+                    <option value="Géant">Géant</option>
+                    <option value="Disco">Disco</option>
+                    <option value="Devoto">Devoto</option>
+                    <option value="El Dorado">El Dorado</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="alertFilter">🚨 Tipo de Alerta:</label>
+                <select id="alertFilter">
+                    <option value="ALL">Todas las Alertas</option>
+                    <option value="RED">🔴 Imagen Apócrifa (Foto propia)</option>
+                    <option value="YELLOW">🟡 Imagen Diferente / Versión</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Product Discrepancies Grid -->
+        <section class="results-section">
+            <div class="results-header">
+                <h2>Resultados de Comparación Lado a Lado</h2>
+                <span id="resultsCount" class="results-count">Mostrando 0 discrepancias</span>
+            </div>
+
+            <div id="discrepanciesGrid" class="cards-grid">
+                <!-- Tarjetas dinámicas se insertan con app.js -->
+            </div>
+
+            <div id="emptyState" class="empty-state hidden">
+                <span class="empty-icon">✅</span>
+                <h3>Sin discrepancias detectadas</h3>
+                <p>No hay productos que coincidan con los filtros seleccionados o el catálogo está 100% en regla.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>COOP System &copy; 2026 — Herramienta de auditoría de catálogo para Conaprole.</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,2890 @@
+{
+  "generated_at": "2026-08-14T21:20:47.272920+00:00",
+  "total_official_products": 296,
+  "supermarkets_analyzed": [
+    "Devoto",
+    "Disco",
+    "El Dorado",
+    "Géant",
+    "TATA",
+    "Tienda Inglesa"
+  ],
+  "discrepancies": [
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-larga-vida-descremada",
+        "name": "Leche UHT Larga Vida Descremada",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193602_291423279.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-larga-vida-descremada/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Larga Vida Descremada Caja 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165542/7730105021374.jpg?v=638536507407030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-larga-vida-descremada-caja-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.13,
+        "is_exact_match": false,
+        "official_name": "Leche UHT Larga Vida Descremada",
+        "supermarket_name": "Leche Conaprole Larga Vida Descremada Caja 1Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 47.62,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-larga-vida-entera",
+        "name": "Leche UHT Larga Vida Entera",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193603_864433867.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-larga-vida-entera/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Larga Vida Entera Caja 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165543/7730105021381.jpg?v=638536507459400000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-larga-vida-entera-caja-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 66.67,
+        "is_exact_match": false,
+        "official_name": "Leche UHT Larga Vida Entera",
+        "supermarket_name": "Leche Conaprole Larga Vida Entera Caja 1Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 55.56,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "colet-dulce-de-leche-1-litro",
+        "name": "Colet Dulce de Leche 1 litro",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260114161412_1098483165.png",
+        "url": "https://www.conaprole.uy/producto/colet-dulce-de-leche-1-litro/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.02,
+        "is_exact_match": false,
+        "official_name": "Colet Dulce de Leche 1 litro",
+        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.27,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "blancanuber-leche-descremada",
+        "name": "Blancanube Leche Descremada",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193604_988817956.png",
+        "url": "https://www.conaprole.uy/producto/blancanuber-leche-descremada/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Descremada 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165476/7730105001284.jpg?v=638536502775970000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-descremada-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.68,
+        "is_exact_match": false,
+        "official_name": "Blancanube Leche Descremada",
+        "supermarket_name": "Leche Conaprole Descremada 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 43.18,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-deslactosada",
+        "name": "Leche UP Descremada sin lactosa",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202503/20250328131720_136173431.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-deslactosada/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Ultra Descremada 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165479/7730105001338.jpg?v=638536502977400000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-ultra-descremada-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 53.73,
+        "is_exact_match": false,
+        "official_name": "Leche UP Descremada sin lactosa",
+        "supermarket_name": "Leche Conaprole Ultra Descremada 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 39.64,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-ultra-primeros-pasos",
+        "name": "Leche Primeros Pasos",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193600_813981317.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-primeros-pasos/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Uht Primeros Pasos Caja 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165477/7730105001291.jpg?v=638536502841730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-uht-primeros-pasos-caja-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.49,
+        "is_exact_match": false,
+        "official_name": "Leche Primeros Pasos",
+        "supermarket_name": "Leche Conaprole Uht Primeros Pasos Caja 1Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 20.9,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-ultra-extra-calcio-descremada",
+        "name": "Leche Descremada Extra Calcio",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193555_1243626296.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-extra-calcio-descremada/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Descremada 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165476/7730105001284.jpg?v=638536502775970000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-descremada-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 67.8,
+        "is_exact_match": false,
+        "official_name": "Leche Descremada Extra Calcio",
+        "supermarket_name": "Leche Conaprole Descremada 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 28.21,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-colet-dulce-de-leche",
+        "name": "Colet Dulce de Leche 250 ml",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193733_303553236.png",
+        "url": "https://www.conaprole.uy/producto/producto-colet-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole 250Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 80.7,
+        "is_exact_match": false,
+        "official_name": "Colet Dulce de Leche 250 ml",
+        "supermarket_name": "Dulce De Leche Conaprole 250Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 23.33,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-ultra-descremada",
+        "name": "Leche Ultrapasteurizada Descremada",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193551_910873013.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-descremada/"
+      },
+      "supermarket_product": {
+        "name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-deslactosada-conaprole-ultrapasteurizada-descremada-1l/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.34,
+        "is_exact_match": false,
+        "official_name": "Leche Ultrapasteurizada Descremada",
+        "supermarket_name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "blancanuber-leche-entera",
+        "name": "Blancanube Leche Entera",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193607_1062195687.png",
+        "url": "https://www.conaprole.uy/producto/blancanuber-leche-entera/"
+      },
+      "supermarket_product": {
+        "name": "Leche Conaprole Entera 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165473/7730105001109.jpg?v=638536502573230000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-entera-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.39,
+        "is_exact_match": false,
+        "official_name": "Blancanube Leche Entera",
+        "supermarket_name": "Leche Conaprole Entera 1Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 55.81,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-leche-ultra-entera",
+        "name": "Leche Ultrapasteurizada Entera",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193546_862559798.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-entera/"
+      },
+      "supermarket_product": {
+        "name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-deslactosada-conaprole-ultrapasteurizada-descremada-1l/p"
+      },
+      "name_comparison": {
+        "similarity_score": 62.22,
+        "is_exact_match": false,
+        "official_name": "Leche Ultrapasteurizada Entera",
+        "supermarket_name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l"
+      },
+      "description_comparison": {
+        "similarity_score": 55.56,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-fondo-durazno",
+        "name": "Yogur Con Fondo de Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
+        "url": "https://www.conaprole.uy/producto/yogur-fondo-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Fondo Trozos Durazno 180Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165623/7730105022746.jpg?v=638537129003370000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-fondo-trozos-durazno-180cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.59,
+        "is_exact_match": false,
+        "official_name": "Yogur Con Fondo de Durazno",
+        "supermarket_name": "Yogur Conaprole Fondo Trozos Durazno 180Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 21.54,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-cereales",
+        "name": "Yogur Viva 0% Corn Flakes",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115210328_52527445.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-cereales/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutilla-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 65.57,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Corn Flakes",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutilla 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 16.98,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-fondo-de-pote-durazno",
+        "name": "Yogur Viva 0% Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-fondo-de-pote-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-natural-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 71.43,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Natural",
+        "supermarket_name": "Yogur Conaprole Viva 0% Natural 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.83,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-integral-200g",
+        "name": "Yogur Integral Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194825_903196694.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-integral-200g/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Integral Natural Clasico 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165482/7730105002014.jpg?v=638536503229470000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-integral-natural-clasico-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 64.71,
+        "is_exact_match": false,
+        "official_name": "Yogur Integral Natural",
+        "supermarket_name": "Yogur Conaprole Integral Natural Clasico 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 28.57,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-viva-0-durazno-1kg",
+        "name": "Yogur Viva 0% Durazno 1kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
+        "url": "https://www.conaprole.uy/producto/yogur-viva-0-durazno-1kg/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.86,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Durazno 1kg",
+        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 19.92,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-biotransit-light-frutilla-1-2kg",
+        "name": "Yogur Biotransit Light Frutilla 1.2kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194946_1411140701.png",
+        "url": "https://www.conaprole.uy/producto/yogur-biotransit-light-frutilla-1-2kg/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Biotop Frutilla Light 1.2Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165658/7730105032851.jpg?v=638537131663030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-biotop-frutilla-light-1-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.0,
+        "is_exact_match": false,
+        "official_name": "Yogur Biotransit Light Frutilla 1.2kg",
+        "supermarket_name": "Yogur Conaprole Biotop Frutilla Light 1.2Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 18.23,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-biotransit-light-anana-durazno-1kg-2",
+        "name": "Yogur Biotransit Vital+ Anana y Durazno 1.2kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195013_1297571215.png",
+        "url": "https://www.conaprole.uy/producto/producto-biotransit-light-anana-durazno-1kg-2/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Vital+Light Anana-Durazno . 1.2L Biotransit",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165684/7730105088667.jpg?v=638537133254000000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-vital-light-anana-durazno-1-2l-biotransit/p"
+      },
+      "name_comparison": {
+        "similarity_score": 79.21,
+        "is_exact_match": false,
+        "official_name": "Yogur Biotransit Vital+ Anana y Durazno 1.2kg",
+        "supermarket_name": "Yogur Conaprole Vital+Light Anana-Durazno . 1.2L Biotransit"
+      },
+      "description_comparison": {
+        "similarity_score": 21.0,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "biotop-sabor-natural-1l",
+        "name": "Biotop sabor Natural 1L",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194735_1753864052.png",
+        "url": "https://www.conaprole.uy/producto/biotop-sabor-natural-1l/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Biotop Natural 1.2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165662/7730105033001.jpg?v=638537131932000000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-biotop-natural-1-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 67.8,
+        "is_exact_match": false,
+        "official_name": "Biotop sabor Natural 1L",
+        "supermarket_name": "Yogur Conaprole Biotop Natural 1.2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 22.62,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-bebida-lactea-frutilla",
+        "name": "Bebida Láctea Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Bebida Lactea Conaprole Frutilla 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-frutilla-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.41,
+        "is_exact_match": false,
+        "official_name": "Bebida Láctea Frutilla",
+        "supermarket_name": "Bebida Lactea Conaprole Frutilla 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 22.81,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-descremado-natural",
+        "name": "Yogur Descremado Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194755_1311266963.png",
+        "url": "https://www.conaprole.uy/producto/yogur-descremado-natural/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Descremado Natural Tetra Top 500Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165544/7730105022029.jpg?v=638536507550000000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-descremado-natural-tetra-top-500gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 64.86,
+        "is_exact_match": false,
+        "official_name": "Yogur Descremado Natural",
+        "supermarket_name": "Yogur Conaprole Descremado Natural Tetra Top 500Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 27.05,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-bebida-lactea-durazno",
+        "name": "Bebida Láctea Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Bebida Lactea Conaprole Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 71.43,
+        "is_exact_match": false,
+        "official_name": "Bebida Láctea Durazno",
+        "supermarket_name": "Bebida Lactea Conaprole Durazno 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.72,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-saborizados-frutilla",
+        "name": "Yogur Viva 0% Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutilla-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.41,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Frutilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutilla 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 18.88,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-biotop-frutilla-light",
+        "name": "Biotop Durazno Light",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194935_1630668837.png",
+        "url": "https://www.conaprole.uy/producto/producto-biotop-frutilla-light/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Biotop Durazno Light 1.2Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165656/7730105032837.jpg?v=638537131516100000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-biotop-durazno-light-1-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 64.52,
+        "is_exact_match": false,
+        "official_name": "Biotop Durazno Light",
+        "supermarket_name": "Yogur Conaprole Biotop Durazno Light 1.2Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 21.09,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-postres-bebible-acai-y-frutos-rojos",
+        "name": "Yogur Viva 0% Açai y Frutos Rojos",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194928_986594182.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-postres-bebible-acai-y-frutos-rojos/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165645/7730105026416.jpg?v=638537130573700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutos-rojos-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 76.06,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Açai y Frutos Rojos",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 17.9,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-yogur-integral-con-fondo-de-frutillas",
+        "name": "Yogur Con Fondo de Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115151405_1986125266.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-yogur-integral-con-fondo-de-frutillas/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Fondo Trozos Frutilla 180Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165624/7730105022753.jpg?v=638537129065700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-fondo-trozos-frutilla-180cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 71.43,
+        "is_exact_match": false,
+        "official_name": "Yogur Con Fondo de Frutilla",
+        "supermarket_name": "Yogur Conaprole Fondo Trozos Frutilla 180Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 22.57,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-integral-ddl",
+        "name": "Yogur Integral con Dulce de Leche",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194829_894821554.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-integral-ddl/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Integral C/Dulce De Leche 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165483/7730105002120.jpg?v=638536503338000000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-integral-c-dulce-de-leche-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 82.5,
+        "is_exact_match": false,
+        "official_name": "Yogur Integral con Dulce de Leche",
+        "supermarket_name": "Yogur Conaprole Integral C/Dulce De Leche 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 30.1,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-durazno-1l",
+        "name": "Yogur Viva 0% Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-durazno-1l/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 74.07,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Durazno",
+        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 19.85,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-viva-0-frutilla-kiwi-arandanos-1kg",
+        "name": "Yogur Viva 0% Frutilla, Kiwi y Arándanos 1kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194857_1344991014.png",
+        "url": "https://www.conaprole.uy/producto/yogur-viva-0-frutilla-kiwi-arandanos-1kg/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Arandano/Kiwi/Frutilla 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165637/7730105026300.jpg?v=638537130037300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-arandano-kiwi-frutilla-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 79.12,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Frutilla, Kiwi y Arándanos 1kg",
+        "supermarket_name": "Yogur Conaprole Viva 0% Arandano/Kiwi/Frutilla 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 22.97,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-biotransit-manzana-ciruela-1kg-2",
+        "name": "Yogur Biotransit Vital+ Manzana y Ciruela 1.2kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194948_777797441.png",
+        "url": "https://www.conaprole.uy/producto/producto-biotransit-manzana-ciruela-1kg-2/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Vital+Biot Transit Ciruela-Manzana 1.2Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165667/7730105085154.jpg?v=638537132259300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-vital-biot-transit-ciruela-manzana-1-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.59,
+        "is_exact_match": false,
+        "official_name": "Yogur Biotransit Vital+ Manzana y Ciruela 1.2kg",
+        "supermarket_name": "Yogur Conaprole Vital+Biot Transit Ciruela-Manzana 1.2Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.88,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-yogur-integral-frutado-de-durazno-500",
+        "name": "Yogur Integral Frutado Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194817_2068843422.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-yogur-integral-frutado-de-durazno-500/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Batido Integral Frutado Durazno Tetra 500Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1167489/7730105022203.jpg?v=638570173382870000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-batido-integral-frutado-durazno-tetra-500gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 67.42,
+        "is_exact_match": false,
+        "official_name": "Yogur Integral Frutado Durazno",
+        "supermarket_name": "Yogur Conaprole Batido Integral Frutado Durazno Tetra 500Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 29.21,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-leche-biotop-frutilla-light-2",
+        "name": "Biotop Frutilla Light",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194933_1187157704.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-biotop-frutilla-light-2/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Biotop Frutilla Light 1.2Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165658/7730105032851.jpg?v=638537131663030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-biotop-frutilla-light-1-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 65.62,
+        "is_exact_match": false,
+        "official_name": "Biotop Frutilla Light",
+        "supermarket_name": "Yogur Conaprole Biotop Frutilla Light 1.2Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 22.14,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-yogur-integral-frutado-de-frutilla-500g",
+        "name": "Yogur Integral Frutado Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194812_390597951.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-yogur-integral-frutado-de-frutilla-500g/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Batido Integral Frutado Frutilla Tetra 500Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165547/7730105022210.jpg?v=638536507812500000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-batido-integral-frutado-frutilla-tetra-500gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 68.13,
+        "is_exact_match": false,
+        "official_name": "Yogur Integral Frutado Frutilla",
+        "supermarket_name": "Yogur Conaprole Batido Integral Frutado Frutilla Tetra 500Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 30.35,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-saborizados-vainilla",
+        "name": "Yogur Viva 0% Vainilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.41,
+        "is_exact_match": false,
+        "official_name": "Yogur Viva 0% Vainilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 18.49,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-vital-natural-1kg",
+        "name": "Yogur Vital+ 0% Natural 1kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195005_251938503.png",
+        "url": "https://www.conaprole.uy/producto/yogur-vital-natural-1kg/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-natural-200cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 65.57,
+        "is_exact_match": false,
+        "official_name": "Yogur Vital+ 0% Natural 1kg",
+        "supermarket_name": "Yogur Conaprole Viva 0% Natural 200Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 19.75,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "queso-rallado-40-grs",
+        "name": "Queso Rallado",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504153832_2051272973.png",
+        "url": "https://www.conaprole.uy/producto/queso-rallado-40-grs/"
+      },
+      "supermarket_product": {
+        "name": "Queso Rallado Conaprole 80Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165510/7730105008832.jpg?v=638536505584530000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-rallado-conaprole-80gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.41,
+        "is_exact_match": false,
+        "official_name": "Queso Rallado",
+        "supermarket_name": "Queso Rallado Conaprole 80Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.1,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-quesos-pastasemidura-fontina",
+        "name": "Queso Fontina",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
+        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
+      },
+      "supermarket_product": {
+        "name": "Queso Conaprole Fontina Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158157/253431.jpg?v=638402761067570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-conaprole-fontina-kg/p"
+      },
+      "name_comparison": {
+        "similarity_score": 66.67,
+        "is_exact_match": false,
+        "official_name": "Queso Fontina",
+        "supermarket_name": "Queso Conaprole Fontina Kg ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.29,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "queso-rallado-80-grs",
+        "name": "Queso Rallado",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504153921_272221088.png",
+        "url": "https://www.conaprole.uy/producto/queso-rallado-80-grs/"
+      },
+      "supermarket_product": {
+        "name": "Queso Rallado Conaprole 80Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165510/7730105008832.jpg?v=638536505584530000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-rallado-conaprole-80gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.41,
+        "is_exact_match": false,
+        "official_name": "Queso Rallado",
+        "supermarket_name": "Queso Rallado Conaprole 80Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.1,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-quesos-pastablanda-cuartirolo",
+        "name": "Queso Cuartirolo",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
+        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
+      },
+      "supermarket_product": {
+        "name": "Queso Conaprole Chico Cuartirolo Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158110/139852.jpg?v=638402757545070000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-conaprole-chico-cuartirolo-kg/p"
+      },
+      "name_comparison": {
+        "similarity_score": 62.75,
+        "is_exact_match": false,
+        "official_name": "Queso Cuartirolo",
+        "supermarket_name": "Queso Conaprole Chico Cuartirolo Kg ."
+      },
+      "description_comparison": {
+        "similarity_score": 31.15,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "cream-cheese-400g",
+        "name": "Cream Cheese 400g",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200909_379402274.png",
+        "url": "https://www.conaprole.uy/producto/cream-cheese-400g/"
+      },
+      "supermarket_product": {
+        "name": "Queso Conaprole Cream Cheese 400Gr.",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165650/7730105028076.jpg?v=638537130975630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-conaprole-cream-cheese-400gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 66.67,
+        "is_exact_match": false,
+        "official_name": "Cream Cheese 400g",
+        "supermarket_name": "Queso Conaprole Cream Cheese 400Gr."
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "manjar-dulce-leche-1-kg",
+        "name": "Manjar Dulce de Leche 1 kg",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203705_1119965188.png",
+        "url": "https://www.conaprole.uy/producto/manjar-dulce-leche-1-kg/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.41,
+        "is_exact_match": false,
+        "official_name": "Manjar Dulce de Leche 1 kg",
+        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg ."
+      },
+      "description_comparison": {
+        "similarity_score": 32.21,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "dulce-de-leche-dietetico-440g",
+        "name": "Dulce de Leche Dietético 440g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203653_1095928333.png",
+        "url": "https://www.conaprole.uy/producto/dulce-de-leche-dietetico-440g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Dietetico Vidrio 440Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165503/7730105005770.jpg?v=638536504731030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-dietetico-vidrio-440gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.68,
+        "is_exact_match": false,
+        "official_name": "Dulce de Leche Dietético 440g",
+        "supermarket_name": "Dulce De Leche Conaprole Dietetico Vidrio 440Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 28.86,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "dulce-crema-leche-500g",
+        "name": "Dulce Crema de Leche 500g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203658_2121102132.png",
+        "url": "https://www.conaprole.uy/producto/dulce-crema-leche-500g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole 500Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165497/7730105005114.jpg?v=638536504310700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-500gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 83.64,
+        "is_exact_match": false,
+        "official_name": "Dulce Crema de Leche 500g",
+        "supermarket_name": "Dulce De Leche Conaprole 500Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 30.65,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "dulce-crema-leche-925g",
+        "name": "Dulce Crema de Leche 925g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203657_1050159144.png",
+        "url": "https://www.conaprole.uy/producto/dulce-crema-leche-925g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Crema 925Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1173297/253029.jpg?v=638690100696800000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-crema-925gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 81.97,
+        "is_exact_match": false,
+        "official_name": "Dulce Crema de Leche 925g",
+        "supermarket_name": "Dulce De Leche Conaprole Crema 925Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 35.38,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "manjar-dulce-leche",
+        "name": "Manjar Dulce de Leche",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
+        "url": "https://www.conaprole.uy/producto/manjar-dulce-leche/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.0,
+        "is_exact_match": false,
+        "official_name": "Manjar Dulce de Leche",
+        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg ."
+      },
+      "description_comparison": {
+        "similarity_score": 31.37,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "dulce-leche-clasico-500g",
+        "name": "Dulce de Leche Clásico 500g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203701_1891510182.png",
+        "url": "https://www.conaprole.uy/producto/dulce-leche-clasico-500g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole 500Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165497/7730105005114.jpg?v=638536504310700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-500gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 77.19,
+        "is_exact_match": false,
+        "official_name": "Dulce de Leche Clásico 500g",
+        "supermarket_name": "Dulce De Leche Conaprole 500Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 28.57,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "dulce-leche-clasico-970g",
+        "name": "Dulce de Leche Clásico 970g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203700_782290776.png",
+        "url": "https://www.conaprole.uy/producto/dulce-leche-clasico-970g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole 970Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1173296/252712.jpg?v=638690100613130000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-970gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 77.19,
+        "is_exact_match": false,
+        "official_name": "Dulce de Leche Clásico 970g",
+        "supermarket_name": "Dulce De Leche Conaprole 970Gr ."
+      },
+      "description_comparison": {
+        "similarity_score": 28.57,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conamigos-pudding-de-dulce-de-leche",
+        "name": "Pudding Conamigos Vainilla",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202602/20260211102122_1680513992.png",
+        "url": "https://www.conaprole.uy/producto/producto-conamigos-pudding-de-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Pudding Conaprole Vainilla 110Gr 2Un .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1181016/7730105026348.jpg.jpg?v=639173116607030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/pudding-conaprole-vainilla-110gr-2un/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.97,
+        "is_exact_match": false,
+        "official_name": "Pudding Conamigos Vainilla",
+        "supermarket_name": "Pudding Conaprole Vainilla 110Gr 2Un ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.79,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-postres-postre-0-chocolate",
+        "name": "Postre Viva 0% Chocolate",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195657_467879374.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-postres-postre-0-chocolate/"
+      },
+      "supermarket_product": {
+        "name": "Postre Conaprole Viva 0% Chocolate 2Un 220Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165647/7730105026560.jpg?v=638537130724700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/postre-conaprole-viva-0-chocolate-2un-220gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.7,
+        "is_exact_match": false,
+        "official_name": "Postre Viva 0% Chocolate",
+        "supermarket_name": "Postre Conaprole Viva 0% Chocolate 2Un 220Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-postres-postre-0-vainilla",
+        "name": "Postre Viva 0% Vainilla",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195655_338405316.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-postres-postre-0-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Postre Conaprole Viva 0% Vainilla 2Un 220Gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165646/7730105026553.jpg?v=638537130650930000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/postre-conaprole-viva-0-vainilla-2un-220gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 68.75,
+        "is_exact_match": false,
+        "official_name": "Postre Viva 0% Vainilla",
+        "supermarket_name": "Postre Conaprole Viva 0% Vainilla 2Un 220Gr"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-gelatinas-frutilla",
+        "name": "Gelatina Frutilla",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115155322_1216555975.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-gelatinas-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Gelatina Conaprole Frutilla 2Un 104Grs",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165611/77317063.jpg?v=638536514578770000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/gelatina-conaprole-frutilla-2un-104grs/p"
+      },
+      "name_comparison": {
+        "similarity_score": 61.82,
+        "is_exact_match": false,
+        "official_name": "Gelatina Frutilla",
+        "supermarket_name": "Gelatina Conaprole Frutilla 2Un 104Grs"
+      },
+      "description_comparison": {
+        "similarity_score": 40.88,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-deleite-brownie-con-dulce-de-leche",
+        "name": "Deleite Flan con Caramelo",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195653_146694368.png",
+        "url": "https://www.conaprole.uy/producto/producto-deleite-brownie-con-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Flan Conaprole Deleite 4un 110 gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1182108/217183.jpg.jpg?v=639220617581200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/flan-conaprole-deleite-4un-110-gr/p"
+      },
+      "name_comparison": {
+        "similarity_score": 58.62,
+        "is_exact_match": false,
+        "official_name": "Deleite Flan con Caramelo",
+        "supermarket_name": "Flan Conaprole Deleite 4un 110 gr"
+      },
+      "description_comparison": {
+        "similarity_score": 15.87,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "alfajor-de-chocolate-congelado",
+        "name": "Alfajor de Chocolate congelado",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115150812_1946133763.png",
+        "url": "https://www.conaprole.uy/producto/alfajor-de-chocolate-congelado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Alfajor Vainilla .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166507/7730105903397.jpg?v=638556958043730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-alfajor-vainilla/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.49,
+        "is_exact_match": false,
+        "official_name": "Alfajor de Chocolate congelado",
+        "supermarket_name": "Helado Conaprole Alfajor Vainilla ."
+      },
+      "description_comparison": {
+        "similarity_score": 15.09,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conamigos-pudding-sabor-dulce-de-leche",
+        "name": "Pudding Conamigos Dulce de Leche",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202602/20260211101107_800826316.png",
+        "url": "https://www.conaprole.uy/producto/producto-conamigos-pudding-sabor-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Pudding Conaprole Dulce De Leche 110Gr 2Un .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1181018/7730105026362.jpg.jpg?v=639173116714300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/pudding-conaprole-dulce-de-leche-110gr-2un/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.68,
+        "is_exact_match": false,
+        "official_name": "Pudding Conamigos Dulce de Leche",
+        "supermarket_name": "Pudding Conaprole Dulce De Leche 110Gr 2Un ."
+      },
+      "description_comparison": {
+        "similarity_score": 21.79,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-super-dulce-de-leche",
+        "name": "Helado Súper Dulce de Leche 2L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-super-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Super Dulce De Leche",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166558/7730105973086.jpg?v=638556961624200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-super-dulce-de-leche/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.5,
+        "is_exact_match": false,
+        "official_name": "Helado Súper Dulce de Leche 2L",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Super Dulce De Leche"
+      },
+      "description_comparison": {
+        "similarity_score": 21.39,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-conaprole-ddl-granizado-5-litros",
+        "name": "Helado Conaprole DDL granizado 5 litros",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200652_1972866196.png",
+        "url": "https://www.conaprole.uy/producto/helado-conaprole-ddl-granizado-5-litros/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Palito Naranja 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166566/77301598.jpg?v=638556962402400000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-palito-naranja-60ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 61.33,
+        "is_exact_match": false,
+        "official_name": "Helado Conaprole DDL granizado 5 litros",
+        "supermarket_name": "Helado Conaprole Palito Naranja 60Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.14,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-sinfonia-chocolate-tipo-holandes-y-crema-tipo-irlandesa",
+        "name": "Helados Sinfonía Chocolate Holandés y Crema Irlandesa 2L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200226_672063295.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-sinfonia-chocolate-tipo-holandes-y-crema-tipo-irlandesa/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-chocolate-holandes-y-menta/p"
+      },
+      "name_comparison": {
+        "similarity_score": 78.57,
+        "is_exact_match": false,
+        "official_name": "Helados Sinfonía Chocolate Holandés y Crema Irlandesa 2L",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta"
+      },
+      "description_comparison": {
+        "similarity_score": 26.23,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-granel-dulce-leche-granizado",
+        "name": "Helado a granel Dulce de leche Granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
+        "url": "https://www.conaprole.uy/producto/helado-granel-dulce-leche-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
+      },
+      "name_comparison": {
+        "similarity_score": 77.65,
+        "is_exact_match": false,
+        "official_name": "Helado a granel Dulce de leche Granizado",
+        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
+        "name": "Helado Barrita Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Crema Marmolada Dulce De Leche 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180665/1605915.jpg.jpg?v=639102363109830000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-crema-marmolada-dulce-de-leche-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 65.0,
+        "is_exact_match": false,
+        "official_name": "Helado Barrita Dulce de Leche",
+        "supermarket_name": "Helado Conaprole Crema Marmolada Dulce De Leche 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-diet-vasito-triple-crema-sabor-vainilla-chocolate-y-frutilla",
+        "name": "Vasito Helado Light Triple Vainilla, Chocolate y Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200134_335389662.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-diet-vasito-triple-crema-sabor-vainilla-chocolate-y-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Regular Light Vainilla Granizada Y Chocolat",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166538/7730105923098.jpg?v=638556960233600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-regular-light-vainilla-granizada-y-chocolat/p"
+      },
+      "name_comparison": {
+        "similarity_score": 68.97,
+        "is_exact_match": false,
+        "official_name": "Vasito Helado Light Triple Vainilla, Chocolate y Frutilla",
+        "supermarket_name": "Helado Conaprole Regular Light Vainilla Granizada Y Chocolat"
+      },
+      "description_comparison": {
+        "similarity_score": 21.23,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-frutilla-mango",
+        "name": "Helado Splash de Frutilla y Mango",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200302_912020863.png",
+        "url": "https://www.conaprole.uy/producto/helado-frutilla-mango/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Splash Frutilla Y Mango",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-splash-frutilla-y-mango/p"
+      },
+      "name_comparison": {
+        "similarity_score": 83.12,
+        "is_exact_match": false,
+        "official_name": "Helado Splash de Frutilla y Mango",
+        "supermarket_name": "Helado Conaprole 2Lt Splash Frutilla Y Mango"
+      },
+      "description_comparison": {
+        "similarity_score": 23.36,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-light-vainilla-granizada-con-dulce-de-leche",
+        "name": "Helado light vainilla granizada con dulce de leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200147_359666171.png",
+        "url": "https://www.conaprole.uy/producto/helado-light-vainilla-granizada-con-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Light Mixto Dulce De Leche Y Vainilla Grani",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166561/7730105973345.jpg?v=638556961888370000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-light-mixto-dulce-de-leche-y-vainilla-grani/p"
+      },
+      "name_comparison": {
+        "similarity_score": 83.64,
+        "is_exact_match": false,
+        "official_name": "Helado light vainilla granizada con dulce de leche",
+        "supermarket_name": "Helado Conaprole Light Mixto Dulce De Leche Y Vainilla Grani"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-dulce-de-leche-granizado",
+        "name": "Helado Dulce de Leche Granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-dulce-de-leche-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
+      },
+      "name_comparison": {
+        "similarity_score": 81.58,
+        "is_exact_match": false,
+        "official_name": "Helado Dulce de Leche Granizado",
+        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado"
+      },
+      "description_comparison": {
+        "similarity_score": 21.43,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-palito-bicolor-frutilla-manzana",
+        "name": "Helado Palito Frutilla/Manzana",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200058_1754302065.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-palito-bicolor-frutilla-manzana/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Agua Frutilla-Manzana Palito 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166502/7730105902574.jpg?v=638556957700230000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-agua-frutilla-manzana-palito-60ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.0,
+        "is_exact_match": false,
+        "official_name": "Helado Palito Frutilla/Manzana",
+        "supermarket_name": "Helado Conaprole Agua Frutilla-Manzana Palito 60Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 25.09,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-dietetico-sabor-vainilla",
+        "name": "Helado dietético sabor vainilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200144_1477376486.png",
+        "url": "https://www.conaprole.uy/producto/helado-dietetico-sabor-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Dietetico Vainilla 900Ml",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166521/7730105913730.jpg?v=638556958992100000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-dietetico-vainilla-900ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 66.67,
+        "is_exact_match": false,
+        "official_name": "Helado dietético sabor vainilla",
+        "supermarket_name": "Helado Conaprole Dietetico Vainilla 900Ml"
+      },
+      "description_comparison": {
+        "similarity_score": 18.54,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-dulce-de-leche-granizado",
+        "name": "Vasito Helado Dulce de Leche Granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-dulce-de-leche-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
+      },
+      "name_comparison": {
+        "similarity_score": 74.7,
+        "is_exact_match": false,
+        "official_name": "Vasito Helado Dulce de Leche Granizado",
+        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado"
+      },
+      "description_comparison": {
+        "similarity_score": 20.49,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-triple-sambayon-chocolate-dulce-leche-1l",
+        "name": "Helado Triple Sambayón, Chocolate y Dulce de Leche 1L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200203_191124169.png",
+        "url": "https://www.conaprole.uy/producto/helado-triple-sambayon-chocolate-dulce-leche-1l/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Sambayon Chocolate Dulce De Leche 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180669/1638204.jpg.jpg?v=639102363355030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-sambayon-chocolate-dulce-de-leche-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 77.36,
+        "is_exact_match": false,
+        "official_name": "Helado Triple Sambayón, Chocolate y Dulce de Leche 1L",
+        "supermarket_name": "Helado Conaprole Sambayon Chocolate Dulce De Leche 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 25.23,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-marmolado-de-dulce-de-leche",
+        "name": "Helado Marmolado de Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Crema Marmolada Dulce De Leche 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180665/1605915.jpg.jpg?v=639102363109830000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-crema-marmolada-dulce-de-leche-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.29,
+        "is_exact_match": false,
+        "official_name": "Helado Marmolado de Dulce de Leche",
+        "supermarket_name": "Helado Conaprole Crema Marmolada Dulce De Leche 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 30.95,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-maxima-chocolate-tipo-holandes",
+        "name": "Máxima Chocolate Holandés",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115150109_434469136.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-maxima-chocolate-tipo-holandes/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Maxima Chocolate Holandes 96Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166506/7730105903373.jpg?v=638556957975900000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-maxima-chocolate-holandes-96ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.89,
+        "is_exact_match": false,
+        "official_name": "Máxima Chocolate Holandés",
+        "supermarket_name": "Helado Conaprole Maxima Chocolate Holandes 96Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 16.83,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-barrita-conaprole-vainilla",
+        "name": "Helado Barrita Vainilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200118_1980038337.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Vainilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180667/1638203.jpg.jpg?v=639102363243900000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-vainilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.23,
+        "is_exact_match": false,
+        "official_name": "Helado Barrita Vainilla",
+        "supermarket_name": "Helado Conaprole Vainilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-helado-palito-bicolor-frutilla-naranja",
+        "name": "Helado Palito Frutilla/Naranja",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200100_1436800483.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-bicolor-frutilla-naranja/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Agua Frutilla-Naranja Palito 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166503/7730105902581.jpg?v=638556957771070000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-agua-frutilla-naranja-palito-60ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.0,
+        "is_exact_match": false,
+        "official_name": "Helado Palito Frutilla/Naranja",
+        "supermarket_name": "Helado Conaprole Agua Frutilla-Naranja Palito 60Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.6,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-sinfonia-chocolate-tipo-holandes-marmolado-con-dulce-de-leche",
+        "name": "Helado Sinfonía Chocolate Holandés Marmolado con Dulce de Leche 2L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200227_2023619388.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-sinfonia-chocolate-tipo-holandes-marmolado-con-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-chocolate-holandes-y-menta/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.13,
+        "is_exact_match": false,
+        "official_name": "Helado Sinfonía Chocolate Holandés Marmolado con Dulce de Leche 2L",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta"
+      },
+      "description_comparison": {
+        "similarity_score": 24.91,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-light-mixto-vainilla-y-chocolate-granizado",
+        "name": "Helado Light Mixto Vainilla y Chocolate granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200142_673999692.png",
+        "url": "https://www.conaprole.uy/producto/helado-light-mixto-vainilla-y-chocolate-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Light Mixto Dulce De Leche Y Vainilla Grani",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166561/7730105973345.jpg?v=638556961888370000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-light-mixto-dulce-de-leche-y-vainilla-grani/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.23,
+        "is_exact_match": false,
+        "official_name": "Helado Light Mixto Vainilla y Chocolate granizado",
+        "supermarket_name": "Helado Conaprole Light Mixto Dulce De Leche Y Vainilla Grani"
+      },
+      "description_comparison": {
+        "similarity_score": 24.24,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-conaprole-triple-crema-chocolate-y-frutilla-5-litros",
+        "name": "Helado Conaprole Triple Crema Chocolate y frutilla 5 litros",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200645_279331452.png",
+        "url": "https://www.conaprole.uy/producto/helado-conaprole-triple-crema-chocolate-y-frutilla-5-litros/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Regular Crema Chocolate Y Frutilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180674/1638976.jpg.jpg?v=639102363642570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-regular-crema-chocolate-y-frutilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 82.46,
+        "is_exact_match": false,
+        "official_name": "Helado Conaprole Triple Crema Chocolate y frutilla 5 litros",
+        "supermarket_name": "Helado Conaprole Regular Crema Chocolate Y Frutilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 22.87,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-alfajor-helado-dulce-de-leche",
+        "name": "Alfajor Helado Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200112_646088168.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Maxima Dulce De Leche 96Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166577/77303707.jpg?v=638556963661100000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-maxima-dulce-de-leche-96ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.44,
+        "is_exact_match": false,
+        "official_name": "Alfajor Helado Dulce de Leche",
+        "supermarket_name": "Helado Conaprole Maxima Dulce De Leche 96Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 20.0,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-sinfonia-sueno-ingles",
+        "name": "Helado Sinfonía Chocolate y Menta 2L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200223_294211441.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-sinfonia-sueno-ingles/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-chocolate-holandes-y-menta/p"
+      },
+      "name_comparison": {
+        "similarity_score": 76.09,
+        "is_exact_match": false,
+        "official_name": "Helado Sinfonía Chocolate y Menta 2L",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta"
+      },
+      "description_comparison": {
+        "similarity_score": 25.37,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-triple-vainilla-frutilla-chocolate-1l",
+        "name": "Helado Triple Vainilla, Frutilla y Chocolate 1L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200205_31320532.png",
+        "url": "https://www.conaprole.uy/producto/helado-triple-vainilla-frutilla-chocolate-1l/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt Triple Crema/Chocolate/Frutilla",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166516/7730105913525.jpg?v=638556958657870000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-triple-crema-chocolate-frutilla/p"
+      },
+      "name_comparison": {
+        "similarity_score": 71.43,
+        "is_exact_match": false,
+        "official_name": "Helado Triple Vainilla, Frutilla y Chocolate 1L",
+        "supermarket_name": "Helado Conaprole 1Lt Triple Crema/Chocolate/Frutilla"
+      },
+      "description_comparison": {
+        "similarity_score": 24.26,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-marmolado-de-frutilla",
+        "name": "Helado Marmolado de Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200244_325461188.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Marmolado Frutilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-marmolado-frutilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 80.6,
+        "is_exact_match": false,
+        "official_name": "Helado Marmolado de Frutilla",
+        "supermarket_name": "Helado Conaprole Marmolado Frutilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 21.66,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "vasito-helado-sinfonia-sabores-creme-brulee",
+        "name": "Vasito Helado Sinfonia de Sabores Creme Brulee",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200038_615021589.png",
+        "url": "https://www.conaprole.uy/producto/vasito-helado-sinfonia-sabores-creme-brulee/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Sinfonia De Sabores Creme Brulle M/Caram 25",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166529/7730105917783.jpg?v=638556959621570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-sinfonia-de-sabores-creme-brulle-m-caram-25/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.58,
+        "is_exact_match": false,
+        "official_name": "Vasito Helado Sinfonia de Sabores Creme Brulee",
+        "supermarket_name": "Helado Conaprole Sinfonia De Sabores Creme Brulle M/Caram 25"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-sinfonia-chocolate-y-menta-2l-polipapel",
+        "name": "Helado Sinfonía Chocolate y Menta Polipapel",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200149_1816516912.png",
+        "url": "https://www.conaprole.uy/producto/helado-sinfonia-chocolate-y-menta-2l-polipapel/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-chocolate-holandes-y-menta/p"
+      },
+      "name_comparison": {
+        "similarity_score": 64.65,
+        "is_exact_match": false,
+        "official_name": "Helado Sinfonía Chocolate y Menta Polipapel",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta"
+      },
+      "description_comparison": {
+        "similarity_score": 24.91,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-frutilla",
+        "name": "Helado Palito D-Frutta Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200108_2092545953.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-d-frutta-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Marmolado Frutilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-marmolado-frutilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 57.14,
+        "is_exact_match": false,
+        "official_name": "Helado Palito D-Frutta Frutilla",
+        "supermarket_name": "Helado Conaprole Marmolado Frutilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 21.05,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-vaso-mixto-vainilla-y-de-chocolate",
+        "name": "Vasito Helado Mixto Crema y Chocolate",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200127_2121045338.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-vaso-mixto-vainilla-y-de-chocolate/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Vaso Mixto Crema/Chocolate 250Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166524/7730105917530.jpg?v=638556959266200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-vaso-mixto-crema-chocolate-250cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 76.74,
+        "is_exact_match": false,
+        "official_name": "Vasito Helado Mixto Crema y Chocolate",
+        "supermarket_name": "Helado Conaprole Vaso Mixto Crema/Chocolate 250Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 22.22,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-crema-1l",
+        "name": "Helado Crema 1L",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200214_1229905889.png",
+        "url": "https://www.conaprole.uy/producto/helado-crema-1l/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt Crema",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-crema/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.17,
+        "is_exact_match": false,
+        "official_name": "Helado Crema 1L",
+        "supermarket_name": "Helado Conaprole 1Lt Crema"
+      },
+      "description_comparison": {
+        "similarity_score": 17.19,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helados-sinfonia-chocolate-holandes-y-crema-irlandesa-polipapel",
+        "name": "Helados Sinfonía Chocolate Holandés y Crema Irlandesa Polipapel",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200152_876653101.png",
+        "url": "https://www.conaprole.uy/producto/helados-sinfonia-chocolate-holandes-y-crema-irlandesa-polipapel/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-chocolate-holandes-y-menta/p"
+      },
+      "name_comparison": {
+        "similarity_score": 68.91,
+        "is_exact_match": false,
+        "official_name": "Helados Sinfonía Chocolate Holandés y Crema Irlandesa Polipapel",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Chocolate Holandes Y Menta"
+      },
+      "description_comparison": {
+        "similarity_score": 24.76,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-granel-frutilla",
+        "name": "Helado a granel Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200654_1219456095.png",
+        "url": "https://www.conaprole.uy/producto/helado-granel-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Marmolado Frutilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-marmolado-frutilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 57.14,
+        "is_exact_match": false,
+        "official_name": "Helado a granel Frutilla",
+        "supermarket_name": "Helado Conaprole Marmolado Frutilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-triple-crema-sabor-vainilla-chocolate-y-frutilla",
+        "name": "Vasito Helado Triple Vainilla, Chocolate y Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200132_1030683845.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-triple-crema-sabor-vainilla-chocolate-y-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Diet  250Cc Vainilla /Chocolate/Frutilla",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166526/7730105917707.jpg?v=638556959413970000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-diet-250cc-vainilla-chocolate-frutilla/p"
+      },
+      "name_comparison": {
+        "similarity_score": 64.76,
+        "is_exact_match": false,
+        "official_name": "Vasito Helado Triple Vainilla, Chocolate y Frutilla",
+        "supermarket_name": "Helado Conaprole Diet  250Cc Vainilla /Chocolate/Frutilla"
+      },
+      "description_comparison": {
+        "similarity_score": 23.66,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-barrita-frutilla",
+        "name": "Helado Barrita Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200042_429560123.png",
+        "url": "https://www.conaprole.uy/producto/helado-barrita-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Barrita Crema 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166568/77301635.jpg?v=638556962645230000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-barrita-crema-60ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 62.07,
+        "is_exact_match": false,
+        "official_name": "Helado Barrita Frutilla",
+        "supermarket_name": "Helado Conaprole Barrita Crema 60Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 19.35,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-helado-palito-de-agua-naranja",
+        "name": "Helado Palito Naranja",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200102_1074414654.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-naranja/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Palito Naranja 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166566/77301598.jpg?v=638556962402400000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-palito-naranja-60ml/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.68,
+        "is_exact_match": false,
+        "official_name": "Helado Palito Naranja",
+        "supermarket_name": "Helado Conaprole Palito Naranja 60Ml ."
+      },
+      "description_comparison": {
+        "similarity_score": 23.48,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-helado-palito-de-agua-frutilla",
+        "name": "Helado Palito Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504154517_1856306981.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Marmolado Frutilla 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-marmolado-frutilla-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 62.3,
+        "is_exact_match": false,
+        "official_name": "Helado Palito Frutilla",
+        "supermarket_name": "Helado Conaprole Marmolado Frutilla 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 24.45,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-triple-crema-sabor-vainilla-chocolate-y-frutilla",
+        "name": "Helado Triple Vainilla, Frutilla y Chocolate",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200249_2118398877.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-triple-crema-sabor-vainilla-chocolate-y-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Diet  250Cc Vainilla /Chocolate/Frutilla",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166526/7730105917707.jpg?v=638556959413970000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-diet-250cc-vainilla-chocolate-frutilla/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.39,
+        "is_exact_match": false,
+        "official_name": "Helado Triple Vainilla, Frutilla y Chocolate",
+        "supermarket_name": "Helado Conaprole Diet  250Cc Vainilla /Chocolate/Frutilla"
+      },
+      "description_comparison": {
+        "similarity_score": 23.39,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-crema-sabor-vainilla",
+        "name": "Helado Crema",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200256_1814422869.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-crema-sabor-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt Crema",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-crema/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.16,
+        "is_exact_match": false,
+        "official_name": "Helado Crema",
+        "supermarket_name": "Helado Conaprole 1Lt Crema"
+      },
+      "description_comparison": {
+        "similarity_score": 17.24,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-mixto-chocolate-tipo-holandes-y-dulce-de-leche",
+        "name": "Helado Mixto Chocolate y Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200237_1324374978.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-mixto-chocolate-tipo-holandes-y-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 2Lt Sinfonia Super Dulce De Leche",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166558/7730105973086.jpg?v=638556961624200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-sinfonia-super-dulce-de-leche/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.66,
+        "is_exact_match": false,
+        "official_name": "Helado Mixto Chocolate y Dulce de Leche",
+        "supermarket_name": "Helado Conaprole 2Lt Sinfonia Super Dulce De Leche"
+      },
+      "description_comparison": {
+        "similarity_score": 23.97,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-triple-crema-sabor-sambayon-chocolate-y-dulce-de-leche",
+        "name": "Helado Triple Sambayón, Chocolate y Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200246_287318172.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-triple-crema-sabor-sambayon-chocolate-y-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Sambayon Chocolate Dulce De Leche 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180669/1638204.jpg.jpg?v=639102363355030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-sambayon-chocolate-dulce-de-leche-2lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 75.73,
+        "is_exact_match": false,
+        "official_name": "Helado Triple Sambayón, Chocolate y Dulce de Leche",
+        "supermarket_name": "Helado Conaprole Sambayon Chocolate Dulce De Leche 2Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 25.23,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-conaprole-flan-marmolado-con-dulce-de-leche-5-litros",
+        "name": "Helado Conaprole Flan marmolado con Dulce de leche 5 litros",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200649_629498173.png",
+        "url": "https://www.conaprole.uy/producto/helado-conaprole-flan-marmolado-con-dulce-de-leche-5-litros/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
+      },
+      "name_comparison": {
+        "similarity_score": 67.31,
+        "is_exact_match": false,
+        "official_name": "Helado Conaprole Flan marmolado con Dulce de leche 5 litros",
+        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado"
+      },
+      "description_comparison": {
+        "similarity_score": 18.34,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-alfajor-helado-vainilla",
+        "name": "Alfajor Helado Vainilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Alfajor Vainilla .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166507/7730105903397.jpg?v=638556958043730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-alfajor-vainilla/p"
+      },
+      "name_comparison": {
+        "similarity_score": 82.14,
+        "is_exact_match": false,
+        "official_name": "Alfajor Helado Vainilla",
+        "supermarket_name": "Helado Conaprole Alfajor Vainilla ."
+      },
+      "description_comparison": {
+        "similarity_score": 11.71,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-manzana-1l",
+        "name": "Jugo de Manzana 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171135_1467264247.png",
+        "url": "https://www.conaprole.uy/producto/jugo-manzana-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Manzana Uht 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165631/7730105025211.jpg?v=638537129529430000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-manzana-uht-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.83,
+        "is_exact_match": false,
+        "official_name": "Jugo de Manzana 1L",
+        "supermarket_name": "Jugo Conaprole Manzana Uht 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 26.25,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-durazno-1l",
+        "name": "Jugo de Durazno 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171126_694819763.png",
+        "url": "https://www.conaprole.uy/producto/jugo-durazno-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Durazno Uht 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165628/7730105025037.jpg?v=638537129336400000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-durazno-uht-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 70.83,
+        "is_exact_match": false,
+        "official_name": "Jugo de Durazno 1L",
+        "supermarket_name": "Jugo Conaprole Durazno Uht 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 27.33,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-jugos-manzanabebebe",
+        "name": "Jugo Manzana Light",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Manzana 250Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-250cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 69.23,
+        "is_exact_match": false,
+        "official_name": "Jugo Manzana Light",
+        "supermarket_name": "Jugo Conaprole Light Manzana 250Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 23.04,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-pera-1l",
+        "name": "Jugo de Pera 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171058_1389795533.png",
+        "url": "https://www.conaprole.uy/producto/jugo-pera-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Pera 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165635/7730105025365.jpg?v=638537129799570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-pera-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.68,
+        "is_exact_match": false,
+        "official_name": "Jugo de Pera 1L",
+        "supermarket_name": "Jugo Conaprole Pera 1Lt"
+      },
+      "description_comparison": {
+        "similarity_score": 29.63,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-naranja-zanahoria-1l",
+        "name": "Jugo de Naranja y Zanahoria 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171115_1427875183.png",
+        "url": "https://www.conaprole.uy/producto/jugo-naranja-zanahoria-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Naranja-Zanahoria Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165630/7730105025181.jpg?v=638537129461570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-naranja-zanahoria-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 78.87,
+        "is_exact_match": false,
+        "official_name": "Jugo de Naranja y Zanahoria 1L",
+        "supermarket_name": "Jugo Conaprole Naranja-Zanahoria Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 30.24,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-jugos-multifrutas-1l",
+        "name": "Jugo Multifrutas",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195236_1113682261.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-multifrutas-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Multifruta 250Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-multifruta-250cc/p"
+      },
+      "name_comparison": {
+        "similarity_score": 63.83,
+        "is_exact_match": false,
+        "official_name": "Jugo Multifrutas",
+        "supermarket_name": "Jugo Conaprole Multifruta 250Cc ."
+      },
+      "description_comparison": {
+        "similarity_score": 18.67,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-jugos-light-naranja-1l",
+        "name": "Jugo Naranja Light",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195239_1911506424.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-light-naranja-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Naranja Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-naranja-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 65.45,
+        "is_exact_match": false,
+        "official_name": "Jugo Naranja Light",
+        "supermarket_name": "Jugo Conaprole Light Naranja Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 27.47,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-multifrutas-1l",
+        "name": "Jugo Multifrutas 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171045_1081329843.png",
+        "url": "https://www.conaprole.uy/producto/jugo-multifrutas-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Multifruta Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165634/7730105025259.jpg?v=638537129733830000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-multifruta-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 71.7,
+        "is_exact_match": false,
+        "official_name": "Jugo Multifrutas 1L",
+        "supermarket_name": "Jugo Conaprole Multifruta Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 19.3,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-naranja-light-1l",
+        "name": "Jugo Naranja Light 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
+        "url": "https://www.conaprole.uy/producto/jugo-naranja-light-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Naranja Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-naranja-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.41,
+        "is_exact_match": false,
+        "official_name": "Jugo Naranja Light 1L",
+        "supermarket_name": "Jugo Conaprole Light Naranja Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 27.47,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-manzana-light-1l",
+        "name": "Jugo Manzana Light 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
+        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Manzana Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 72.41,
+        "is_exact_match": false,
+        "official_name": "Jugo Manzana Light 1L",
+        "supermarket_name": "Jugo Conaprole Light Manzana Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 24.74,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-jugos-naranja-zanahoria-1l",
+        "name": "Jugo de Naranja y Zanahoria",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195242_1669158865.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-naranja-zanahoria-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Naranja-Zanahoria Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165630/7730105025181.jpg?v=638537129461570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-naranja-zanahoria-slim-1lt/p"
+      },
+      "name_comparison": {
+        "similarity_score": 73.53,
+        "is_exact_match": false,
+        "official_name": "Jugo de Naranja y Zanahoria",
+        "supermarket_name": "Jugo Conaprole Naranja-Zanahoria Slim 1Lt ."
+      },
+      "description_comparison": {
+        "similarity_score": 30.24,
+        "status": "compared"
+      },
+      "image_comparison": null,
+      "alert_level": "YELLOW"
+    }
+  ],
+  "matches_summary": {
+    "El Dorado": {
+      "matches": 3,
+      "discrepancies": 106
+    },
+    "TATA": {
+      "matches": 0,
+      "discrepancies": 0
+    },
+    "Tienda Inglesa": {
+      "matches": 0,
+      "discrepancies": 0
+    }
+  }
+}
