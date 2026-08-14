@@ -121,49 +121,6 @@
         <p>COOP System &copy; 2026 — Herramienta de auditoría de catálogo para Conaprole.</p>
     </footer>
 
-    <!-- Modal para Comparación Pixel a Pixel -->
-    <div id="pixelModal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title-group">
-                    <h3>🔍 Comparación Pixel a Pixel</h3>
-                    <span id="modalProductName" class="modal-subtitle">Producto</span>
-                </div>
-                <button id="closeModalBtn" class="close-btn">&times;</button>
-            </div>
-
-            <div class="modal-body">
-                <!-- Visual comparison stage -->
-                <div class="pixel-stage" id="pixelStage">
-                    <img id="modalOffImg" class="pixel-img base-img" src="" alt="Oficial" />
-                    <img id="modalSpImg" class="pixel-img overlay-img" src="" alt="Supermercado" />
-                    <div id="curtainDivider" class="curtain-line hidden"></div>
-                </div>
-
-                <!-- Controls for modal -->
-                <div class="modal-controls">
-                    <div class="control-group">
-                        <button id="btnHoldCompare" class="btn btn-primary btn-hold">
-                            👆 Mantén Presionado para Alternar (Pressed)
-                        </button>
-                    </div>
-
-                    <div class="control-group slider-group">
-                        <label for="opacitySlider">🎚️ Opacidad de Superposición:</label>
-                        <input type="range" id="opacitySlider" min="0" max="100" value="50" />
-                        <span id="opacityVal">50%</span>
-                    </div>
-
-                    <div class="control-group">
-                        <button id="btnToggleMode" class="btn btn-secondary">
-                            ↔️ Modo Cortina / Superposición
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="/static/app.js"></script>
 </body>
 </html>

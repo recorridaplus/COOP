@@ -14,16 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const spinnerContainer = document.getElementById("spinnerContainer");
     const spinnerLabel = document.getElementById("spinnerLabel");
 
-    // Modal elements
-    const pixelModal = document.getElementById("pixelModal");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-    const modalProductName = document.getElementById("modalProductName");
-    const modalOffImg = document.getElementById("modalOffImg");
-    const modalSpImg = document.getElementById("modalSpImg");
-    const opacitySlider = document.getElementById("opacitySlider");
-    const opacityVal = document.getElementById("opacityVal");
-    const btnHoldCompare = document.getElementById("btnHoldCompare");
-
     async function loadReportData() {
         try {
             const resp = await fetch("/api/report");
@@ -73,8 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emptyState.classList.add("hidden");
         grid.innerHTML = filtered.map((item, index) => createCardHtml(item, index)).join("");
 
-        // Activar manejadores de eventos interactivos en las tarjetas recién renderizadas
-        attachCardInteractions(filtered);
+        attachCardInteractions();
     }
 
     function createCardHtml(item, index) {
@@ -118,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="tight-compare-wrapper">
                         <div class="tight-stage">
                             <!-- Foto Oficial -->
-                            <div class="tight-img-box img-off-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Mantén presionado para alternar foto">
+                            <div class="tight-img-box img-off-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Haz clic o mantén presionado para alternar foto">
                                 <span class="img-tag-badge off-badge">OFICIAL</span>
                                 <img src="${offImg}" class="card-img-off" alt="Oficial" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'" />
                             </div>
@@ -128,17 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
 
                             <!-- Foto Supermercado -->
-                            <div class="tight-img-box img-sp-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Mantén presionado para alternar foto">
+                            <div class="tight-img-box img-sp-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Haz clic o mantén presionado para alternar foto">
                                 <span class="img-tag-badge">${item.supermarket.toUpperCase()}</span>
                                 <img src="${spImg}" class="card-img-sp" alt="Supermercado" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'" />
                             </div>
                         </div>
 
-                        <span class="press-hint">👆 Haz clic o mantén presionado para alternar fotos</span>
-
-                        <button class="btn btn-secondary btn-pixel" data-card-idx="${index}">
-                            🔍 Comparar Pixel a Pixel
-                        </button>
+                        <span class="press-hint">👆 Haz clic o mantén presionado sobre la foto para alternar</span>
                     </div>
 
                     <!-- Datos del producto -->
@@ -163,8 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    function attachCardInteractions(filteredItems) {
-        // Manejadores de Presionar y Mantener en las fotos de las tarjetas
+    function attachCardInteractions() {
         document.querySelectorAll(".tight-img-box").forEach(box => {
             const imgEl = box.querySelector("img");
             const offUrl = box.getAttribute("data-off-url");
@@ -189,61 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             box.addEventListener("touchstart", (e) => { e.preventDefault(); showOther(); });
             box.addEventListener("touchend", restoreOriginal);
         });
-
-        // Botón "Comparar Pixel a Pixel" -> abre el modal
-        document.querySelectorAll(".btn-pixel").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const idx = parseInt(btn.getAttribute("data-card-idx"));
-                const item = filteredItems[idx];
-                if (item) {
-                    openPixelModal(item);
-                }
-            });
-        });
     }
-
-    function openPixelModal(item) {
-        modalProductName.innerText = `${item.conaprole_product.name} (vs ${item.supermarket})`;
-        modalOffImg.src = item.conaprole_product.image_url || "/static/no-img.png";
-        modalSpImg.src = item.supermarket_product.image_url || "/static/no-img.png";
-
-        opacitySlider.value = 50;
-        opacityVal.innerText = "50%";
-        modalSpImg.style.opacity = 0.5;
-
-        pixelModal.classList.remove("hidden");
-    }
-
-    function closePixelModal() {
-        pixelModal.classList.add("hidden");
-    }
-
-    closeModalBtn.addEventListener("click", closePixelModal);
-    pixelModal.addEventListener("click", (e) => {
-        if (e.target === pixelModal) closePixelModal();
-    });
-
-    opacitySlider.addEventListener("input", () => {
-        const val = opacitySlider.value;
-        opacityVal.innerText = `${val}%`;
-        modalSpImg.style.opacity = val / 100;
-    });
-
-    // Mantener presionado en el Modal para alternar al 100% de opacidad
-    function modalPressStart() {
-        modalSpImg.style.opacity = 1.0;
-    }
-
-    function modalPressEnd() {
-        modalSpImg.style.opacity = opacitySlider.value / 100;
-    }
-
-    btnHoldCompare.addEventListener("mousedown", modalPressStart);
-    btnHoldCompare.addEventListener("mouseup", modalPressEnd);
-    btnHoldCompare.addEventListener("mouseleave", modalPressEnd);
-
-    btnHoldCompare.addEventListener("touchstart", (e) => { e.preventDefault(); modalPressStart(); });
-    btnHoldCompare.addEventListener("touchend", modalPressEnd);
 
     function setProcessingState(active, labelText = "Procesando...") {
         isProcessing = active;
