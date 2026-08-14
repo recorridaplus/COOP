@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const offImg = item.conaprole_product.image_url || "/static/no-img.png";
         const spImg = item.supermarket_product.image_url || "/static/no-img.png";
 
+        const offUrl = item.conaprole_product.url || "#";
+        const spUrl = item.supermarket_product.url || "#";
+
         const simScore = item.name_comparison ? item.name_comparison.similarity_score : 100;
 
         return `
@@ -81,21 +84,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     <!-- Conaprole Oficial -->
                     <div class="product-side">
                         <span class="side-label">OFICIAL CONAPROLE</span>
-                        <div class="img-container">
+                        <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="img-container clickable-img" title="Ver ficha en Conaprole">
                             <img src="${offImg}" alt="${item.conaprole_product.name}" onerror="this.src='https://via.placeholder.com/140?text=Sin+Imagen'" />
-                        </div>
+                        </a>
                         <span class="product-name">${item.conaprole_product.name}</span>
                         <span class="match-bar">Cat: ${item.conaprole_product.category}</span>
+                        <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="source-link">
+                            🌐 Ver Ficha Oficial ↗
+                        </a>
                     </div>
 
                     <!-- Supermercado -->
                     <div class="product-side">
                         <span class="side-label sp-side">PUBLICACIÓN SUPERMERCADO</span>
-                        <div class="img-container">
+                        <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="img-container clickable-img" title="Ver en sitio de ${item.supermarket}">
                             <img src="${spImg}" alt="${item.supermarket_product.name}" onerror="this.src='https://via.placeholder.com/140?text=Sin+Imagen'" />
-                        </div>
+                        </a>
                         <span class="product-name">${item.supermarket_product.name}</span>
                         <span class="match-bar">Similitud nombre: <strong>${simScore}%</strong></span>
+                        <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="source-link sp-source-link">
+                            🛒 Ver en ${item.supermarket} ↗
+                        </a>
                     </div>
                 </div>
             </div>

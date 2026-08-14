@@ -356,6 +356,48 @@ body {
     color: var(--text-muted);
 }
 
+.img-container.clickable-img {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.img-container.clickable-img:hover {
+    transform: scale(1.03);
+    border: 1px solid var(--purple-light);
+}
+
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--purple-light);
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-sm);
+    margin-top: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.source-link:hover {
+    background: rgba(139, 92, 246, 0.25);
+    color: #ffffff;
+}
+
+.sp-source-link {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.sp-source-link:hover {
+    background: rgba(56, 189, 248, 0.25);
+    color: #ffffff;
+}
+
 .empty-state {
     text-align: center;
     padding: 4rem 2rem;
