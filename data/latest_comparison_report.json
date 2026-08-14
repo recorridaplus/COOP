@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T22:56:59.539170+00:00",
+  "generated_at": "2026-08-14T23:03:13.534612+00:00",
   "total_official_products": 296,
   "supermarkets_analyzed": [
     "Devoto",
@@ -79,39 +79,6 @@
     {
       "supermarket": "Devoto",
       "conaprole_product": {
-        "id": "producto-helados-2litros-super-dulce-de-leche",
-        "name": "Helado Súper Dulce de Leche 2L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-super-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "url": "https://www.devoto.com.uy/product/helado-conaprole-super-dulce-de-leche-250-cc/236855"
-      },
-      "name_comparison": {
-        "official_name": "Helado Súper Dulce de Leche 2L",
-        "supermarket_name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
         "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
         "name": "Helado Palito D-Frutta Durazno/Kiwi",
         "category": "Helados",
@@ -141,39 +108,6 @@
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "jugo-manzana-light-1l",
-        "name": "Jugo Manzana Light 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.devoto.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light 1L",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 14,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
     },
     {
       "supermarket": "Disco",
@@ -244,39 +178,6 @@
     {
       "supermarket": "Disco",
       "conaprole_product": {
-        "id": "producto-helados-2litros-super-dulce-de-leche",
-        "name": "Helado Súper Dulce de Leche 2L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-super-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "url": "https://www.disco.com.uy/product/helado-conaprole-super-dulce-de-leche-250-cc/236855"
-      },
-      "name_comparison": {
-        "official_name": "Helado Súper Dulce de Leche 2L",
-        "supermarket_name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
         "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
         "name": "Helado Palito D-Frutta Durazno/Kiwi",
         "category": "Helados",
@@ -306,39 +207,6 @@
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "jugo-manzana-light-1l",
-        "name": "Jugo Manzana Light 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.disco.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light 1L",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 14,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
     },
     {
       "supermarket": "El Dorado",
@@ -640,72 +508,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "dulce-leche-5-kg",
-        "name": "Dulce de Leche 5 kg",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115145437_1693434796.png",
-        "url": "https://www.conaprole.uy/producto/dulce-leche-5-kg/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole 250Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Dulce de Leche 5 kg",
-        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
-        "similarity_score": 96.0
-      },
-      "description_comparison": {
-        "similarity_score": 28.57,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115145437_1693434796.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "dulce-crema-leche-925g",
-        "name": "Dulce Crema de Leche 925g",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203657_1050159144.png",
-        "url": "https://www.conaprole.uy/producto/dulce-crema-leche-925g/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole Crema 500Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-crema-500gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Dulce Crema de Leche 925g",
-        "supermarket_name": "Dulce De Leche Conaprole Crema 500Gr .",
-        "similarity_score": 97.14
-      },
-      "description_comparison": {
-        "similarity_score": 35.38,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203657_1050159144.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-conaprole-dulce-de-leche-crema-1kg",
         "name": "Dulce Crema de Leche",
         "category": "Dulce de leche",
@@ -765,39 +567,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "dulce-leche-3-kg",
-        "name": "Dulce de Leche 3 kg",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115145012_1445596737.png",
-        "url": "https://www.conaprole.uy/producto/dulce-leche-3-kg/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole 250Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Dulce de Leche 3 kg",
-        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
-        "similarity_score": 96.0
-      },
-      "description_comparison": {
-        "similarity_score": 29.69,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115145012_1445596737.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1003,39 +772,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "jugo-manzana-1l",
-        "name": "Jugo de Manzana 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171135_1467264247.png",
-        "url": "https://www.conaprole.uy/producto/jugo-manzana-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Manzana 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-manzana-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo de Manzana 1L",
-        "supermarket_name": "Jugo Conaprole Manzana 250Cc .",
-        "similarity_score": 90.72
-      },
-      "description_comparison": {
-        "similarity_score": 25.32,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 12,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171135_1467264247.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "details": "Imagen coincidente (pHash dist: 12)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-jugos-manzana-1l-2",
         "name": "Jugo de Manzana",
         "category": "Jugos",
@@ -1128,39 +864,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195505_376886939.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "jugo-durazno-1l",
-        "name": "Jugo de Durazno 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171126_694819763.png",
-        "url": "https://www.conaprole.uy/producto/jugo-durazno-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Durazno 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-durazno-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo de Durazno 1L",
-        "supermarket_name": "Jugo Conaprole Durazno 250Cc .",
-        "similarity_score": 90.72
-      },
-      "description_comparison": {
-        "similarity_score": 25.16,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 12,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171126_694819763.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "details": "Imagen coincidente (pHash dist: 12)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE"
@@ -1267,39 +970,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "jugo-multifrutas-1l",
-        "name": "Jugo Multifrutas 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171045_1081329843.png",
-        "url": "https://www.conaprole.uy/producto/jugo-multifrutas-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Multifruta 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-multifruta-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Multifrutas 1L",
-        "supermarket_name": "Jugo Conaprole Multifruta 250Cc .",
-        "similarity_score": 90.91
-      },
-      "description_comparison": {
-        "similarity_score": 18.67,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 18,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171045_1081329843.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "jugo-naranja-light-1l",
         "name": "Jugo Naranja Light 1L",
         "category": "Jugos",
@@ -1340,25 +1010,25 @@
         "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
       },
       "supermarket_product": {
-        "name": "Jugo Conaprole Light Manzana 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-250cc/p"
+        "name": "Jugo Conaprole Light Manzana Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-slim-1lt/p"
       },
       "name_comparison": {
         "official_name": "Jugo Manzana Light 1L",
-        "supermarket_name": "Jugo Conaprole Light Manzana 250Cc .",
-        "similarity_score": 96.84
+        "supermarket_name": "Jugo Conaprole Light Manzana Slim 1Lt .",
+        "similarity_score": 90.23
       },
       "description_comparison": {
-        "similarity_score": 23.04,
+        "similarity_score": 24.74,
         "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 14,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1465,39 +1135,6 @@
     {
       "supermarket": "Géant",
       "conaprole_product": {
-        "id": "producto-helados-2litros-super-dulce-de-leche",
-        "name": "Helado Súper Dulce de Leche 2L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-super-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "url": "https://www.geant.com.uy/product/helado-conaprole-super-dulce-de-leche-250-cc/236855"
-      },
-      "name_comparison": {
-        "official_name": "Helado Súper Dulce de Leche 2L",
-        "supermarket_name": "Helado CONAPROLE súper dulce de leche 250 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
         "id": "producto-helados-impagua-helado-palito-de-agua-d-frutta-durazno-kiwi",
         "name": "Helado Palito D-Frutta Durazno/Kiwi",
         "category": "Helados",
@@ -1527,57 +1164,24 @@
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "jugo-manzana-light-1l",
-        "name": "Jugo Manzana Light 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.geant.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light 1L",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 14,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
     }
   ],
   "matches_summary": {
     "Devoto": {
-      "matches": 6,
-      "discrepancies": 5
+      "matches": 7,
+      "discrepancies": 3
     },
     "Disco": {
-      "matches": 6,
-      "discrepancies": 5
+      "matches": 7,
+      "discrepancies": 3
     },
     "El Dorado": {
       "matches": 18,
-      "discrepancies": 31
+      "discrepancies": 25
     },
     "Géant": {
-      "matches": 5,
-      "discrepancies": 6
+      "matches": 6,
+      "discrepancies": 4
     },
     "TATA": {
       "matches": 0,
