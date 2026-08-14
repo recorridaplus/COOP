@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T22:51:56.115165+00:00",
+  "generated_at": "2026-08-14T22:56:59.539170+00:00",
   "total_official_products": 296,
   "supermarkets_analyzed": [
     "Devoto",
@@ -35,10 +35,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -67,80 +67,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-fontina",
-        "name": "Queso Fontina",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
-      },
-      "supermarket_product": {
-        "name": "Queso fontina CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "url": "https://www.devoto.com.uy/product/queso-fontina-conaprole-50-g/270128"
-      },
-      "name_comparison": {
-        "official_name": "Queso Fontina",
-        "supermarket_name": "Queso fontina CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.devoto.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Devoto",
@@ -167,75 +101,9 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
-      },
-      "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.devoto.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
-      },
-      "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-helados-2litros-marmolado-de-dulce-de-leche",
-        "name": "Helado Marmolado de Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
-        "url": "https://www.devoto.com.uy/product/helado-conaprole-marmolado-dulce-de-leche-2-l/241013"
-      },
-      "name_comparison": {
-        "official_name": "Helado Marmolado de Dulce de Leche",
-        "supermarket_name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "similarity_score": 97.23
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
@@ -265,80 +133,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "status": "MATCH",
+        "phash_distance": 4,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "Imagen coincidente (pHash dist: 4)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-alfajor-helado-vainilla",
-        "name": "Alfajor Helado Vainilla",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "url": "https://www.devoto.com.uy/product/helado-alfajor-vainilla-conaprole-66-g/236929"
-      },
-      "name_comparison": {
-        "official_name": "Alfajor Helado Vainilla",
-        "supermarket_name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-jugos-manzanabebebe",
-        "name": "Jugo Manzana Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.devoto.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Devoto",
@@ -365,10 +167,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
+        "phash_distance": 14,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -398,10 +200,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -430,80 +232,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-fontina",
-        "name": "Queso Fontina",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
-      },
-      "supermarket_product": {
-        "name": "Queso fontina CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "url": "https://www.disco.com.uy/product/queso-fontina-conaprole-50-g/270128"
-      },
-      "name_comparison": {
-        "official_name": "Queso Fontina",
-        "supermarket_name": "Queso fontina CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.disco.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Disco",
@@ -530,75 +266,9 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
-      },
-      "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.disco.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
-      },
-      "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-helados-2litros-marmolado-de-dulce-de-leche",
-        "name": "Helado Marmolado de Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
-        "url": "https://www.disco.com.uy/product/helado-conaprole-marmolado-dulce-de-leche-2-l/241013"
-      },
-      "name_comparison": {
-        "official_name": "Helado Marmolado de Dulce de Leche",
-        "supermarket_name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "similarity_score": 97.23
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
@@ -628,80 +298,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "status": "MATCH",
+        "phash_distance": 4,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "Imagen coincidente (pHash dist: 4)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-alfajor-helado-vainilla",
-        "name": "Alfajor Helado Vainilla",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "url": "https://www.disco.com.uy/product/helado-alfajor-vainilla-conaprole-66-g/236929"
-      },
-      "name_comparison": {
-        "official_name": "Alfajor Helado Vainilla",
-        "supermarket_name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-jugos-manzanabebebe",
-        "name": "Jugo Manzana Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.disco.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Disco",
@@ -728,76 +332,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
+        "phash_distance": 14,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-leche-leche-polvo-descremada-200g",
-        "name": "LECHE EN POLVO DESCREMADA",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202502/20250213150704_1979952473.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-polvo-descremada-200g/"
-      },
-      "supermarket_product": {
-        "name": "Leche En Polvo Conaprole Descremada 200Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165490/7730105004155.jpg?v=638536503825800000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-en-polvo-conaprole-descremada-200gr/p"
-      },
-      "name_comparison": {
-        "official_name": "LECHE EN POLVO DESCREMADA",
-        "supermarket_name": "Leche En Polvo Conaprole Descremada 200Gr .",
-        "similarity_score": 97.69
-      },
-      "description_comparison": {
-        "similarity_score": 20.41,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202502/20250213150704_1979952473.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165490/7730105004155.jpg?v=638536503825800000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-leche-leche-polvo-entera-400g",
-        "name": "LECHE EN POLVO ENTERA",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202502/20250213152011_1619233454.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-polvo-entera-400g/"
-      },
-      "supermarket_product": {
-        "name": "Leche En Polvo Conaprole Entera 400Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165489/7730105004131.jpg?v=638536503759170000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-en-polvo-conaprole-entera-400gr/p"
-      },
-      "name_comparison": {
-        "official_name": "LECHE EN POLVO ENTERA",
-        "supermarket_name": "Leche En Polvo Conaprole Entera 400Gr .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 22.22,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202502/20250213152011_1619233454.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165489/7730105004131.jpg?v=638536503759170000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -827,76 +365,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 42,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193551_910873013.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 42)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-viva-yogures-viva-0-fondo-de-pote-durazno",
-        "name": "Yogur Viva 0% Natural",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-fondo-de-pote-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Natural 200Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-natural-200cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Natural",
-        "supermarket_name": "Yogur Conaprole Viva 0% Natural 200Cc .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 20.83,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "yogur-viva-0-durazno-1kg",
-        "name": "Yogur Viva 0% Durazno 1kg",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
-        "url": "https://www.conaprole.uy/producto/yogur-viva-0-durazno-1kg/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Durazno 1kg",
-        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 19.92,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -926,10 +398,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "phash_distance": 16,
         "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 16)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -970,39 +442,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-viva-yogures-viva-0-saborizados-frutilla",
-        "name": "Yogur Viva 0% Frutilla",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-frutilla/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutilla-200cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Frutilla",
-        "supermarket_name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
-        "similarity_score": 97.39
-      },
-      "description_comparison": {
-        "similarity_score": 18.88,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-viva-yogures-viva-0-durazno-1l",
         "name": "Yogur Viva 0% Durazno",
         "category": "Yogures",
@@ -1025,10 +464,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "phash_distance": 26,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1069,72 +508,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-viva-yogures-viva-0-saborizados-vainilla",
-        "name": "Yogur Viva 0% Vainilla",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Vainilla",
-        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
-        "similarity_score": 97.39
-      },
-      "description_comparison": {
-        "similarity_score": 18.49,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "queso-rallado-200g",
-        "name": "Queso rallado Sbrinz deshidratado 200g",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504154025_583768674.png",
-        "url": "https://www.conaprole.uy/producto/queso-rallado-200g/"
-      },
-      "supermarket_product": {
-        "name": "Queso Rallado Conaprole Sbriz Deshidratado 200gr",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177245/7730105010026.jpg?v=638887873801470000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-rallado-conaprole-sbriz-deshidratado-200gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Queso rallado Sbrinz deshidratado 200g",
-        "supermarket_name": "Queso Rallado Conaprole Sbriz Deshidratado 200gr",
-        "similarity_score": 98.46
-      },
-      "description_comparison": {
-        "similarity_score": 31.63,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 18,
-        "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504154025_583768674.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177245/7730105010026.jpg?v=638887873801470000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "requeson-0-lactosa",
         "name": "Requesón 0% lactosa",
         "category": "Quesos",
@@ -1157,10 +530,10 @@
       },
       "image_comparison": {
         "status": "MATCH",
-        "phash_distance": 10,
+        "phash_distance": 4,
         "official_url": "https://cdn.conaprole.uy/gallery/202506/20250610114118_788655509.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177244/7730105009655.jpg?v=638887873659870000",
-        "details": "Imagen coincidente tras recorte de lienzo (pHash dist: 10)"
+        "details": "Imagen coincidente (pHash dist: 4)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE"
@@ -1190,10 +563,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 34,
+        "phash_distance": 26,
         "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504153832_2051272973.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165510/7730105008832.jpg?v=638536505584530000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 34)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1222,14 +595,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 18,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158157/253431.jpg?v=638402761067570000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -1260,39 +633,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504153921_272221088.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165510/7730105008832.jpg?v=638536505584530000",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "manjar-dulce-leche-1-kg",
-        "name": "Manjar Dulce de Leche 1 kg",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203705_1119965188.png",
-        "url": "https://www.conaprole.uy/producto/manjar-dulce-leche-1-kg/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
-      },
-      "name_comparison": {
-        "official_name": "Manjar Dulce de Leche 1 kg",
-        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 32.21,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203705_1119965188.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1333,39 +673,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "dulce-crema-leche-500g",
-        "name": "Dulce Crema de Leche 500g",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203658_2121102132.png",
-        "url": "https://www.conaprole.uy/producto/dulce-crema-leche-500g/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole Crema 500Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-crema-500gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Dulce Crema de Leche 500g",
-        "supermarket_name": "Dulce De Leche Conaprole Crema 500Gr .",
-        "similarity_score": 97.14
-      },
-      "description_comparison": {
-        "similarity_score": 35.38,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203658_2121102132.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "dulce-crema-leche-925g",
         "name": "Dulce Crema de Leche 925g",
         "category": "Dulce de leche",
@@ -1388,10 +695,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
+        "phash_distance": 26,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203657_1050159144.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1421,10 +728,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203702_167233294.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165500/7730105005343.jpg?v=638536504503770000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1454,10 +761,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 34,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 34)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1487,76 +794,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "phash_distance": 28,
         "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115145012_1445596737.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-viva-postres-postre-0-chocolate",
-        "name": "Postre Viva 0% Chocolate",
-        "category": "Postres",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195657_467879374.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-postres-postre-0-chocolate/"
-      },
-      "supermarket_product": {
-        "name": "Postre Conaprole Viva 0% Chocolate 2Un 220Gr",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165647/7730105026560.jpg?v=638537130724700000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/postre-conaprole-viva-0-chocolate-2un-220gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Postre Viva 0% Chocolate",
-        "supermarket_name": "Postre Conaprole Viva 0% Chocolate 2Un 220Gr",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 100.0,
-        "status": "official_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195657_467879374.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165647/7730105026560.jpg?v=638537130724700000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-viva-postres-postre-0-vainilla",
-        "name": "Postre Viva 0% Vainilla",
-        "category": "Postres",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195655_338405316.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-postres-postre-0-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Postre Conaprole Viva 0% Vainilla 2Un 220Gr",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165646/7730105026553.jpg?v=638537130650930000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/postre-conaprole-viva-0-vainilla-2un-220gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Postre Viva 0% Vainilla",
-        "supermarket_name": "Postre Conaprole Viva 0% Vainilla 2Un 220Gr",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 100.0,
-        "status": "official_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195655_338405316.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165646/7730105026553.jpg?v=638537130650930000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1586,43 +827,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 34,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 34)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "helado-frutilla-mango",
-        "name": "Helado Splash de Frutilla y Mango",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200302_912020863.png",
-        "url": "https://www.conaprole.uy/producto/helado-frutilla-mango/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 2Lt Splash Frutilla Y Mango",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-splash-frutilla-y-mango/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Splash de Frutilla y Mango",
-        "supermarket_name": "Helado Conaprole 2Lt Splash Frutilla Y Mango",
-        "similarity_score": 97.14
-      },
-      "description_comparison": {
-        "similarity_score": 23.36,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200302_912020863.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1652,10 +860,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "phash_distance": 20,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1685,109 +893,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 36,
+        "phash_distance": 24,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 36)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-helados-2litros-marmolado-de-frutilla",
-        "name": "Helado Marmolado de Frutilla",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200244_325461188.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-frutilla/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole Marmolado Frutilla 2Lt",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-marmolado-frutilla-2lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Marmolado de Frutilla",
-        "supermarket_name": "Helado Conaprole Marmolado Frutilla 2Lt",
-        "similarity_score": 96.6
-      },
-      "description_comparison": {
-        "similarity_score": 21.66,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 18,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200244_325461188.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "helado-dulce-leche-granizado-1l",
-        "name": "Helado Dulce de Leche Granizado 1L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200208_676135900.png",
-        "url": "https://www.conaprole.uy/producto/helado-dulce-leche-granizado-1l/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Dulce de Leche Granizado 1L",
-        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 21.43,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200208_676135900.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "helado-crema-1l",
-        "name": "Helado Crema 1L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200214_1229905889.png",
-        "url": "https://www.conaprole.uy/producto/helado-crema-1l/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 1Lt Crema",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-crema/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Crema 1L",
-        "supermarket_name": "Helado Conaprole 1Lt Crema",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 17.19,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200214_1229905889.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1816,80 +925,14 @@
         "status": "official_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 18,
+        "status": "MATCH",
+        "phash_distance": 0,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
+        "details": "Imagen coincidente (pHash dist: 0)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-helados-impagua-helado-palito-de-agua-naranja",
-        "name": "Helado Palito Naranja",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200102_1074414654.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-naranja/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole Palito Naranja 60Ml .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166566/77301598.jpg?v=638556962402400000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-palito-naranja-60ml/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Palito Naranja",
-        "supermarket_name": "Helado Conaprole Palito Naranja 60Ml .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 23.48,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 36,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200102_1074414654.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166566/77301598.jpg?v=638556962402400000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 36)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "helado-splash-frutilla-mango-1l",
-        "name": "Helado Splash de Frutilla y Mango 1L",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200258_1959318617.png",
-        "url": "https://www.conaprole.uy/producto/helado-splash-frutilla-mango-1l/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 2Lt Splash Frutilla Y Mango",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-2lt-splash-frutilla-y-mango/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Splash de Frutilla y Mango 1L",
-        "supermarket_name": "Helado Conaprole 2Lt Splash Frutilla Y Mango",
-        "similarity_score": 97.14
-      },
-      "description_comparison": {
-        "similarity_score": 23.36,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200258_1959318617.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -1916,10 +959,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "phash_distance": 20,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200256_1814422869.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1949,10 +992,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
+        "phash_distance": 18,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166507/7730105903397.jpg?v=638556958043730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -1981,14 +1024,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 12,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171135_1467264247.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "Imagen coincidente (pHash dist: 12)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -2014,14 +1057,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195503_204916589.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165539/7730105015663.jpg?v=638536507164630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -2048,10 +1091,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "phash_distance": 20,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195238_160964193.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165635/7730105025365.jpg?v=638537129799570000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2080,14 +1123,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195505_376886939.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -2113,47 +1156,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 12,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171126_694819763.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165538/7730105015656.jpg?v=638536507111000000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "Imagen coincidente (pHash dist: 12)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-jugos-manzanabebebe",
-        "name": "Jugo Manzana Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Light Manzana 250Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-250cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light",
-        "supermarket_name": "Jugo Conaprole Light Manzana 250Cc .",
-        "similarity_score": 96.84
-      },
-      "description_comparison": {
-        "similarity_score": 23.04,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -2180,10 +1190,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "phash_distance": 20,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171058_1389795533.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165635/7730105025365.jpg?v=638537129799570000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2212,14 +1222,14 @@
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195236_1113682261.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "El Dorado",
@@ -2246,10 +1256,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 38,
+        "phash_distance": 26,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195239_1911506424.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 38)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2279,10 +1289,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "phash_distance": 18,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171045_1081329843.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165535/7730105015625.jpg?v=638536506948870000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 18)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2312,10 +1322,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 34,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 34)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2345,10 +1355,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "phash_distance": 14,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2378,10 +1388,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
+        "phash_distance": 30,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2410,14 +1420,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 2,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194752_1667177984.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/03a74848-a96b-45b1-96b5-378713c0172c/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+        "details": "Imagen coincidente (pHash dist: 2)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Géant",
@@ -2444,43 +1454,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202816_611378910.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8a8e34de-2905-4e6e-9806-5f7643625079/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.geant.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2510,75 +1487,9 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "phash_distance": 22,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200231_448228051.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/e5b0faf0-43f9-4e98-83c8-ef63e280df2f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
-      },
-      "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.geant.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
-      },
-      "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-helados-2litros-marmolado-de-dulce-de-leche",
-        "name": "Helado Marmolado de Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-marmolado-de-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
-        "url": "https://www.geant.com.uy/product/helado-conaprole-marmolado-dulce-de-leche-2-l/241013"
-      },
-      "name_comparison": {
-        "official_name": "Helado Marmolado de Dulce de Leche",
-        "supermarket_name": "Helado CONAPROLE marmolado dulce de leche 2 L",
-        "similarity_score": 97.23
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200238_504998352.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8035736e-e38b-4794-9c69-c06baa946465/content",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
@@ -2608,80 +1519,14 @@
         "status": "supermarket_missing"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
+        "status": "MATCH",
+        "phash_distance": 4,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200106_931401366.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/3c41645e-74cb-42b0-8f48-b2f773500a97/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
+        "details": "Imagen coincidente (pHash dist: 4)"
       },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-alfajor-helado-vainilla",
-        "name": "Alfajor Helado Vainilla",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "url": "https://www.geant.com.uy/product/helado-alfajor-vainilla-conaprole-66-g/236929"
-      },
-      "name_comparison": {
-        "official_name": "Alfajor Helado Vainilla",
-        "supermarket_name": "Helado alfajor vainilla CONAPROLE 66 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200114_193264472.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/71904667-33a3-4efb-b84b-ad4eaa8f947e/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-jugos-manzanabebebe",
-        "name": "Jugo Manzana Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "url": "https://www.geant.com.uy/product/jugo-conaprole-manzana-light-200-ml/750001"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light",
-        "supermarket_name": "Jugo CONAPROLE Manzana Light 200 ml",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 32)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE"
     },
     {
       "supermarket": "Géant",
@@ -2708,10 +1553,10 @@
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
+        "phash_distance": 14,
         "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
         "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/b976b579-f25e-45f1-8e16-762662d17e0f/content",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -2719,20 +1564,20 @@
   ],
   "matches_summary": {
     "Devoto": {
-      "matches": 0,
-      "discrepancies": 11
+      "matches": 6,
+      "discrepancies": 5
     },
     "Disco": {
-      "matches": 0,
-      "discrepancies": 11
+      "matches": 6,
+      "discrepancies": 5
     },
     "El Dorado": {
-      "matches": 0,
-      "discrepancies": 49
+      "matches": 18,
+      "discrepancies": 31
     },
     "Géant": {
-      "matches": 0,
-      "discrepancies": 11
+      "matches": 5,
+      "discrepancies": 6
     },
     "TATA": {
       "matches": 0,
