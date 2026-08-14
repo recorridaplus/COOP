@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T23:13:14.592867+00:00",
+  "generated_at": "2026-08-14T23:26:15.913511+00:00",
   "total_official_products": 296,
   "supermarkets_analyzed": [
     "Devoto",
@@ -105,138 +105,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193551_910873013.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-conaprole-bebida-lactea-frutilla",
-        "name": "Bebida Láctea Frutilla",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
-        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-frutilla/"
-      },
-      "supermarket_product": {
-        "name": "Bebida Lactea Conaprole Frutilla 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-frutilla-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Bebida Láctea Frutilla",
-        "supermarket_name": "Bebida Lactea Conaprole Frutilla 1Lt .",
-        "similarity_score": 91.3
-      },
-      "description_comparison": {
-        "similarity_score": 22.81,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 16,
-        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 16)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-conaprole-bebida-lactea-durazno",
-        "name": "Bebida Láctea Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
-        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Bebida Lactea Conaprole Durazno 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-durazno-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Bebida Láctea Durazno",
-        "supermarket_name": "Bebida Lactea Conaprole Durazno 1Lt .",
-        "similarity_score": 90.91
-      },
-      "description_comparison": {
-        "similarity_score": 20.72,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-viva-yogures-viva-0-durazno-1l",
-        "name": "Yogur Viva 0% Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-durazno-1l/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Durazno",
-        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
-        "similarity_score": 97.27
-      },
-      "description_comparison": {
-        "similarity_score": 19.85,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "yogur-viva-vainilla",
-        "name": "Yogur Viva vainilla",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115151543_505934518.png",
-        "url": "https://www.conaprole.uy/producto/yogur-viva-vainilla/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva vainilla",
-        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
-        "similarity_score": 93.02
-      },
-      "description_comparison": {
-        "similarity_score": 20.97,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115151543_505934518.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -376,105 +244,6 @@
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "helado-granel-dulce-leche-granizado",
-        "name": "Helado a granel Dulce de leche Granizado",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
-        "url": "https://www.conaprole.uy/producto/helado-granel-dulce-leche-granizado/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado a granel Dulce de leche Granizado",
-        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "similarity_score": 92.39
-      },
-      "description_comparison": {
-        "similarity_score": 100.0,
-        "status": "official_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 22)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-helados-2litros-dulce-de-leche-granizado",
-        "name": "Helado Dulce de Leche Granizado",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-dulce-de-leche-granizado/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
-      },
-      "name_comparison": {
-        "official_name": "Helado Dulce de Leche Granizado",
-        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 21.43,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-dulce-de-leche-granizado",
-        "name": "Vasito Helado Dulce de Leche Granizado",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-dulce-de-leche-granizado/"
-      },
-      "supermarket_product": {
-        "name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-dulce-de-leche-granizado/p"
-      },
-      "name_comparison": {
-        "official_name": "Vasito Helado Dulce de Leche Granizado",
-        "supermarket_name": "Helado Conaprole 1Lt  Dulce de leche Granizado",
-        "similarity_score": 93.91
-      },
-      "description_comparison": {
-        "similarity_score": 20.49,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
         "id": "producto-helados-2litros-crema-sabor-vainilla",
         "name": "Helado Crema",
         "category": "Helados",
@@ -605,105 +374,6 @@
       "alert_level": "YELLOW"
     },
     {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-jugos-light-naranja-1l",
-        "name": "Jugo Naranja Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195239_1911506424.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-light-naranja-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Light Naranja Slim 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-naranja-slim-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Naranja Light",
-        "supermarket_name": "Jugo Conaprole Light Naranja Slim 1Lt .",
-        "similarity_score": 90.23
-      },
-      "description_comparison": {
-        "similarity_score": 27.47,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195239_1911506424.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "jugo-naranja-light-1l",
-        "name": "Jugo Naranja Light 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
-        "url": "https://www.conaprole.uy/producto/jugo-naranja-light-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Light Naranja Slim 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-naranja-slim-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Naranja Light 1L",
-        "supermarket_name": "Jugo Conaprole Light Naranja Slim 1Lt .",
-        "similarity_score": 90.23
-      },
-      "description_comparison": {
-        "similarity_score": 27.47,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "jugo-manzana-light-1l",
-        "name": "Jugo Manzana Light 1L",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
-      },
-      "supermarket_product": {
-        "name": "Jugo Conaprole Light Manzana Slim 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-slim-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light 1L",
-        "supermarket_name": "Jugo Conaprole Light Manzana Slim 1Lt .",
-        "similarity_score": 90.23
-      },
-      "description_comparison": {
-        "similarity_score": 24.74,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
       "supermarket": "Géant",
       "conaprole_product": {
         "id": "producto-leche-leche-fresca-descremada-pasteurizada",
@@ -768,6 +438,270 @@
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-leche-leche-fresca-entera-pasteurizada",
+        "name": "Leche Fresca Entera",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193535_938051979.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-fresca-entera-pasteurizada/"
+      },
+      "supermarket_product": {
+        "name": "Leche CONAPROLE Fresca Entera Sachet 1 L",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000161-2.jpg?20260529122836,Leche-CONAPROLE-Fresca-Entera-Sachet-1-L-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/leche-conaprole-fresca-entera-sachet-1-l.producto?1531,,42"
+      },
+      "name_comparison": {
+        "official_name": "Leche Fresca Entera",
+        "supermarket_name": "Leche CONAPROLE Fresca Entera Sachet 1 L",
+        "similarity_score": 90.67
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 24,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193535_938051979.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000161-2.jpg?20260529122836,Leche-CONAPROLE-Fresca-Entera-Sachet-1-L-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-conaprole-yogures-integral-200g",
+        "name": "Yogur Integral Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194825_903196694.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-yogures-integral-200g/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Integral CONAPROLE Sabor Natural 500 gr",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P400529-1.jpg?20221010160029,Yogur-Integral-CONAPROLE-Sabor-Natural-500-gr-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/yogur-integral-conaprole-sabor-natural-500-gr.producto?327077,,42"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Integral Natural",
+        "supermarket_name": "Yogur Integral CONAPROLE Sabor Natural 500 gr",
+        "similarity_score": 92.8
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 28,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194825_903196694.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P400529-1.jpg?20221010160029,Yogur-Integral-CONAPROLE-Sabor-Natural-500-gr-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "queso-rallado-40-grs",
+        "name": "Queso Rallado",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504153832_2051272973.png",
+        "url": "https://www.conaprole.uy/producto/queso-rallado-40-grs/"
+      },
+      "supermarket_product": {
+        "name": "Queso Rallado CONAPROLE 80g",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000842-2.jpg?20201230183700,Queso-Rallado-CONAPROLE-80g-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/queso-rallado-conaprole-80g.producto?23470,,42"
+      },
+      "name_comparison": {
+        "official_name": "Queso Rallado",
+        "supermarket_name": "Queso Rallado CONAPROLE 80g",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 26,
+        "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504153832_2051272973.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000842-2.jpg?20201230183700,Queso-Rallado-CONAPROLE-80g-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 26)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "queso-rallado-80-grs",
+        "name": "Queso Rallado",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504153921_272221088.png",
+        "url": "https://www.conaprole.uy/producto/queso-rallado-80-grs/"
+      },
+      "supermarket_product": {
+        "name": "Queso Rallado CONAPROLE 80g",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000842-2.jpg?20201230183700,Queso-Rallado-CONAPROLE-80g-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/queso-rallado-conaprole-80g.producto?23470,,42"
+      },
+      "name_comparison": {
+        "official_name": "Queso Rallado",
+        "supermarket_name": "Queso Rallado CONAPROLE 80g",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 28,
+        "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504153921_272221088.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000842-2.jpg?20201230183700,Queso-Rallado-CONAPROLE-80g-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 28)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-quesos-pastasemidura-semiduro",
+        "name": "Queso Semiduro",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202819_136307800.png",
+        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-semiduro/"
+      },
+      "supermarket_product": {
+        "name": "Queso Semiduro CONAPROLE (Kg)",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P011997-1.jpg?20220824200055,Queso-Semiduro-CONAPROLE-Kg-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/queso-semiduro-conaprole-kg.producto?639,,42"
+      },
+      "name_comparison": {
+        "official_name": "Queso Semiduro",
+        "supermarket_name": "Queso Semiduro CONAPROLE (Kg)",
+        "similarity_score": 90.91
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 20,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202819_136307800.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P011997-1.jpg?20220824200055,Queso-Semiduro-CONAPROLE-Kg-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 20)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-conaprole-dulce-de-leche-clasico-970g",
+        "name": "Dulce de Leche Clásico",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203703_1500332162.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-dulce-de-leche-clasico-970g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce de Leche CONAPROLE Clásico 500 gr",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/dulce-de-leche-conaprole-clasico-500-gr.producto?1048,,42"
+      },
+      "name_comparison": {
+        "official_name": "Dulce de Leche Clásico",
+        "supermarket_name": "Dulce de Leche CONAPROLE Clásico 500 gr",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 24,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203703_1500332162.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "dulce-leche-clasico-500g",
+        "name": "Dulce de Leche Clásico 500g",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203701_1891510182.png",
+        "url": "https://www.conaprole.uy/producto/dulce-leche-clasico-500g/"
+      },
+      "supermarket_product": {
+        "name": "Dulce de Leche CONAPROLE Clásico 500 gr",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/dulce-de-leche-conaprole-clasico-500-gr.producto?1048,,42"
+      },
+      "name_comparison": {
+        "official_name": "Dulce de Leche Clásico 500g",
+        "supermarket_name": "Dulce de Leche CONAPROLE Clásico 500 gr",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 24,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203701_1891510182.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-jugos-manzanabebebe",
+        "name": "Jugo Manzana Light",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
+      },
+      "supermarket_product": {
+        "name": "Jugo CONAPROLE Sabor Manzana Light 1 L",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P294852-3.jpg?20250228153032,Jugo-CONAPROLE-Sabor-Manzana-Light-1-L-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/jugo-conaprole-sabor-manzana-light-1-l.producto?224024,,42"
+      },
+      "name_comparison": {
+        "official_name": "Jugo Manzana Light",
+        "supermarket_name": "Jugo CONAPROLE Sabor Manzana Light 1 L",
+        "similarity_score": 91.43
+      },
+      "description_comparison": {
+        "similarity_score": 0.0,
+        "status": "supermarket_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 14,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P294852-3.jpg?20250228153032,Jugo-CONAPROLE-Sabor-Manzana-Light-1-L-en-Tienda-Inglesa",
+        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 14)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
     }
   ],
   "matches_summary": {
@@ -780,8 +714,8 @@
       "discrepancies": 1
     },
     "El Dorado": {
-      "matches": 24,
-      "discrepancies": 19
+      "matches": 10,
+      "discrepancies": 9
     },
     "Géant": {
       "matches": 8,
@@ -792,8 +726,8 @@
       "discrepancies": 0
     },
     "Tienda Inglesa": {
-      "matches": 0,
-      "discrepancies": 0
+      "matches": 9,
+      "discrepancies": 8
     }
   }
 }

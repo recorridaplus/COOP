@@ -1,18 +1,16 @@
 """
-vtex_scraper.py — Scraper para supermercados VTEX (El Dorado, TATA, Tienda Inglesa).
+vtex_scraper.py — Scraper para supermercados basados en VTEX y Tienda Inglesa.
 """
 
+import asyncio
 import json
 import logging
-import asyncio
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
+from typing import TypedDict
 import httpx
 from playwright.async_api import async_playwright
-
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from scraper.base_scraper import BaseSupermarketScraper, SupermarketProduct
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -20,77 +18,58 @@ logger = logging.getLogger(__name__)
 DATA_DIR = Path(__file__).parent.parent / "data" / "supermarkets"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
-    "Accept": "application/json",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*"
 }
 
-VTEX_ACCOUNTS = {
-    "eldorado": {
-        "name": "El Dorado",
-        "account": "eldoradouy"
-    },
-    "tata": {
-        "name": "TATA",
-        "account": "tatauy"
-    }
-}
+class SupermarketProduct(TypedDict):
+    name: str
+    image_url: str
+    description: str
+    product_url: str
+    supermarket: str
+    scraped_at: str
 
-def fetch_vtex_api_products(account: str, store_name: str, query: str = "conaprole") -> list[SupermarketProduct]:
-    """
-    Extrae productos directamente usando la API Catalog System de VTEX.
-    """
-    logger.info(f"⚡ [{store_name}] Consultando API VTEX para '{query}'...")
-    products: list[SupermarketProduct] = []
-    _from = 0
-    step = 50
-    now_str = datetime.now(timezone.utc).isoformat()
+def fetch_vtex_api_products(store_account: str, store_name: str, query: str = "conaprole") -> list[SupermarketProduct]:
+    url = f"https://{store_account}.vtexcommercestable.com.br/api/catalog_system/pub/products/search?ft={query}&_from=0&_to=49"
+    logger.info(f"🔎 [{store_name}] Consultando API VTEX: {url}")
+    results: list[SupermarketProduct] = []
 
-    while True:
-        url = f"https://{account}.vtexcommercestable.com.br/api/catalog_system/pub/products/search?ft={query}&_from={_from}&_to={_from + step - 1}"
-        try:
-            r = httpx.get(url, headers=HEADERS, timeout=12)
-            if r.status_code not in [200, 206]:
-                logger.debug(f"Fin o status {r.status_code}")
-                break
-            batch = r.json()
-            if not batch:
-                break
+    try:
+        resp = httpx.get(url, headers=HEADERS, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        now_str = datetime.now(timezone.utc).isoformat()
 
-            for p in batch:
-                name = p.get("productName", "").strip()
-                link = p.get("link", "")
-                items = p.get("items", [])
-                img = ""
-                if items and items[0].get("images"):
-                    img = items[0]["images"][0].get("imageUrl", "")
+        for prod in data:
+            name = prod.get("productName", "")
+            description = prod.get("description", "") or prod.get("MetaTagDescription", "")
+            link = prod.get("link", "")
 
-                if name:
-                    products.append({
-                        "name": name,
-                        "image_url": img,
-                        "description": p.get("description", "") or "",
-                        "product_url": link,
-                        "supermarket": store_name,
-                        "scraped_at": now_str
-                    })
+            image_url = ""
+            items = prod.get("items", [])
+            if items and items[0].get("images"):
+                image_url = items[0]["images"][0].get("imageUrl", "")
 
-            if len(batch) < step:
-                break
-            _from += step
-        except Exception as e:
-            logger.error(f"Error en API VTEX ({account}): {e}")
-            break
+            results.append({
+                "name": name,
+                "image_url": image_url,
+                "description": description,
+                "product_url": link,
+                "supermarket": store_name,
+                "scraped_at": now_str
+            })
 
-    logger.info(f"✅ [{store_name}] Extraídos {len(products)} productos vía API VTEX.")
-    return products
+        logger.info(f"✅ [{store_name}] Extraídos {len(results)} productos.")
+    except Exception as e:
+        logger.error(f"❌ [{store_name}] Error scraping VTEX API: {e}")
 
-async def fetch_tienda_inglesa_playwright(query: str = "conaprole") -> list[SupermarketProduct]:
-    """
-    Extrae productos de Tienda Inglesa renderizando con Playwright.
-    """
+    return results
+
+async def scrape_tienda_inglesa(query: str = "conaprole") -> list[SupermarketProduct]:
     store_name = "Tienda Inglesa"
-    url = f"https://www.tiendainglesa.com.uy/busqueda?ft={query}"
-    logger.info(f"🔎 [{store_name}] Buscando en: {url}")
+    url = "https://www.tiendainglesa.com.uy/"
+    logger.info(f"🔎 [{store_name}] Scrapeando interactivamente en: {url}")
     results: list[SupermarketProduct] = []
 
     async with async_playwright() as p:
@@ -98,29 +77,67 @@ async def fetch_tienda_inglesa_playwright(query: str = "conaprole") -> list[Supe
         page = await browser.new_page(user_agent=HEADERS["User-Agent"])
 
         try:
-            await page.goto(url, wait_until="networkidle", timeout=30000)
-            await asyncio.sleep(2)
+            await page.goto(url, wait_until="domcontentloaded", timeout=35000)
+            await asyncio.sleep(3)
 
-            for _ in range(3):
-                await page.evaluate("window.scrollBy(0, 800)")
+            search_selector = "input[id*='SEARCH'], input[placeholder*='Buscar'], input[type='text']"
+            await page.fill(search_selector, query)
+            await page.press(search_selector, "Enter")
+
+            try:
+                await page.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
+            await asyncio.sleep(4)
+
+            for _ in range(4):
+                await page.evaluate("window.scrollBy(0, 1000)")
                 await asyncio.sleep(1)
 
             raw_prods = await page.evaluate('''() => {
                 const results = [];
-                const cards = document.querySelectorAll("a[href*='.producto']");
-                cards.forEach(card => {
-                    const nameEl = card.querySelector(".product-title, .title, span, h2, h3") || card;
-                    const imgEl = card.querySelector("img");
-                    const name = nameEl.innerText ? nameEl.innerText.trim() : "";
-                    const href = card.getAttribute("href") || "";
-                    const img = imgEl ? (imgEl.src || imgEl.getAttribute("data-src") || "") : "";
+                const links = Array.from(document.querySelectorAll("a[href*='.producto']"));
 
-                    if (name && href && !results.some(r => r.product_url === href)) {
+                links.forEach(link => {
+                    const href = link.getAttribute("href") || "";
+                    const text = link.innerText ? link.innerText.trim() : "";
+
+                    let parentCard = link.parentElement;
+                    let steps = 0;
+                    while (parentCard && !parentCard.querySelector("img") && steps < 5) {
+                        parentCard = parentCard.parentElement;
+                        steps++;
+                    }
+
+                    const imgs = Array.from((link.querySelector("img") ? [link.querySelector("img")] : (parentCard ? parentCard.querySelectorAll("img") : [])));
+                    let prodImg = "";
+
+                    for (const imgEl of imgs) {
+                        const src = imgEl.src || imgEl.getAttribute("data-src") || imgEl.getAttribute("data-original") || "";
+                        const isStamp = src.includes("/Ico/") || src.includes("ico_") || src.includes("banner") || src.includes("logo");
+                        if (src && !isStamp && (src.includes("/images/") || src.includes("prod-resize") || src.includes(".jpg"))) {
+                            prodImg = src;
+                            break;
+                        }
+                    }
+
+                    if (!prodImg) {
+                        for (const imgEl of imgs) {
+                            const src = imgEl.src || imgEl.getAttribute("data-src") || "";
+                            if (src && !src.includes("ico_search") && !src.includes("main_logo")) {
+                                prodImg = src;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (text && text.length > 2 && href && !results.some(r => r.product_url.includes(href))) {
+                        const fullHref = href.startsWith("http") ? href : "https://www.tiendainglesa.com.uy" + href;
                         results.push({
-                            name: name,
-                            image_url: img,
+                            name: text.replace(/\\n/g, ' '),
+                            image_url: prodImg,
                             description: "",
-                            product_url: href.startsWith("http") ? href : "https://www.tiendainglesa.com.uy" + href
+                            product_url: fullHref
                         });
                     }
                 });
@@ -139,7 +156,7 @@ async def fetch_tienda_inglesa_playwright(query: str = "conaprole") -> list[Supe
                         "scraped_at": now_str
                     })
 
-            logger.info(f"✅ [{store_name}] Extraídos {len(results)} productos.")
+            logger.info(f"✅ [{store_name}] Extraídos {len(results)} productos reales con imágenes de catálogo.")
         except Exception as e:
             logger.error(f"❌ [{store_name}] Error en scraping: {e}")
         finally:
@@ -160,10 +177,10 @@ def run_vtex_scrapers(query: str = "conaprole"):
     with open(DATA_DIR / "tata.json", "w", encoding="utf-8") as f:
         json.dump({"supermarket": "TATA", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(tata_prods), "products": tata_prods}, f, ensure_ascii=False, indent=2)
 
-    # 3. Tienda Inglesa vía Playwright
-    ti_prods = asyncio.run(fetch_tienda_inglesa_playwright(query))
+    # 3. Tienda Inglesa vía Playwright interactivo
+    tienda_prods = asyncio.run(scrape_tienda_inglesa(query))
     with open(DATA_DIR / "tiendainglesa.json", "w", encoding="utf-8") as f:
-        json.dump({"supermarket": "Tienda Inglesa", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(ti_prods), "products": ti_prods}, f, ensure_ascii=False, indent=2)
+        json.dump({"supermarket": "Tienda Inglesa", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(tienda_prods), "products": tienda_prods}, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     run_vtex_scrapers("conaprole")
