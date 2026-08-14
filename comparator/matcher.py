@@ -2,10 +2,11 @@
 matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
 
 Reglas avanzadas de matching:
-1. Filtrado por sub-marca distintiva (Colet, Viva, Deleite, Sinfonía, Conamigos, etc.)
-   Si un producto oficial tiene "Colet", el producto del supermercado DEBE contener "Colet".
-2. Regla de compatibilidad de categoría/tipo (Queso vs Dulce de Leche vs Leche).
-3. Score ponderado de similitud token-sort + token-set.
+1. Exclusión de Marca Propia de Supermercado (Tienda Inglesa, TATA, Casino, etc.)
+   Si el producto publicado pertenece a la marca propia del supermercado, NO se compara con Conaprole.
+2. Filtrado por marcas del grupo Conaprole / licencias (Polar Food, Colet, Viva, Deleite, Sinfonía, etc.)
+3. Regla de compatibilidad de categoría/tipo.
+4. Score ponderado de similitud token-sort + token-set.
 """
 
 import json
@@ -27,36 +28,41 @@ CONAPROLE_PATH = DATA_DIR / "conaprole_catalog.json"
 SUPERMARKETS_DIR = DATA_DIR / "supermarkets"
 REPORT_OUTPUT_PATH = DATA_DIR / "latest_comparison_report.json"
 
-# Sub-marcas y líneas de producto distintivas de Conaprole
-SUB_BRANDS = [
-    "colet", "viva", "deleite", "sinfonia", "sinfonía", 
-    "conamigos", "blancanube", "baccanal", "conahorro",
-    "lactoplus", "máxima", "maxima", "triffle"
+# Nombres de Marcas Propias de Supermercados (Private Labels)
+SUPERMARKET_PRIVATE_LABELS = [
+    "tienda inglesa", "tata", "casino", "leader price", 
+    "great value", "el dorado", "disco", "devoto", "geant"
 ]
 
-# Tipos de producto primarios para evitar cruces (ej: Dulce de leche vs Bebida/Leche)
-PRODUCT_TYPES = [
-    "dulce de leche", "leche", "queso", "yogur", "helado", 
-    "postre", "jugo", "manteca", "crema", "alfajor", "gelatina"
+# Marcas oficiales del ecosistema Conaprole y licencias asociadas
+CONAPROLE_BRANDS = [
+    "polar food", "polar", "colet", "viva", "deleite", "sinfonia", "sinfonía", 
+    "conamigos", "blancanube", "baccanal", "conahorro", "lactoplus", 
+    "máxima", "maxima", "triffle", "orgullo celeste"
 ]
 
 def is_valid_match_pair(official_name: str, supermarket_name: str) -> bool:
     """
     Verifica si un par de nombres es un candidato válido antes de calcular score.
-    Previene falsos positivos como 'Colet Dulce de Leche' vs 'Dulce de Leche Conaprole'.
+    Previene falsos positivos por marcas propias de supermercados o sub-marcas cruzadas.
     """
     off_lower = official_name.lower()
     sup_lower = supermarket_name.lower()
 
-    # 1. Regla de sub-marcas (Colet, Viva, Deleite, etc.)
-    for sub in SUB_BRANDS:
-        in_off = sub in off_lower
-        in_sup = sub in sup_lower
-        if in_off != in_sup:
-            return False  # Uno tiene la sub-marca y el otro no -> FALSO MATCH
+    # 1. Regla de Marca Propia de Supermercado (ej: Empanadas Tienda Inglesa)
+    # Si el producto del supermercado dice "Tienda Inglesa" y el oficial no -> Marca Propia, NO MATCH
+    for priv in SUPERMARKET_PRIVATE_LABELS:
+        if priv in sup_lower and priv not in off_lower:
+            return False
 
-    # 2. Regla de tipo de producto primario
-    # Si el producto oficial es "Dulce de Leche" (pote) y no Colet, no emparejar con Colet
+    # 2. Regla de Marcas Conaprole y Licencias (Polar Food, Colet, Viva, etc.)
+    for brand in CONAPROLE_BRANDS:
+        in_off = brand in off_lower
+        in_sup = brand in sup_lower
+        if in_off != in_sup:
+            return False  # Uno tiene la marca Conaprole/Polar y el otro no -> NO MATCH
+
+    # 3. Prevenir cruces Colet / Dulce de Leche
     if "colet" in sup_lower and "colet" not in off_lower:
         return False
     if "colet" in off_lower and "colet" not in sup_lower:
@@ -75,7 +81,6 @@ def calculate_match_score(official_name: str, supermarket_name: str) -> float:
     sort_score = fuzz.token_sort_ratio(off_lower, sup_lower)
     set_score = fuzz.token_set_ratio(off_lower, sup_lower)
 
-    # Score ponderado: da peso tanto al orden como a la presencia de tokens clave
     final_score = (sort_score * 0.65) + (set_score * 0.35)
     return round(final_score, 2)
 
@@ -126,7 +131,6 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
             off_name = off_prod["name"]
             off_img = off_prod["images"][0] if off_prod.get("images") else ""
 
-            # Buscar el MEJOR match candidato en el supermercado usando nuestras reglas inteligentes
             best_sp_prod = None
             best_score = 0.0
 
@@ -141,25 +145,20 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     best_sp_prod = sp_prod
 
             if not best_sp_prod:
-                # No se encontró equivalente válido para este producto en este supermercado
                 continue
 
             sp_name_pub = best_sp_prod["name"]
             sp_img = best_sp_prod.get("image_url", "")
 
-            # Comparar nombres
             name_cmp = compare_names(off_name, sp_name_pub)
-            name_cmp["similarity_score"] = best_score # Usar score inteligente
+            name_cmp["similarity_score"] = best_score
 
-            # Comparar descripción
             desc_cmp = compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", ""))
 
-            # Comparar imágenes (si corresponde)
             img_cmp = None
             if compare_images_flag and off_img and sp_img:
                 img_cmp = compare_images(off_img, sp_img)
 
-            # Determinar discrepancias
             has_name_discrepancy = best_score < 90.0
             has_img_discrepancy = img_cmp and img_cmp["status"] in ["DIFFERENT_IMAGE", "APOCRYPHAL_IMAGE"]
 
@@ -193,7 +192,6 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
             "discrepancies": discrepancies_count
         }
 
-    # Guardar reporte
     with open(REPORT_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
