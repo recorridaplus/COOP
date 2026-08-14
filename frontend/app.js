@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("discrepanciesGrid");
     const emptyState = document.getElementById("emptyState");
     const resultsCount = document.getElementById("resultsCount");
-    
+
     const btnRunFast = document.getElementById("btnRunFast");
     const btnRunFull = document.getElementById("btnRunFull");
     const spinnerContainer = document.getElementById("spinnerContainer");
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const resp = await fetch("/api/report");
             const data = await resp.json();
 
-            // Actualizar Stats
             document.getElementById("statTotalOfficial").innerText = data.total_official_products || 0;
             allDiscrepancies = data.discrepancies || [];
 
@@ -66,10 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function createCardHtml(item) {
-        const isRed = item.alert_level === "RED";
-        const badgeClass = isRed ? "badge-red-tag" : "badge-yellow-tag";
-        const badgeLabel = isRed ? "🔴 FOTO APÓCRIFA (CM)" : "🟡 IMAGEN DIFERENTE";
-        const cardBorderClass = isRed ? "badge-red" : "badge-yellow";
+        const type = item.discrepancy_type || (item.alert_level === "RED" ? "APOCRYPHAL_IMAGE" : "DIFFERENT_IMAGE");
+
+        let badgeClass = "badge-yellow-tag";
+        let badgeLabel = "🟡 FOTO DIFERENTE";
+        let cardBorderClass = "badge-yellow";
+
+        if (type === "APOCRYPHAL_IMAGE" || item.alert_level === "RED") {
+            badgeClass = "badge-red-tag";
+            badgeLabel = "🔴 FOTO APÓCRIFA (CM)";
+            cardBorderClass = "badge-red";
+        } else if (type === "NAME_DISCREPANCY" || item.alert_level === "BLUE") {
+            badgeClass = "badge-blue-tag";
+            badgeLabel = "📝 DIFERENCIA DE NOMBRE";
+            cardBorderClass = "badge-blue";
+        } else {
+            badgeClass = "badge-yellow-tag";
+            badgeLabel = "🟡 FOTO DIFERENTE";
+            cardBorderClass = "badge-yellow";
+        }
 
         const offImg = item.conaprole_product.image_url || "/static/no-img.png";
         const spImg = item.supermarket_product.image_url || "/static/no-img.png";
@@ -129,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Acciones de los botones
     btnRunFast.addEventListener("click", async () => {
         if (isProcessing) return;
         setProcessingState(true, "Re-comparando datos...");
@@ -152,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const startData = await startResp.json();
 
             if (startData.status === "started" || startData.status === "busy") {
-                // Poll de estado cada 3 segundos hasta finalizar
                 const pollInterval = setInterval(async () => {
                     try {
                         const statusResp = await fetch("/api/status");
@@ -179,11 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Event listeners de filtros
     searchInput.addEventListener("input", renderDiscrepancies);
     spSelect.addEventListener("change", renderDiscrepancies);
     alertSelect.addEventListener("change", renderDiscrepancies);
 
-    // Cargar inicial
     loadReportData();
 });

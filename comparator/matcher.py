@@ -1,22 +1,24 @@
 """
 matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
 
-Reglas avanzadas de matching:
-1. Exclusión por tipo de producto/categoría cruzada (ej. Helado vs Dulce de Leche, Queso vs Leche).
-2. Exclusión de Marca Propia de Supermercado (Tienda Inglesa, TATA, Casino, etc.).
-3. Filtrado por marcas del grupo Conaprole / licencias (Polar Food, Colet, Viva, Deleite, Sinfonía, etc.).
-4. Score ponderado de similitud token-sort + token-set (umbral mínimo 75%).
+Reglas avanzadas:
+1. Normalización de nombres (ignora 'Conaprole', '180 cc', '250 g' para evitar falsas diferencias de nombre).
+2. Clasificación precisa de discrepancias:
+   - 🔴 APOCRYPHAL_IMAGE: Foto casera/propia del CM
+   - 🟡 DIFFERENT_IMAGE: Otra versión oficial de la foto
+   - 📝 NAME_DISCREPANCY: Redacción del nombre significativamente distinta
 """
 
 import json
 import logging
+import re
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from rapidfuzz import fuzz
-from comparator.text_comparator import compare_names, compare_descriptions
+from comparator.text_comparator import compare_descriptions
 from comparator.image_comparator import compare_images
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -27,7 +29,7 @@ CONAPROLE_PATH = DATA_DIR / "conaprole_catalog.json"
 SUPERMARKETS_DIR = DATA_DIR / "supermarkets"
 REPORT_OUTPUT_PATH = DATA_DIR / "latest_comparison_report.json"
 
-# Nombres de Marcas Propias de Supermercados (Private Labels)
+# Marcas Propias de Supermercados (Private Labels)
 SUPERMARKET_PRIVATE_LABELS = [
     "tienda inglesa", "tata", "casino", "leader price", 
     "great value", "el dorado", "disco", "devoto", "geant"
@@ -40,7 +42,6 @@ CONAPROLE_BRANDS = [
     "máxima", "maxima", "triffle", "orgullo celeste"
 ]
 
-# Categorías y tipos de productos para evitar cruces
 CATEGORY_KEYWORDS = {
     "helado": ["helado", "helados"],
     "queso": ["queso", "quesos"],
@@ -52,36 +53,35 @@ CATEGORY_KEYWORDS = {
     "gelatina": ["gelatina", "gelatinas"]
 }
 
+def normalize_product_name(name: str) -> str:
+    """Remueve ruido como marca Conaprole repetida o unidades de medida para comparar la esencia del nombre."""
+    text = name.lower()
+    text = re.sub(r'\bconaprole\b', '', text)
+    text = re.sub(r'\b\d+\s*(ml|cc|g|gr|kg|l|lt|un|unidades)\b', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
 def is_valid_match_pair(official_name: str, official_category: str, supermarket_name: str) -> bool:
-    """
-    Verifica si un par de nombres es un candidato válido antes de calcular score.
-    Previene falsos positivos por marcas propias, sub-marcas o categorías cruzadas.
-    """
     off_lower = official_name.lower()
     cat_lower = (official_category or "").lower()
     sup_lower = supermarket_name.lower()
 
-    # 1. Regla de Marca Propia de Supermercado (ej: Empanadas Tienda Inglesa)
     for priv in SUPERMARKET_PRIVATE_LABELS:
         if priv in sup_lower and priv not in off_lower:
             return False
 
-    # 2. Regla de Marcas Conaprole y Licencias (Polar Food, Colet, Viva, etc.)
     for brand in CONAPROLE_BRANDS:
         in_off = brand in off_lower
         in_sup = brand in sup_lower
         if in_off != in_sup:
             return False
 
-    # 3. Regla de Tipos de Producto incompatibles (ej. Helado vs Dulce de Leche)
     for cat_key, synonyms in CATEGORY_KEYWORDS.items():
         in_sup = any(s in sup_lower for s in synonyms)
         in_off = any(s in off_lower or s in cat_lower for s in synonyms)
-        
         if in_sup and not in_off:
             return False
 
-    # 4. Prevenir cruces Colet / Dulce de Leche
     if "colet" in sup_lower and "colet" not in off_lower:
         return False
     if "colet" in off_lower and "colet" not in sup_lower:
@@ -90,17 +90,16 @@ def is_valid_match_pair(official_name: str, official_category: str, supermarket_
     return True
 
 def calculate_match_score(official_name: str, official_category: str, supermarket_name: str) -> float:
-    """Calcula score ponderado de similitud entre dos nombres de producto."""
     if not is_valid_match_pair(official_name, official_category, supermarket_name):
         return 0.0
 
-    off_lower = official_name.lower()
-    sup_lower = supermarket_name.lower()
+    norm_off = normalize_product_name(official_name)
+    norm_sup = normalize_product_name(supermarket_name)
 
-    sort_score = fuzz.token_sort_ratio(off_lower, sup_lower)
-    set_score = fuzz.token_set_ratio(off_lower, sup_lower)
+    sort_score = fuzz.token_sort_ratio(norm_off, norm_sup)
+    set_score = fuzz.token_set_ratio(norm_off, norm_sup)
 
-    final_score = (sort_score * 0.65) + (set_score * 0.35)
+    final_score = (sort_score * 0.6) + (set_score * 0.4)
     return round(final_score, 2)
 
 def load_json(path: Path) -> dict | list | None:
@@ -109,10 +108,7 @@ def load_json(path: Path) -> dict | list | None:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 75.0) -> dict:
-    """
-    Ejecuta el proceso inteligente de matching y comparación.
-    """
+def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 70.0) -> dict:
     logger.info("🔍 Cargando catálogo oficial de Conaprole...")
     conaprole_data = load_json(CONAPROLE_PATH)
     if not conaprole_data:
@@ -170,19 +166,26 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
             sp_name_pub = best_sp_prod["name"]
             sp_img = best_sp_prod.get("image_url", "")
 
-            name_cmp = compare_names(off_name, sp_name_pub)
-            name_cmp["similarity_score"] = best_score
-
-            desc_cmp = compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", ""))
-
+            # Comparar imagen si corresponde
             img_cmp = None
             if compare_images_flag and off_img and sp_img:
                 img_cmp = compare_images(off_img, sp_img)
 
-            has_name_discrepancy = best_score < 90.0
-            has_img_discrepancy = img_cmp and img_cmp["status"] in ["DIFFERENT_IMAGE", "APOCRYPHAL_IMAGE"]
+            # Clasificación precisa del tipo de discrepancia
+            discrepancy_type = None
+            alert_level = None
 
-            if has_name_discrepancy or has_img_discrepancy:
+            if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
+                discrepancy_type = "APOCRYPHAL_IMAGE"
+                alert_level = "RED"
+            elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
+                discrepancy_type = "DIFFERENT_IMAGE"
+                alert_level = "YELLOW"
+            elif best_score < 88.0:
+                discrepancy_type = "NAME_DISCREPANCY"
+                alert_level = "BLUE"
+
+            if discrepancy_type:
                 discrepancies_count += 1
                 item_discrepancy = {
                     "supermarket": sp_name,
@@ -198,10 +201,15 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                         "image_url": sp_img,
                         "url": best_sp_prod.get("product_url", "")
                     },
-                    "name_comparison": name_cmp,
-                    "description_comparison": desc_cmp,
+                    "name_comparison": {
+                        "official_name": off_name,
+                        "supermarket_name": sp_name_pub,
+                        "similarity_score": best_score
+                    },
+                    "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
                     "image_comparison": img_cmp,
-                    "alert_level": "RED" if (img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE") else "YELLOW"
+                    "discrepancy_type": discrepancy_type,
+                    "alert_level": alert_level
                 }
                 report["discrepancies"].append(item_discrepancy)
             else:

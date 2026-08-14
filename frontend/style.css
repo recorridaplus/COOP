@@ -12,6 +12,9 @@
     --yellow-bg: rgba(245, 158, 11, 0.15);
     --yellow-border: #f59e0b;
     --yellow-text: #fde68a;
+    --blue-bg: rgba(56, 189, 248, 0.15);
+    --blue-border: #38bdf8;
+    --blue-text: #bae6fd;
     --green-bg: rgba(16, 185, 129, 0.15);
     --green-border: #10b981;
     --radius-sm: 8px;
@@ -328,6 +331,10 @@ body {
     border-left: 5px solid var(--yellow-border);
 }
 
+.comparison-card.badge-blue {
+    border-left: 5px solid var(--blue-border);
+}
+
 .card-header-bar {
     padding: 0.9rem 1.25rem;
     background: rgba(0,0,0,0.2);
@@ -361,6 +368,12 @@ body {
     background: var(--yellow-bg);
     color: var(--yellow-text);
     border: 1px solid var(--yellow-border);
+}
+
+.badge-blue-tag {
+    background: var(--blue-bg);
+    color: var(--blue-text);
+    border: 1px solid var(--blue-border);
 }
 
 /* Side by side comparison */
