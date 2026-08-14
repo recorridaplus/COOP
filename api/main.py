@@ -18,7 +18,7 @@ from scraper.conaprole_scraper import scrape_conaprole
 from scraper.vtex_scraper import run_vtex_scrapers
 from scraper.gdu_scraper import scrape_and_save_gdu
 
-app = FastAPI(title="COOP — Comparador de Catálogo Conaprole", version="1.3.0")
+app = FastAPI(title="COOP — Comparador de Catálogo Conaprole", version="1.4.0")
 
 app.add_middleware(
     CORSMiddleware,

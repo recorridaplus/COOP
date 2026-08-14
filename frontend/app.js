@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const spinnerContainer = document.getElementById("spinnerContainer");
     const spinnerLabel = document.getElementById("spinnerLabel");
 
+    // Modal elements
+    const pixelModal = document.getElementById("pixelModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modalProductName = document.getElementById("modalProductName");
+    const modalOffImg = document.getElementById("modalOffImg");
+    const modalSpImg = document.getElementById("modalSpImg");
+    const opacitySlider = document.getElementById("opacitySlider");
+    const opacityVal = document.getElementById("opacityVal");
+    const btnHoldCompare = document.getElementById("btnHoldCompare");
+
     async function loadReportData() {
         try {
             const resp = await fetch("/api/report");
@@ -61,10 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         emptyState.classList.add("hidden");
-        grid.innerHTML = filtered.map(item => createCardHtml(item)).join("");
+        grid.innerHTML = filtered.map((item, index) => createCardHtml(item, index)).join("");
+
+        // Activar manejadores de eventos interactivos en las tarjetas recién renderizadas
+        attachCardInteractions(filtered);
     }
 
-    function createCardHtml(item) {
+    function createCardHtml(item, index) {
         const type = item.discrepancy_type || (item.alert_level === "RED" ? "APOCRYPHAL_IMAGE" : "DIFFERENT_IMAGE");
 
         let badgeClass = "badge-yellow-tag";
@@ -94,41 +107,143 @@ document.addEventListener("DOMContentLoaded", () => {
         const simScore = item.name_comparison ? item.name_comparison.similarity_score : 100;
 
         return `
-            <div class="comparison-card ${cardBorderClass}">
+            <div class="comparison-card ${cardBorderClass}" data-card-idx="${index}">
                 <div class="card-header-bar">
                     <span class="sp-tag">🏪 ${item.supermarket}</span>
                     <span class="badge ${badgeClass}">${badgeLabel}</span>
                 </div>
+
                 <div class="side-by-side">
-                    <!-- Conaprole Oficial -->
-                    <div class="product-side">
-                        <span class="side-label">OFICIAL CONAPROLE</span>
-                        <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="img-container clickable-img" title="Ver ficha en Conaprole">
-                            <img src="${offImg}" alt="${item.conaprole_product.name}" onerror="this.src='https://via.placeholder.com/140?text=Sin+Imagen'" />
-                        </a>
-                        <span class="product-name">${item.conaprole_product.name}</span>
-                        <span class="match-bar">Cat: ${item.conaprole_product.category}</span>
-                        <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="source-link">
-                            🌐 Ver Ficha Oficial ↗
-                        </a>
+                    <!-- Tight Stage comparador ultracercano -->
+                    <div class="tight-compare-wrapper">
+                        <div class="tight-stage">
+                            <!-- Foto Oficial -->
+                            <div class="tight-img-box img-off-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Mantén presionado para alternar foto">
+                                <span class="img-tag-badge off-badge">OFICIAL</span>
+                                <img src="${offImg}" class="card-img-off" alt="Oficial" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'" />
+                            </div>
+
+                            <div class="vs-divider">
+                                <span class="vs-badge">VS</span>
+                            </div>
+
+                            <!-- Foto Supermercado -->
+                            <div class="tight-img-box img-sp-box" data-off-url="${offImg}" data-sp-url="${spImg}" title="Mantén presionado para alternar foto">
+                                <span class="img-tag-badge">${item.supermarket.toUpperCase()}</span>
+                                <img src="${spImg}" class="card-img-sp" alt="Supermercado" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'" />
+                            </div>
+                        </div>
+
+                        <span class="press-hint">👆 Haz clic o mantén presionado para alternar fotos</span>
+
+                        <button class="btn btn-secondary btn-pixel" data-card-idx="${index}">
+                            🔍 Comparar Pixel a Pixel
+                        </button>
                     </div>
 
-                    <!-- Supermercado -->
-                    <div class="product-side">
-                        <span class="side-label sp-side">PUBLICACIÓN SUPERMERCADO</span>
-                        <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="img-container clickable-img" title="Ver en sitio de ${item.supermarket}">
-                            <img src="${spImg}" alt="${item.supermarket_product.name}" onerror="this.src='https://via.placeholder.com/140?text=Sin+Imagen'" />
-                        </a>
-                        <span class="product-name">${item.supermarket_product.name}</span>
-                        <span class="match-bar">Similitud nombre: <strong>${simScore}%</strong></span>
-                        <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="source-link sp-source-link">
-                            🛒 Ver en ${item.supermarket} ↗
-                        </a>
+                    <!-- Datos del producto -->
+                    <div class="card-info-grid">
+                        <div class="info-column">
+                            <span class="product-name">${item.conaprole_product.name}</span>
+                            <span class="match-bar">Cat: ${item.conaprole_product.category}</span>
+                            <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="source-link">
+                                🌐 Ficha Oficial ↗
+                            </a>
+                        </div>
+                        <div class="info-column">
+                            <span class="product-name">${item.supermarket_product.name}</span>
+                            <span class="match-bar">Similitud: <strong>${simScore}%</strong></span>
+                            <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="source-link sp-source-link">
+                                🛒 En ${item.supermarket} ↗
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
     }
+
+    function attachCardInteractions(filteredItems) {
+        // Manejadores de Presionar y Mantener en las fotos de las tarjetas
+        document.querySelectorAll(".tight-img-box").forEach(box => {
+            const imgEl = box.querySelector("img");
+            const offUrl = box.getAttribute("data-off-url");
+            const spUrl = box.getAttribute("data-sp-url");
+
+            const isOffBox = box.classList.contains("img-off-box");
+
+            function showOther() {
+                box.classList.add("is-pressed");
+                imgEl.src = isOffBox ? spUrl : offUrl;
+            }
+
+            function restoreOriginal() {
+                box.classList.remove("is-pressed");
+                imgEl.src = isOffBox ? offUrl : spUrl;
+            }
+
+            box.addEventListener("mousedown", showOther);
+            box.addEventListener("mouseup", restoreOriginal);
+            box.addEventListener("mouseleave", restoreOriginal);
+
+            box.addEventListener("touchstart", (e) => { e.preventDefault(); showOther(); });
+            box.addEventListener("touchend", restoreOriginal);
+        });
+
+        // Botón "Comparar Pixel a Pixel" -> abre el modal
+        document.querySelectorAll(".btn-pixel").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const idx = parseInt(btn.getAttribute("data-card-idx"));
+                const item = filteredItems[idx];
+                if (item) {
+                    openPixelModal(item);
+                }
+            });
+        });
+    }
+
+    function openPixelModal(item) {
+        modalProductName.innerText = `${item.conaprole_product.name} (vs ${item.supermarket})`;
+        modalOffImg.src = item.conaprole_product.image_url || "/static/no-img.png";
+        modalSpImg.src = item.supermarket_product.image_url || "/static/no-img.png";
+
+        opacitySlider.value = 50;
+        opacityVal.innerText = "50%";
+        modalSpImg.style.opacity = 0.5;
+
+        pixelModal.classList.remove("hidden");
+    }
+
+    function closePixelModal() {
+        pixelModal.classList.add("hidden");
+    }
+
+    closeModalBtn.addEventListener("click", closePixelModal);
+    pixelModal.addEventListener("click", (e) => {
+        if (e.target === pixelModal) closePixelModal();
+    });
+
+    opacitySlider.addEventListener("input", () => {
+        const val = opacitySlider.value;
+        opacityVal.innerText = `${val}%`;
+        modalSpImg.style.opacity = val / 100;
+    });
+
+    // Mantener presionado en el Modal para alternar al 100% de opacidad
+    function modalPressStart() {
+        modalSpImg.style.opacity = 1.0;
+    }
+
+    function modalPressEnd() {
+        modalSpImg.style.opacity = opacitySlider.value / 100;
+    }
+
+    btnHoldCompare.addEventListener("mousedown", modalPressStart);
+    btnHoldCompare.addEventListener("mouseup", modalPressEnd);
+    btnHoldCompare.addEventListener("mouseleave", modalPressEnd);
+
+    btnHoldCompare.addEventListener("touchstart", (e) => { e.preventDefault(); modalPressStart(); });
+    btnHoldCompare.addEventListener("touchend", modalPressEnd);
 
     function setProcessingState(active, labelText = "Procesando...") {
         isProcessing = active;
