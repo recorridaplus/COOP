@@ -2,11 +2,10 @@
 matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
 
 Reglas avanzadas de matching:
-1. Exclusión de Marca Propia de Supermercado (Tienda Inglesa, TATA, Casino, etc.)
-   Si el producto publicado pertenece a la marca propia del supermercado, NO se compara con Conaprole.
-2. Filtrado por marcas del grupo Conaprole / licencias (Polar Food, Colet, Viva, Deleite, Sinfonía, etc.)
-3. Regla de compatibilidad de categoría/tipo.
-4. Score ponderado de similitud token-sort + token-set.
+1. Exclusión por tipo de producto/categoría cruzada (ej. Helado vs Dulce de Leche, Queso vs Leche).
+2. Exclusión de Marca Propia de Supermercado (Tienda Inglesa, TATA, Casino, etc.).
+3. Filtrado por marcas del grupo Conaprole / licencias (Polar Food, Colet, Viva, Deleite, Sinfonía, etc.).
+4. Score ponderado de similitud token-sort + token-set (umbral mínimo 75%).
 """
 
 import json
@@ -41,16 +40,28 @@ CONAPROLE_BRANDS = [
     "máxima", "maxima", "triffle", "orgullo celeste"
 ]
 
-def is_valid_match_pair(official_name: str, supermarket_name: str) -> bool:
+# Categorías y tipos de productos para evitar cruces
+CATEGORY_KEYWORDS = {
+    "helado": ["helado", "helados"],
+    "queso": ["queso", "quesos"],
+    "yogur": ["yogur", "yogures"],
+    "postre": ["postre", "postres", "flan", "pudding", "pudín"],
+    "jugo": ["jugo", "jugos"],
+    "manteca": ["manteca"],
+    "alfajor": ["alfajor", "alfajores"],
+    "gelatina": ["gelatina", "gelatinas"]
+}
+
+def is_valid_match_pair(official_name: str, official_category: str, supermarket_name: str) -> bool:
     """
     Verifica si un par de nombres es un candidato válido antes de calcular score.
-    Previene falsos positivos por marcas propias de supermercados o sub-marcas cruzadas.
+    Previene falsos positivos por marcas propias, sub-marcas o categorías cruzadas.
     """
     off_lower = official_name.lower()
+    cat_lower = (official_category or "").lower()
     sup_lower = supermarket_name.lower()
 
     # 1. Regla de Marca Propia de Supermercado (ej: Empanadas Tienda Inglesa)
-    # Si el producto del supermercado dice "Tienda Inglesa" y el oficial no -> Marca Propia, NO MATCH
     for priv in SUPERMARKET_PRIVATE_LABELS:
         if priv in sup_lower and priv not in off_lower:
             return False
@@ -60,9 +71,17 @@ def is_valid_match_pair(official_name: str, supermarket_name: str) -> bool:
         in_off = brand in off_lower
         in_sup = brand in sup_lower
         if in_off != in_sup:
-            return False  # Uno tiene la marca Conaprole/Polar y el otro no -> NO MATCH
+            return False
 
-    # 3. Prevenir cruces Colet / Dulce de Leche
+    # 3. Regla de Tipos de Producto incompatibles (ej. Helado vs Dulce de Leche)
+    for cat_key, synonyms in CATEGORY_KEYWORDS.items():
+        in_sup = any(s in sup_lower for s in synonyms)
+        in_off = any(s in off_lower or s in cat_lower for s in synonyms)
+        
+        if in_sup and not in_off:
+            return False
+
+    # 4. Prevenir cruces Colet / Dulce de Leche
     if "colet" in sup_lower and "colet" not in off_lower:
         return False
     if "colet" in off_lower and "colet" not in sup_lower:
@@ -70,9 +89,9 @@ def is_valid_match_pair(official_name: str, supermarket_name: str) -> bool:
 
     return True
 
-def calculate_match_score(official_name: str, supermarket_name: str) -> float:
+def calculate_match_score(official_name: str, official_category: str, supermarket_name: str) -> float:
     """Calcula score ponderado de similitud entre dos nombres de producto."""
-    if not is_valid_match_pair(official_name, supermarket_name):
+    if not is_valid_match_pair(official_name, official_category, supermarket_name):
         return 0.0
 
     off_lower = official_name.lower()
@@ -90,7 +109,7 @@ def load_json(path: Path) -> dict | list | None:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 65.0) -> dict:
+def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 75.0) -> dict:
     """
     Ejecuta el proceso inteligente de matching y comparación.
     """
@@ -129,6 +148,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
         for off_prod in official_products:
             off_name = off_prod["name"]
+            off_cat = off_prod.get("category", "")
             off_img = off_prod["images"][0] if off_prod.get("images") else ""
 
             best_sp_prod = None
@@ -139,7 +159,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                 if not sp_name_pub:
                     continue
 
-                score = calculate_match_score(off_name, sp_name_pub)
+                score = calculate_match_score(off_name, off_cat, sp_name_pub)
                 if score > best_score and score >= min_match_threshold:
                     best_score = score
                     best_sp_prod = sp_prod
@@ -169,7 +189,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     "conaprole_product": {
                         "id": off_prod["id"],
                         "name": off_name,
-                        "category": off_prod["category"],
+                        "category": off_cat,
                         "image_url": off_img,
                         "url": off_prod["url"]
                     },
