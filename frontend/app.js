@@ -102,8 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="badge ${badgeClass}">${badgeLabel}</span>
                 </div>
 
-                <div class="side-by-side">
-                    <!-- Tight Stage comparador ultracercano -->
+                <div class="side-by-side-row">
+                    <!-- Columna Izquierda: Ficha Oficial -->
+                    <div class="info-column left-column">
+                        <span class="column-badge">OFICIAL CONAPROLE</span>
+                        <span class="product-name">${item.conaprole_product.name}</span>
+                        <span class="match-bar">Cat: ${item.conaprole_product.category}</span>
+                        <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="source-link">
+                            🌐 Ficha Oficial ↗
+                        </a>
+                    </div>
+
+                    <!-- Columna Centro: Comparador de Fotos Ultracercano -->
                     <div class="tight-compare-wrapper">
                         <div class="tight-stage">
                             <!-- Foto Oficial -->
@@ -122,26 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <img src="${spImg}" class="card-img-sp" alt="Supermercado" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'" />
                             </div>
                         </div>
-
-                        <span class="press-hint">👆 Haz clic o mantén presionado sobre la foto para alternar</span>
+                        <span class="press-hint">👆 Haz clic o mantén presionado para alternar</span>
                     </div>
 
-                    <!-- Datos del producto -->
-                    <div class="card-info-grid">
-                        <div class="info-column">
-                            <span class="product-name">${item.conaprole_product.name}</span>
-                            <span class="match-bar">Cat: ${item.conaprole_product.category}</span>
-                            <a href="${offUrl}" target="_blank" rel="noopener noreferrer" class="source-link">
-                                🌐 Ficha Oficial ↗
-                            </a>
-                        </div>
-                        <div class="info-column">
-                            <span class="product-name">${item.supermarket_product.name}</span>
-                            <span class="match-bar">Similitud: <strong>${simScore}%</strong></span>
-                            <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="source-link sp-source-link">
-                                🛒 En ${item.supermarket} ↗
-                            </a>
-                        </div>
+                    <!-- Columna Derecha: Ficha Supermercado -->
+                    <div class="info-column right-column">
+                        <span class="column-badge sp-badge">PUBLICACIÓN SUPERMERCADO</span>
+                        <span class="product-name">${item.supermarket_product.name}</span>
+                        <span class="match-bar">Similitud: <strong>${simScore}%</strong></span>
+                        <a href="${spUrl}" target="_blank" rel="noopener noreferrer" class="source-link sp-source-link">
+                            🛒 En ${item.supermarket} ↗
+                        </a>
                     </div>
                 </div>
             </div>
