@@ -2,11 +2,13 @@
 matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
 
 Reglas avanzadas:
-1. Normalización de nombres (ignora 'Conaprole', '180 cc', '250 g' para evitar falsas diferencias de nombre).
-2. Clasificación precisa de discrepancias:
+1. Umbral de similitud de nombre mínimo del 90% (evita asumir que son el mismo producto si no coinciden al 90%).
+2. Normalización de nombres para ignorar ruido de unidades.
+3. Evaluación paralela ultrarrápida de imágenes (pHash + recorte de lienzo).
+4. Clasificación exacta de insignias:
    - 🔴 APOCRYPHAL_IMAGE: Foto casera/propia del CM
    - 🟡 DIFFERENT_IMAGE: Otra versión oficial de la foto
-   - 📝 NAME_DISCREPANCY: Redacción del nombre significativamente distinta
+   - 📝 NAME_DISCREPANCY: Redacción del nombre con ligera diferencia
 """
 
 import json
@@ -15,6 +17,7 @@ import re
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from rapidfuzz import fuzz
@@ -29,13 +32,11 @@ CONAPROLE_PATH = DATA_DIR / "conaprole_catalog.json"
 SUPERMARKETS_DIR = DATA_DIR / "supermarkets"
 REPORT_OUTPUT_PATH = DATA_DIR / "latest_comparison_report.json"
 
-# Marcas Propias de Supermercados (Private Labels)
 SUPERMARKET_PRIVATE_LABELS = [
     "tienda inglesa", "tata", "casino", "leader price", 
     "great value", "el dorado", "disco", "devoto", "geant"
 ]
 
-# Marcas oficiales del ecosistema Conaprole y licencias asociadas
 CONAPROLE_BRANDS = [
     "polar food", "polar", "colet", "viva", "deleite", "sinfonia", "sinfonía", 
     "conamigos", "blancanube", "baccanal", "conahorro", "lactoplus", 
@@ -54,7 +55,6 @@ CATEGORY_KEYWORDS = {
 }
 
 def normalize_product_name(name: str) -> str:
-    """Remueve ruido como marca Conaprole repetida o unidades de medida para comparar la esencia del nombre."""
     text = name.lower()
     text = re.sub(r'\bconaprole\b', '', text)
     text = re.sub(r'\b\d+\s*(ml|cc|g|gr|kg|l|lt|un|unidades)\b', '', text)
@@ -108,8 +108,8 @@ def load_json(path: Path) -> dict | list | None:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 70.0) -> dict:
-    logger.info("🔍 Cargando catálogo oficial de Conaprole...")
+def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 90.0) -> dict:
+    logger.info(f"🔍 Cargando catálogo oficial de Conaprole (Umbral min similitud: {min_match_threshold}%)...")
     conaprole_data = load_json(CONAPROLE_PATH)
     if not conaprole_data:
         raise FileNotFoundError(f"No se encontró {CONAPROLE_PATH}. Ejecuta el scraper de Conaprole primero.")
@@ -126,26 +126,16 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
             supermarket_catalogs[sp_name] = sp_data.get("products", [])
             logger.info(f"   {sp_name}: {len(supermarket_catalogs[sp_name])} productos cargados.")
 
-    report = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "total_official_products": len(official_products),
-        "supermarkets_analyzed": list(supermarket_catalogs.keys()),
-        "discrepancies": [],
-        "matches_summary": {}
-    }
+    candidate_pairs = []
+    summary = {sp: {"matches": 0, "discrepancies": 0} for sp in supermarket_catalogs.keys()}
 
     for sp_name, sp_products in supermarket_catalogs.items():
         if not sp_products:
             continue
 
-        logger.info(f"\n⚡ Comparando contra {sp_name}...")
-        discrepancies_count = 0
-        matches_count = 0
-
         for off_prod in official_products:
             off_name = off_prod["name"]
             off_cat = off_prod.get("category", "")
-            off_img = off_prod["images"][0] if off_prod.get("images") else ""
 
             best_sp_prod = None
             best_score = 0.0
@@ -160,72 +150,91 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     best_score = score
                     best_sp_prod = sp_prod
 
-            if not best_sp_prod:
-                continue
+            if best_sp_prod:
+                candidate_pairs.append((sp_name, off_prod, best_sp_prod, best_score))
 
-            sp_name_pub = best_sp_prod["name"]
-            sp_img = best_sp_prod.get("image_url", "")
+    logger.info(f"⚡ {len(candidate_pairs)} candidatos con similitud >= {min_match_threshold}%. Evaluando imágenes...")
 
-            # Comparar imagen si corresponde
-            img_cmp = None
-            if compare_images_flag and off_img and sp_img:
-                img_cmp = compare_images(off_img, sp_img)
+    # Helper para evaluar imágenes en paralelo
+    def _evaluate_image_pair(item):
+        sp_name, off_prod, best_sp_prod, score = item
+        off_img = off_prod["images"][0] if off_prod.get("images") else ""
+        sp_img = best_sp_prod.get("image_url", "")
+        img_cmp = None
+        if compare_images_flag and off_img and sp_img:
+            img_cmp = compare_images(off_img, sp_img)
+            if img_cmp and "phash_distance" in img_cmp:
+                img_cmp["phash_distance"] = int(img_cmp["phash_distance"])
+        return (sp_name, off_prod, best_sp_prod, score, img_cmp)
 
-            # Clasificación precisa del tipo de discrepancia
-            discrepancy_type = None
-            alert_level = None
+    if compare_images_flag and candidate_pairs:
+        with ThreadPoolExecutor(max_workers=12) as executor:
+            evaluated_pairs = list(executor.map(_evaluate_image_pair, candidate_pairs))
+    else:
+        evaluated_pairs = [(sp_name, off_prod, best_sp_prod, score, None) for sp_name, off_prod, best_sp_prod, score in candidate_pairs]
 
-            if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
-                discrepancy_type = "APOCRYPHAL_IMAGE"
-                alert_level = "RED"
-            elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
-                discrepancy_type = "DIFFERENT_IMAGE"
-                alert_level = "YELLOW"
-            elif best_score < 88.0:
-                discrepancy_type = "NAME_DISCREPANCY"
-                alert_level = "BLUE"
+    report = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "total_official_products": len(official_products),
+        "supermarkets_analyzed": list(supermarket_catalogs.keys()),
+        "discrepancies": [],
+        "matches_summary": summary
+    }
 
-            if discrepancy_type:
-                discrepancies_count += 1
-                item_discrepancy = {
-                    "supermarket": sp_name,
-                    "conaprole_product": {
-                        "id": off_prod["id"],
-                        "name": off_name,
-                        "category": off_cat,
-                        "image_url": off_img,
-                        "url": off_prod["url"]
-                    },
-                    "supermarket_product": {
-                        "name": sp_name_pub,
-                        "image_url": sp_img,
-                        "url": best_sp_prod.get("product_url", "")
-                    },
-                    "name_comparison": {
-                        "official_name": off_name,
-                        "supermarket_name": sp_name_pub,
-                        "similarity_score": best_score
-                    },
-                    "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
-                    "image_comparison": img_cmp,
-                    "discrepancy_type": discrepancy_type,
-                    "alert_level": alert_level
-                }
-                report["discrepancies"].append(item_discrepancy)
-            else:
-                matches_count += 1
+    for sp_name, off_prod, best_sp_prod, score, img_cmp in evaluated_pairs:
+        off_name = off_prod["name"]
+        sp_name_pub = best_sp_prod["name"]
 
-        report["matches_summary"][sp_name] = {
-            "matches": matches_count,
-            "discrepancies": discrepancies_count
-        }
+        discrepancy_type = None
+        alert_level = None
+
+        if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
+            discrepancy_type = "APOCRYPHAL_IMAGE"
+            alert_level = "RED"
+        elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
+            discrepancy_type = "DIFFERENT_IMAGE"
+            alert_level = "YELLOW"
+        elif score < 96.0:
+            discrepancy_type = "NAME_DISCREPANCY"
+            alert_level = "BLUE"
+
+        if discrepancy_type:
+            summary[sp_name]["discrepancies"] += 1
+            report["discrepancies"].append({
+                "supermarket": sp_name,
+                "conaprole_product": {
+                    "id": off_prod["id"],
+                    "name": off_name,
+                    "category": off_prod.get("category", ""),
+                    "image_url": off_prod["images"][0] if off_prod.get("images") else "",
+                    "url": off_prod["url"]
+                },
+                "supermarket_product": {
+                    "name": sp_name_pub,
+                    "image_url": best_sp_prod.get("image_url", ""),
+                    "url": best_sp_prod.get("product_url", "")
+                },
+                "name_comparison": {
+                    "official_name": off_name,
+                    "supermarket_name": sp_name_pub,
+                    "similarity_score": score
+                },
+                "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
+                "image_comparison": img_cmp,
+                "discrepancy_type": discrepancy_type,
+                "alert_level": alert_level
+            })
+        else:
+            summary[sp_name]["matches"] += 1
+
+    report["matches_summary"] = summary
 
     with open(REPORT_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"\n✅ Reporte inteligente generado en: {REPORT_OUTPUT_PATH}")
-    logger.info(f"   Total discrepancias válidas encontradas: {len(report['discrepancies'])}")
+    logger.info(f"✅ Reporte inteligente generado en: {REPORT_OUTPUT_PATH}")
+    logger.info(f"   Total discrepancias encontradas: {len(report['discrepancies'])}")
     return report
 
 if __name__ == "__main__":
-    run_matching(compare_images_flag=False)
+    run_matching(compare_images_flag=True, min_match_threshold=90.0)
