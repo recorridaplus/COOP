@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T11:07:34.381610+00:00",
+  "generated_at": "2026-08-15T11:32:51.736487+00:00",
   "total_official_products": 286,
   "supermarkets_analyzed": [
     "El Dorado",
@@ -41,7 +41,7 @@
         "supermarket_label_info": "1Lt",
         "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente respecto al catálogo oficial.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente al del catálogo oficial.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -50,52 +50,6 @@
         "similarity_score": 18,
         "official_desc": "Proteínas lácteas, agua, almidón modificado, crema de leche, fermentos lácticos, regulador de acidez: ácido láctico, aromatizante, colorante: rojo carmín, edulcorantes: sucralosa, acesulfame k.",
         "supermarket_desc": "Bebida Lactea Conaprole Frutilla 1lt ."
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-conaprole-bebida-lactea-durazno",
-        "name": "Bebida Láctea Durazno",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
-        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-durazno/"
-      },
-      "supermarket_product": {
-        "name": "Bebida Lactea Conaprole Durazno 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-durazno-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Bebida Láctea Durazno",
-        "supermarket_name": "Bebida Lactea Conaprole Durazno 1Lt .",
-        "similarity_score": 98.0
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1L",
-        "supermarket_label_info": "1lt",
-        "ai_verdict": "PACKAGING_REDESIGN",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente en comparación con el catálogo oficial.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      },
-      "description_comparison": {
-        "has_discrepancy": true,
-        "similarity_score": 16,
-        "official_desc": "Proteínas lácteas, agua, leche pasteurizada, almidón modificado, crema de leche, fermentos lácticos, regulador de acidez: ácido láctico, colorante: amarillo annato, edulcorantes: sucralosa, acesulfame k, aromatizante.",
-        "supermarket_desc": "Bebida Lactea Conaprole Durazno 1lt ."
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -130,7 +84,7 @@
         "is_same_product": true,
         "is_same_presentation": false,
         "official_label_info": "Yogur Viva vainilla 1 kg",
-        "supermarket_label_info": "Yogur Conaprole Viva 0% Vainilla 200Cc",
+        "supermarket_label_info": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
         "explanation": "El producto oficial es un yogur de 1 kg, mientras que el producto en el supermercado es de 200 cc, lo que representa una diferencia de tamaño sustancial.",
@@ -177,9 +131,9 @@
         "is_same_presentation": false,
         "official_label_info": "1l",
         "supermarket_label_info": "1Lt",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo yogur de durazno 0%, pero la presentación en el supermercado indica '1Lt' en lugar de '1l', lo que sugiere una diferencia en la forma de expresar el volumen, aunque ambos se refieren a la misma cantidad.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente al del catálogo oficial.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -188,52 +142,6 @@
         "similarity_score": 34,
         "official_desc": "Leche descremada pasteurizada, preparado de durazno, proteínas lácteas, almidón modificado, fermentos lácticos, estabilizantes; gelatina, colorante natural amarillo annato, edulcorante: sucralosa y acesulfame K, aromatizante.",
         "supermarket_desc": "Yogur Conaprole Viva 0% Durazno 1lt ."
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-viva-postres-bebible-acai-y-frutos-rojos",
-        "name": "Yogur Viva 0% Açai y Frutos Rojos",
-        "category": "Yogures",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194928_986594182.png",
-        "url": "https://www.conaprole.uy/producto/producto-viva-postres-bebible-acai-y-frutos-rojos/"
-      },
-      "supermarket_product": {
-        "name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165645/7730105026416.jpg?v=638537130573700000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutos-rojos-1lt/p"
-      },
-      "name_comparison": {
-        "official_name": "Yogur Viva 0% Açai y Frutos Rojos",
-        "supermarket_name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt .",
-        "similarity_score": 92.2
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 10,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194928_986594182.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165645/7730105026416.jpg?v=638537130573700000",
-        "details": "Imagen coincidente (pHash dist: 10)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "Yogur Viva 0% Açai y Frutos Rojos",
-        "supermarket_label_info": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt",
-        "ai_verdict": "PACKAGING_REDESIGN",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico anterior o diferente en comparación con el catálogo oficial.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      },
-      "description_comparison": {
-        "has_discrepancy": true,
-        "similarity_score": 18,
-        "official_desc": "Leche descremada pasteurizada, preparado de açaí, frutilla, durazno, mora y frambuesa, proteínas lácteas, almidón modificado, vitaminas A, C, D y E, fermentos lácticos, estabilizante: gelatina, colorantes rojo carmín y azul brillante, aromatizante, edulcorantes: sucralosa y acesulfame K.",
-        "supermarket_desc": "Yogur Conaprole Viva 0% Frutos Rojos 1lt ."
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -271,7 +179,7 @@
         "supermarket_label_info": "1.2L",
         "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente y la descripción incluye 'Light', lo que puede causar confusión.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un rediseño gráfico y una variación en la forma de expresar el volumen (kg vs L).",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -317,7 +225,7 @@
         "supermarket_label_info": "60ml",
         "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente y un peso ligeramente distinto.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico diferente y un volumen ligeramente distinto.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -359,11 +267,11 @@
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "No especificado en la imagen",
+        "official_label_info": "1L",
         "supermarket_label_info": "2Lt",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un vasito helado, mientras que el del supermercado es un envase de 2 litros, lo que indica una diferencia en la presentación.",
+        "explanation": "El producto oficial y el del supermercado son el mismo sabor, pero el tamaño del envase es diferente (1L vs 2Lt).",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -405,11 +313,11 @@
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "1kg/2L",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "official_label_info": "1Lt",
+        "supermarket_label_info": "1lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un helado de 1kg/2L, mientras que el producto en el supermercado es de 1Lt, lo que indica una diferencia en la presentación.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico anterior o diferente en comparación con el catálogo oficial.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -419,8 +327,8 @@
         "official_desc": "Leche pasteurizada, crema de leche, azúcar, proteínas lácteas, estabilizante/emulsificante: <br> mono y diglicéridos de ácidos grasos, INS 433, goma guar, carboximetilcelulosa, carragenina,<br> aromatizante.",
         "supermarket_desc": "Helado Conaprole Crema 1lt ."
       },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE"
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW"
     },
     {
       "supermarket": "El Dorado",
@@ -455,7 +363,7 @@
         "supermarket_label_info": "2Lt",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un helado a granel de 1kg, mientras que el producto en el supermercado es de 2Lt, lo que indica una diferencia en la presentación.",
+        "explanation": "El producto oficial es de 1kg, mientras que el del supermercado es de 2Lt, lo que indica una diferencia en la presentación del producto.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -500,7 +408,7 @@
         "supermarket_label_info": "1Lt",
         "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un rediseño gráfico diferente en comparación con el catálogo oficial.",
+        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un rediseño gráfico con cambios en el logotipo y colores.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -546,7 +454,7 @@
         "supermarket_label_info": "1 L",
         "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero el envase en el supermercado muestra un diseño gráfico anterior con cambios en colores y logotipo.",
+        "explanation": "El producto es el mismo, pero el envase del supermercado muestra un diseño gráfico anterior con cambios en colores y logotipo.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       },
@@ -585,17 +493,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193604_988817956.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177691/1657683.jpg?v=638924130438700000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 litro",
-        "supermarket_label_info": "1lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide con el producto oficial en nombre y presentación, ambos son leche descremada de 1 litro.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -623,17 +520,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193607_1062195687.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177692/1657684.jpg?v=638924130514300000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 litro",
-        "supermarket_label_info": "1lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide con el catálogo oficial en nombre, descripción y presentación, ya que ambos son leche entera de 1 litro.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -661,15 +547,42 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202502/20250213150704_1979952473.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165490/7730105004155.jpg?v=638536503825800000",
         "details": "Imagen coincidente (pHash dist: 10)"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-bebida-lactea-durazno",
+        "name": "Bebida Láctea Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Bebida Lactea Conaprole Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Bebida Láctea Durazno",
+        "supermarket_name": "Bebida Lactea Conaprole Durazno 1Lt .",
+        "similarity_score": 98.0
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 24,
+        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
       },
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": true,
-        "official_label_info": "200g",
-        "supermarket_label_info": "200Gr",
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "Los productos son el mismo, la presentación es idéntica y la información de gramos coincide, aunque hay una variación tipográfica en la escritura de '200Gr'.",
+        "explanation": "El producto en el supermercado es el mismo que el oficial, ambos son Bebida Láctea Durazno de 1 litro, aunque hay una ligera variación tipográfica en la presentación del volumen.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -699,17 +612,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194825_903196694.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165482/7730105002014.jpg?v=638536503229470000",
         "details": "Imagen coincidente (pHash dist: 8)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200g",
-        "supermarket_label_info": "200Cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto y la presentación coinciden, aunque hay una variación tipográfica en la unidad de medida (g vs Cc), pero visualmente el envase es el mismo.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -737,17 +639,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194829_894821554.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165483/7730105002120.jpg?v=638536503338000000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200cc",
-        "supermarket_label_info": "200cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son Yogur Integral con Dulce de Leche de 200cc.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -775,17 +666,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194843_237093377.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165484/7730105002366.jpg?v=638536503404700000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "185cc",
-        "supermarket_label_info": "185Cc .",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con la misma presentación y volumen, aunque hay una variación tipográfica en la escritura de '185Cc'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -813,17 +693,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "1kg",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un yogur de 1kg, mientras que el publicado en el supermercado es de 1Lt, lo que representa una diferencia en la presentación del producto.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -851,17 +720,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194857_1344991014.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165637/7730105026300.jpg?v=638537130037300000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "1kg",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial y el del supermercado son el mismo yogur, pero hay una diferencia en el tamaño del envase: 1kg en el catálogo oficial y 1Lt en el supermercado.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -889,17 +747,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200Cc",
-        "supermarket_label_info": "200cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo yogur, con la misma presentación y tamaño, aunque hay una variación tipográfica en la forma de escribir '200Cc' y '200cc'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -927,17 +774,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200Cc",
-        "supermarket_label_info": "200cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con la misma presentación y tamaño, aunque hay una variación tipográfica en la información del volumen.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -965,17 +801,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200cc",
-        "supermarket_label_info": "200Cc .",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide en nombre y presentación con el catálogo oficial, aunque hay una variación tipográfica en la forma de escribir '200Cc'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1011,9 +836,36 @@
         "supermarket_label_info": "1Lt",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "Los nombres y descripciones de los productos coinciden, y el tamaño del envase es el mismo. La variación en la escritura de '1l' y '1Lt' no afecta la coincidencia.",
+        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, aunque hay una ligera variación tipográfica en la forma de escribir '1l' y '1Lt'.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-postres-bebible-acai-y-frutos-rojos",
+        "name": "Yogur Viva 0% Açai y Frutos Rojos",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194928_986594182.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-postres-bebible-acai-y-frutos-rojos/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165645/7730105026416.jpg?v=638537130573700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutos-rojos-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Açai y Frutos Rojos",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutos Rojos 1Lt .",
+        "similarity_score": 92.2
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 10,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194928_986594182.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165645/7730105026416.jpg?v=638537130573700000",
+        "details": "Imagen coincidente (pHash dist: 10)"
       }
     },
     {
@@ -1041,17 +893,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504154025_583768674.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177245/7730105010026.jpg?v=638887873801470000",
         "details": "Imagen coincidente (pHash dist: 10)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200g",
-        "supermarket_label_info": "200gr",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con la misma presentación y cantidad, aunque hay una ligera variación en la forma de escribir '200g' y '200gr'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1079,17 +920,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202506/20250610114118_788655509.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177244/7730105009655.jpg?v=638887873659870000",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "250g",
-        "supermarket_label_info": "250gr",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son Requesón 0% lactosa de 250g.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1117,17 +947,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1158157/253431.jpg?v=638402761067570000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 kg",
-        "supermarket_label_info": "Kg",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, aunque la información de peso en el envase del supermercado es genérica.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1155,17 +974,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1143406/5566.gif?v=637957416143500000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "500g",
-        "supermarket_label_info": "500gr",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide en nombre y presentación con el catálogo oficial, ambos son Dulce de Leche Manjar de 500g.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1193,17 +1001,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195655_338405316.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165646/7730105026553.jpg?v=638537130650930000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "220g",
-        "supermarket_label_info": "220gr",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto y la presentación coinciden, aunque hay una ligera variación en la forma de escribir los gramos, pero visualmente el envase es el mismo.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1231,17 +1028,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195657_467879374.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165647/7730105026560.jpg?v=638537130724700000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "220g",
-        "supermarket_label_info": "220gr",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto y la presentación coinciden, aunque hay una variación en la forma de escribir los gramos, pero visualmente el envase es el mismo.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1277,7 +1063,7 @@
         "supermarket_label_info": "210gr",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo, ambos indican que son empanadas de queso y aceitunas, y la presentación coincide en cantidad y formato.",
+        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ya que ambas referencias indican el mismo contenido de empanadas y el peso total es consistente.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -1307,17 +1093,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202511/20251105144451_242141538.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166488/7730105023927.jpg?v=638556956316900000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "Helado CONO sabor vainilla con dulce de leche",
-        "supermarket_label_info": "Helado Conaprole Vainilla-Dulce De Leche Cono",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "Los productos son el mismo, con coincidencia en el nombre y la presentación del envase, aunque hay ligeras variaciones tipográficas en el nombre.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1345,17 +1120,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "25",
-        "supermarket_label_info": "25",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide con el producto oficial en nombre y presentación, ambos indican 25, por lo que se considera una coincidencia.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1383,17 +1147,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200058_1754302065.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166502/7730105902574.jpg?v=638556957700230000",
         "details": "Imagen coincidente (pHash dist: 6)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "60ml",
-        "supermarket_label_info": "60ml",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son helados de 60ml de frutilla y manzana.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1421,17 +1174,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200100_1436800483.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166503/7730105902581.jpg?v=638556957771070000",
         "details": "Imagen coincidente (pHash dist: 6)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "60ml",
-        "supermarket_label_info": "60ml",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son helados de 60ml de frutilla y naranja.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1459,17 +1201,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200102_1074414654.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166566/77301598.jpg?v=638556962402400000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "60ml",
-        "supermarket_label_info": "60ml",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son Helado Palito Naranja de 60ml.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1497,17 +1228,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200109_1749090119.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166527/7730105917745.jpg?v=638556959482570000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "250Cc",
-        "supermarket_label_info": "250cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, aunque hay una variación tipográfica en la escritura de 'Cc' y 'cc'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1543,7 +1263,7 @@
         "supermarket_label_info": "66g",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre, presentación y tamaño. Ambos envases muestran el mismo diseño gráfico y contienen la misma cantidad.",
+        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre, presentación y tamaño.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -1577,11 +1297,11 @@
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": true,
-        "official_label_info": "Entre 2 galletitas sabor chocolate",
-        "supermarket_label_info": "Entre 2 galletitas sabor chocolate",
+        "official_label_info": "66g",
+        "supermarket_label_info": "66g",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "La información del producto y la presentación en el supermercado coinciden con el catálogo oficial.",
+        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, y ambos envases indican el mismo peso de 66g.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -1611,17 +1331,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200129_2076578983.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166522/7730105917202.jpg?v=638556959112700000",
         "details": "Imagen coincidente (pHash dist: 12)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "250Cc",
-        "supermarket_label_info": "250cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, aunque hay una variación tipográfica en la forma de escribir 'Cc' y 'cc'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1649,17 +1358,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200208_676135900.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166515/7730105913518.jpg?v=638556958584200000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1L",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide en nombre y presentación con el catálogo oficial, aunque hay una variación tipográfica en la forma de escribir '1L' como '1Lt'.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1687,17 +1385,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200214_1229905889.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1L",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide con el producto oficial en nombre y presentación, aunque hay una ligera variación en la forma de escribir el volumen (1L vs 1Lt), pero esto no afecta la coincidencia del producto.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1725,17 +1412,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200221_1501459977.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166511/7730105913020.jpg?v=638556958315770000",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1Lt",
-        "supermarket_label_info": "1lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con la misma presentación y tamaño. La variación en la escritura de '1Lt' y '1lt' no afecta la coincidencia.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1763,17 +1439,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200223_294211441.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166560/7730105973239.jpg?v=638556961765600000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "2L",
-        "supermarket_label_info": "2Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con la misma presentación de 2L, aunque hay una ligera variación en la forma de escribir la cantidad (2L vs 2Lt), pero visualmente el envase coincide.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1801,17 +1466,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200227_2023619388.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166556/7730105973017.jpg?v=638556961479100000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "Helado Sinfonía Chocolate Holandés Marmolado con Dulce de Leche 2L",
-        "supermarket_label_info": "Helado Conaprole 2 L Sinfonia Chocolate-Marmolado De Dulce De Leche",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, por lo que se considera una coincidencia.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1839,17 +1493,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200229_771262471.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166557/7730105973024.jpg?v=638556961554100000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "2L",
-        "supermarket_label_info": "2Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, aunque hay una variación tipográfica en la forma de expresar el volumen.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1877,17 +1520,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200244_325461188.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180672/1638206.jpg.jpg?v=639102363528030000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "2Lt",
-        "supermarket_label_info": "2lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, aunque hay una ligera variación en la forma de escribir '2Lt' y '2lt', lo cual no afecta la coincidencia.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1915,17 +1547,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1kg",
-        "supermarket_label_info": "2lt",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto es el mismo, pero hay una diferencia en la presentación, ya que el envase oficial indica 1kg y el del supermercado menciona 2lt, lo que sugiere un cambio en la cantidad.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1953,17 +1574,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200258_1959318617.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166512/7730105913419.jpg?v=638556958381670000",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1L",
-        "supermarket_label_info": "1Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre, presentación y volumen. La variación en la forma de escribir '1L' y '1Lt' no afecta la coincidencia.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -1991,17 +1601,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200302_912020863.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166540/7730105923500.jpg?v=638556960366700000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "2Lt",
-        "supermarket_label_info": "2lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, aunque hay una variación tipográfica en la descripción del volumen.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -2037,7 +1636,7 @@
         "supermarket_label_info": "1Lt",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado es el mismo que el oficial, con una ligera variación tipográfica en la presentación del volumen, pero visualmente el envase coincide.",
+        "explanation": "Los productos son el mismo, con la misma presentación de 1L, aunque hay una ligera variación tipográfica en la forma de expresar el volumen.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -2075,7 +1674,7 @@
         "supermarket_label_info": "1Lt",
         "ai_verdict": "MATCH",
         "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado es el mismo que el oficial, con la misma presentación de 1L, aunque hay una ligera variación tipográfica en la forma de escribir '1L'.",
+        "explanation": "El producto del supermercado es el mismo que el oficial, con la misma presentación de 1L, aunque hay una ligera variación tipográfica en la forma de escribir '1Lt'.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -2105,17 +1704,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "200ml",
-        "supermarket_label_info": "200cc",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo, ambos indican 200ml/200cc, y el diseño del envase coincide.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -2143,17 +1731,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193604_988817956.png",
         "supermarket_url": "https://tatauy.vteximg.com.br/arquivos/ids/785338/68c2fac555f1dcd81808bf67.jpg?v=638932054530170000",
         "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 litro",
-        "supermarket_label_info": "1 Lt",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide en nombre y presentación con el catálogo oficial, ambos son leche descremada Blancanube de 1 litro.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -2181,17 +1758,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193602_291423279.png",
         "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P072467-1.jpg?20230228081052,Leche-UHT-Descremada-CONAPROLE-Larga-Vida-1-L-en-Tienda-Inglesa",
         "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 L",
-        "supermarket_label_info": "1 L",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto del supermercado coincide con el producto oficial en nombre, presentación y volumen. Ambos son leche UHT descremada de 1 litro.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     },
     {
@@ -2219,24 +1785,13 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193603_864433867.png",
         "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000738-1.jpg?20230228081259,Leche-UHT-Entera-CONAPROLE-Larga-Vida-1-L-en-Tienda-Inglesa",
         "details": "Imagen coincidente (pHash dist: 0)"
-      },
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": true,
-        "official_label_info": "1 L",
-        "supermarket_label_info": "1 L",
-        "ai_verdict": "MATCH",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto en el supermercado coincide con el producto oficial en nombre y presentación, ambos son leche UHT entera de 1 litro.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
       }
     }
   ],
   "matches_summary": {
     "El Dorado": {
-      "matches": 41,
-      "discrepancies": 11
+      "matches": 43,
+      "discrepancies": 9
     },
     "TATA": {
       "matches": 1,

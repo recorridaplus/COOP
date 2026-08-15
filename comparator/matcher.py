@@ -347,7 +347,12 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
         discrepancy_type = None
         alert_level = None
 
-        if ai_active:
+        # 1. Regla de Oro: Si la imagen ya fue verificada matemáticamente como idéntica (pHash <= 12, MATCH)
+        # y los atributos son compatibles (score >= 90%), es una COINCIDENCIA PERFECTA.
+        if img_cmp and img_cmp.get("status") == "MATCH":
+            discrepancy_type = None
+        elif ai_active:
+            # 2. Si el comparador de imágenes detectó una diferencia o no hay imagen, consultar OpenAI Vision
             logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
             ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
             
@@ -366,12 +371,10 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     discrepancy_type = "DIFFERENT_IMAGE"
                     alert_level = "YELLOW"
                 elif verdict == "DIFFERENT_PRESENTATION":
-                    if img_cmp and img_cmp.get("status") == "MATCH":
-                        discrepancy_type = None
-                    else:
-                        discrepancy_type = "NAME_DISCREPANCY"
-                        alert_level = "BLUE"
+                    discrepancy_type = "NAME_DISCREPANCY"
+                    alert_level = "BLUE"
         else:
+            # 3. Modo local sin IA
             if img_cmp and img_cmp.get("status") == "APOCRYPHAL_IMAGE":
                 discrepancy_type = "APOCRYPHAL_IMAGE"
                 alert_level = "RED"
@@ -381,6 +384,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
             elif not img_cmp and score < 95.0:
                 discrepancy_type = "NAME_DISCREPANCY"
                 alert_level = "BLUE"
+
 
 
         match_item = {
