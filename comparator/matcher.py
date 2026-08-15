@@ -347,43 +347,43 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
         discrepancy_type = None
         alert_level = None
 
-        # 1. Regla de Oro: Si la imagen ya fue verificada matemáticamente como idéntica (pHash <= 12, MATCH)
-        # y los atributos son compatibles (score >= 90%), es una COINCIDENCIA PERFECTA.
+        # 1. Si la imagen es idéntica por pHash (distancia <= 12, MATCH), es COINCIDENCIA PERFECTA
         if img_cmp and img_cmp.get("status") == "MATCH":
             discrepancy_type = None
-        elif ai_active:
-            # 2. Si el comparador de imágenes detectó una diferencia o no hay imagen, consultar OpenAI Vision
+        # 2. Si el comparador de imágenes detectó una imagen diferente de catálogo (rediseño pHash > 12)
+        elif img_cmp and img_cmp.get("status") == "DIFFERENT_IMAGE":
+            discrepancy_type = "DIFFERENT_IMAGE"
+            alert_level = "YELLOW"
+        # 3. Si el comparador de imágenes detectó una foto no oficial / apócrifa (fondo de tienda)
+        elif img_cmp and img_cmp.get("status") == "APOCRYPHAL_IMAGE":
+            discrepancy_type = "APOCRYPHAL_IMAGE"
+            alert_level = "RED"
+        elif not img_cmp and score < 95.0:
+            discrepancy_type = "NAME_DISCREPANCY"
+            alert_level = "BLUE"
+
+        # 4. Si la IA está activa y hay una discrepancia o falta imagen, consultar para auditar/descartar
+        if ai_active and (discrepancy_type or not img_cmp):
             logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
             ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
             
             if ai_result.get("status") == "SUCCESS":
+                # Si la IA determina que son productos incompatibles, rechazar el match falso
                 if ai_result.get("is_same_product") is False:
                     logger.info(f"   ❌ IA rechazó el match: {ai_result.get('explanation')}")
                     return ("REJECTED", sp_name, None)
 
                 verdict = ai_result.get("ai_verdict")
-                if verdict == "MATCH":
-                    discrepancy_type = None
-                elif verdict == "APOCRYPHAL_IMAGE":
+                if verdict == "APOCRYPHAL_IMAGE":
                     discrepancy_type = "APOCRYPHAL_IMAGE"
                     alert_level = "RED"
                 elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE"]:
                     discrepancy_type = "DIFFERENT_IMAGE"
                     alert_level = "YELLOW"
-                elif verdict == "DIFFERENT_PRESENTATION":
+                elif verdict == "DIFFERENT_PRESENTATION" and not discrepancy_type:
                     discrepancy_type = "NAME_DISCREPANCY"
                     alert_level = "BLUE"
-        else:
-            # 3. Modo local sin IA
-            if img_cmp and img_cmp.get("status") == "APOCRYPHAL_IMAGE":
-                discrepancy_type = "APOCRYPHAL_IMAGE"
-                alert_level = "RED"
-            elif img_cmp and img_cmp.get("status") == "DIFFERENT_IMAGE":
-                discrepancy_type = "DIFFERENT_IMAGE"
-                alert_level = "YELLOW"
-            elif not img_cmp and score < 95.0:
-                discrepancy_type = "NAME_DISCREPANCY"
-                alert_level = "BLUE"
+
 
 
 
