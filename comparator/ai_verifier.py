@@ -9,20 +9,37 @@ import os
 import json
 import logging
 from pathlib import Path
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
 
 logger = logging.getLogger(__name__)
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini").strip()
+ENV_PATH = Path(__file__).parent.parent / ".env"
+
+try:
+    from dotenv import load_dotenv
+    if ENV_PATH.exists():
+        load_dotenv(dotenv_path=ENV_PATH)
+    else:
+        load_dotenv()
+except ImportError:
+    pass
+
+def get_openai_api_key() -> str:
+    if ENV_PATH.exists():
+        try:
+            from dotenv import load_dotenv
+            load_dotenv(dotenv_path=ENV_PATH, override=True)
+        except Exception:
+            pass
+    return os.getenv("OPENAI_API_KEY", "").strip()
+
+def get_openai_model() -> str:
+    return os.getenv("OPENAI_MODEL", "gpt-4o-mini").strip()
 
 def is_openai_available() -> bool:
     """Retorna True si hay una clave de API de OpenAI válida configurada en el entorno."""
-    return bool(OPENAI_API_KEY and len(OPENAI_API_KEY) > 10)
+    key = get_openai_api_key()
+    return bool(key and len(key) > 10 and not key.startswith("your_"))
+
 
 def verify_product_match_with_ai(
     official_prod: dict,
@@ -41,15 +58,19 @@ def verify_product_match_with_ai(
             "reason": "OPENAI_API_KEY no está configurada en el entorno."
         }
 
+    api_key = get_openai_api_key()
+    model_name = get_openai_model()
+
     try:
         from openai import OpenAI
-        client = OpenAI(api_key=OPENAI_API_KEY)
+        client = OpenAI(api_key=api_key)
     except Exception as e:
         logger.error(f"Error inicializando cliente de OpenAI: {e}")
         return {
             "status": "ERROR",
             "error": str(e)
         }
+
 
     off_name = official_prod.get("name", "")
     off_cat = official_prod.get("category", "")
@@ -102,7 +123,7 @@ def verify_product_match_with_ai(
 
     try:
         response = client.chat.completions.create(
-            model=OPENAI_MODEL,
+            model=model_name,
             response_format={"type": "json_object"},
             messages=[
                 {
@@ -125,7 +146,8 @@ def verify_product_match_with_ai(
         result_text = response.choices[0].message.content
         ai_data = json.loads(result_text)
         ai_data["status"] = "SUCCESS"
-        ai_data["model_used"] = OPENAI_MODEL
+        ai_data["model_used"] = model_name
+
         return ai_data
 
     except Exception as e:
