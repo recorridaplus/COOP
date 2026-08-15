@@ -36,6 +36,8 @@ CONFIGS = {
     }
 }
 
+DEFAULT_QUERIES = ["conaprole", "colet", "viva", "deleite", "polar food", "blancanube", "conamigos"]
+
 class GduScraper(BaseSupermarketScraper):
     def __init__(self, key: str):
         config = CONFIGS[key]
@@ -43,9 +45,16 @@ class GduScraper(BaseSupermarketScraper):
         self.key = key
         self.config = config
 
-    async def async_search(self, query: str = "conaprole") -> list[SupermarketProduct]:
-        logger.info(f"🔎 [{self.supermarket_name}] Abriendo sitio: {self.base_url}")
+    async def async_search(self, queries: list[str] | str = None) -> list[SupermarketProduct]:
+        if queries is None:
+            queries = DEFAULT_QUERIES
+        elif isinstance(queries, str):
+            queries = [queries]
+
+        logger.info(f"🔎 [{self.supermarket_name}] Abriendo sitio: {self.base_url} (Queries: {queries})")
         results: list[SupermarketProduct] = []
+        seen_urls: set[str] = set()
+        now_str = datetime.now(timezone.utc).isoformat()
 
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
@@ -55,67 +64,60 @@ class GduScraper(BaseSupermarketScraper):
             page = await context.new_page()
 
             try:
-                await page.goto(self.base_url, wait_until="domcontentloaded", timeout=30000)
-                await asyncio.sleep(3)
-
-                # Buscar input de búsqueda
-                search_input = await page.query_selector("input[type='search'], input[type='text'], input[placeholder*='Buscar'], .search-input")
-                if search_input:
-                    logger.info(f"  Escribiendo '{query}' en la barra de búsqueda...")
-                    await search_input.fill(query)
-                    await search_input.press("Enter")
-                    await asyncio.sleep(5)
-                else:
-                    await page.goto(f"{self.base_url}buscar?text={query}", wait_until="domcontentloaded", timeout=20000)
+                for q in queries:
+                    target_url = f"{self.base_url}buscar?text={q}"
+                    logger.info(f"  [{self.supermarket_name}] NAVEGANDO A: {target_url}")
+                    await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
                     await asyncio.sleep(4)
 
-                # Scroll gradual
-                for _ in range(4):
-                    await page.evaluate("window.scrollBy(0, 800)")
-                    await asyncio.sleep(1)
+                    # Scroll gradual
+                    for _ in range(3):
+                        await page.evaluate("window.scrollBy(0, 800)")
+                        await asyncio.sleep(1)
 
-                raw_prods = await page.evaluate('''() => {
-                    const results = [];
-                    const cards = document.querySelectorAll(".product-item, .card, [class*='product-card'], [class*='product_'], .rz-g-col, article");
-                    cards.forEach(card => {
-                        const nameEl = card.querySelector("h1, h2, h3, h4, .product-title, .title, .name, span.name");
-                        const imgEl = card.querySelector("img");
-                        const linkEl = card.querySelector("a");
-                        const name = nameEl ? nameEl.innerText.trim() : "";
-                        const href = linkEl ? linkEl.getAttribute("href") : "";
-                        const img = imgEl ? (imgEl.src || imgEl.getAttribute("data-src") || "") : "";
+                    raw_prods = await page.evaluate('''() => {
+                        const results = [];
+                        const cards = document.querySelectorAll(".product-item, .card, [class*='product-card'], [class*='product_'], .rz-g-col, article");
+                        const keywords = ["conaprole", "colet", "viva", "deleite", "polar", "blancanube", "sinfonia", "sinfonía", "conamigos", "baccanal", "conahorro", "lactoplus", "maxima", "máxima", "triffle", "orgullo celeste"];
 
-                        // Filtrar estrictamente productos que tengan relación con Conaprole o lácteos
-                        const isConaprole = name.toLowerCase().includes("conaprole") || 
-                                            name.toLowerCase().includes("colet") || 
-                                            name.toLowerCase().includes("viva") || 
-                                            name.toLowerCase().includes("deleite");
+                        cards.forEach(card => {
+                            const nameEl = card.querySelector("h1, h2, h3, h4, .product-title, .title, .name, span.name");
+                            const imgEl = card.querySelector("img");
+                            const linkEl = card.querySelector("a");
+                            const name = nameEl ? nameEl.innerText.trim() : "";
+                            const href = linkEl ? linkEl.getAttribute("href") : "";
+                            const img = imgEl ? (imgEl.src || imgEl.getAttribute("data-src") || "") : "";
 
-                        if (name && isConaprole && !results.some(r => r.name === name)) {
-                            results.push({
-                                name: name,
-                                image_url: img,
-                                description: "",
-                                product_url: href ? (href.startsWith("http") ? href : window.location.origin + href) : window.location.href,
-                                supermarket: window.location.host
-                            });
-                        }
-                    });
-                    return results;
-                }''')
+                            const nameLow = name.toLowerCase();
+                            const isConaprole = keywords.some(kw => nameLow.includes(kw));
 
-                now_str = datetime.now(timezone.utc).isoformat()
-                for p in raw_prods:
-                    results.append({
-                        "name": p["name"],
-                        "image_url": p["image_url"],
-                        "description": "",
-                        "product_url": p["product_url"],
-                        "supermarket": self.supermarket_name,
-                        "scraped_at": now_str
-                    })
+                            if (name && isConaprole && !results.some(r => r.name === name)) {
+                                results.push({
+                                    name: name,
+                                    image_url: img,
+                                    description: "",
+                                    product_url: href ? (href.startsWith("http") ? href : window.location.origin + href) : window.location.href,
+                                    supermarket: window.location.host
+                                });
+                            }
+                        });
+                        return results;
+                    }''')
 
-                logger.info(f"✅ [{self.supermarket_name}] Extraídos {len(results)} productos válidos de Conaprole.")
+                    for p_item in raw_prods:
+                        url_p = p_item["product_url"]
+                        if p_item["name"] and url_p not in seen_urls:
+                            seen_urls.add(url_p)
+                            results.append({
+                                "name": p_item["name"],
+                                "image_url": p_item["image_url"],
+                                "description": "",
+                                "product_url": url_p,
+                                "supermarket": self.supermarket_name,
+                                "scraped_at": now_str
+                            })
+
+                logger.info(f"✅ [{self.supermarket_name}] Extraídos {len(results)} productos válidos de Conaprole y submarcas.")
             except Exception as e:
                 logger.error(f"❌ [{self.supermarket_name}] Error en scraping: {e}")
             finally:
@@ -123,14 +125,14 @@ class GduScraper(BaseSupermarketScraper):
 
         return results
 
-    def search_product(self, query: str = "conaprole") -> list[SupermarketProduct]:
-        return asyncio.run(self.async_search(query))
+    def search_product(self, queries: list[str] | str = None) -> list[SupermarketProduct]:
+        return asyncio.run(self.async_search(queries))
 
-def scrape_and_save_gdu(query: str = "conaprole"):
+def scrape_and_save_gdu(queries: list[str] | str = None):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     for key in CONFIGS.keys():
         scraper = GduScraper(key)
-        products = scraper.search_product(query)
+        products = scraper.search_product(queries)
         out_file = DATA_DIR / f"{key}.json"
         data = {
             "supermarket": scraper.supermarket_name,
@@ -143,4 +145,4 @@ def scrape_and_save_gdu(query: str = "conaprole"):
         logger.info(f"💾 Guardado {out_file}")
 
 if __name__ == "__main__":
-    scrape_and_save_gdu("conaprole")
+    scrape_and_save_gdu()

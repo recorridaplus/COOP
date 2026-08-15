@@ -85,10 +85,10 @@ def _execute_full_rescrape_task():
     scraping_status["is_running"] = True
     try:
         scraping_status["current_step"] = "Scrapeando supermercados (VTEX)..."
-        run_vtex_scrapers("conaprole")
+        run_vtex_scrapers()
 
         scraping_status["current_step"] = "Scrapeando supermercados (GDU)..."
-        scrape_and_save_gdu("conaprole")
+        scrape_and_save_gdu()
 
         scraping_status["current_step"] = "Ejecutando motor de matching e imágenes..."
         run_matching(compare_images_flag=False)

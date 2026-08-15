@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from rapidfuzz import fuzz
 from comparator.text_comparator import compare_descriptions
 from comparator.image_comparator import compare_images
+from comparator.ai_verifier import is_openai_available, verify_product_match_with_ai
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -40,6 +41,33 @@ CONAPROLE_BRANDS = [
     "conamigos", "blancanube", "baccanal", "conahorro", "lactoplus", 
     "máxima", "maxima", "triffle", "orgullo celeste"
 ]
+
+SUBBRAND_CANONICAL = {
+    "polar food": "polar",
+    "polar": "polar",
+    "colet": "colet",
+    "viva": "viva",
+    "deleite": "deleite",
+    "sinfonia": "sinfonia",
+    "sinfonía": "sinfonia",
+    "conamigos": "conamigos",
+    "blancanube": "blancanube",
+    "baccanal": "baccanal",
+    "conahorro": "conahorro",
+    "lactoplus": "lactoplus",
+    "máxima": "maxima",
+    "maxima": "maxima",
+    "triffle": "triffle",
+    "orgullo celeste": "orgullo celeste"
+}
+
+def get_subbrands(text: str) -> set[str]:
+    found = set()
+    text_lower = text.lower()
+    for raw, canonical in SUBBRAND_CANONICAL.items():
+        if re.search(r'\b' + re.escape(raw) + r'\b', text_lower):
+            found.add(canonical)
+    return found
 
 CATEGORY_KEYWORDS = {
     "helado": ["helado", "helados"],
@@ -92,6 +120,8 @@ def are_presentations_compatible(official_name: str, supermarket_name: str) -> b
 def normalize_product_name(name: str) -> str:
     text = name.lower()
     text = re.sub(r'\bconaprole\b', '', text)
+    for raw in SUBBRAND_CANONICAL.keys():
+        text = re.sub(r'\b' + re.escape(raw) + r'\b', '', text)
     text = re.sub(r'\b\d+\s*(ml|cc|g|gr|kg|l|lt|un|unidades)\b', '', text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text
@@ -108,22 +138,20 @@ def is_valid_match_pair(official_name: str, official_category: str, supermarket_
         if priv in sup_lower and priv not in off_lower:
             return False
 
-    for brand in CONAPROLE_BRANDS:
-        in_off = brand in off_lower
-        in_sup = brand in sup_lower
-        if in_off != in_sup:
-            return False
+    off_sub = get_subbrands(off_lower)
+    sup_sub = get_subbrands(sup_lower)
+
+    if off_sub and sup_sub and off_sub != sup_sub:
+        return False
+
+    if sup_sub and not off_sub:
+        return False
 
     for cat_key, synonyms in CATEGORY_KEYWORDS.items():
         in_sup = any(s in sup_lower for s in synonyms)
         in_off = any(s in off_lower or s in cat_lower for s in synonyms)
         if in_sup and not in_off:
             return False
-
-    if "colet" in sup_lower and "colet" not in off_lower:
-        return False
-    if "colet" in off_lower and "colet" not in sup_lower:
-        return False
 
     return True
 
@@ -146,7 +174,7 @@ def load_json(path: Path) -> dict | list | None:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 90.0) -> dict:
+def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 90.0, use_ai_flag: bool = True) -> dict:
     logger.info(f"🔍 Cargando catálogo oficial de Conaprole (Umbral min similitud: {min_match_threshold}%)...")
     conaprole_data = load_json(CONAPROLE_PATH)
     if not conaprole_data:
@@ -210,10 +238,17 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
     else:
         evaluated_pairs = [(sp_name, off_prod, best_sp_prod, score, None) for sp_name, off_prod, best_sp_prod, score in candidate_pairs]
 
+    ai_active = use_ai_flag and is_openai_available()
+    if ai_active:
+        logger.info("🤖 OpenAI Vision activado para auditar discrepancias de packagings y etiquetas.")
+    else:
+        logger.info("ℹ️ OpenAI Vision omitido (sin API Key o bandera en False). Funcionando en modo motor local.")
+
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_official_products": len(official_products),
         "supermarkets_analyzed": list(supermarket_catalogs.keys()),
+        "ai_enabled": ai_active,
         "discrepancies": [],
         "matches_summary": summary
     }
@@ -237,7 +272,8 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
         if discrepancy_type:
             summary[sp_name]["discrepancies"] += 1
-            report["discrepancies"].append({
+            
+            discrepancy_item = {
                 "supermarket": sp_name,
                 "conaprole_product": {
                     "id": off_prod["id"],
@@ -260,7 +296,14 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                 "image_comparison": img_cmp,
                 "discrepancy_type": discrepancy_type,
                 "alert_level": alert_level
-            })
+            }
+
+            if ai_active:
+                logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
+                ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
+                discrepancy_item["ai_verification"] = ai_result
+
+            report["discrepancies"].append(discrepancy_item)
         else:
             summary[sp_name]["matches"] += 1
 
@@ -274,4 +317,5 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
     return report
 
 if __name__ == "__main__":
-    run_matching(compare_images_flag=True, min_match_threshold=90.0)
+    run_matching(compare_images_flag=True, min_match_threshold=90.0, use_ai_flag=True)
+
