@@ -151,7 +151,7 @@ def compare_images(
             "phash_distance": distance,
             "official_url": official_url,
             "supermarket_url": supermarket_url,
-            "details": f"🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: {distance})"
+            "details": f"Imagen diferente (fondo blanco de catalogo, pHash dist: {distance})"
         }
     else:
         return {
@@ -159,5 +159,6 @@ def compare_images(
             "phash_distance": distance,
             "official_url": official_url,
             "supermarket_url": supermarket_url,
-            "details": f"🔴 Imagen apócrifa (foto tomada por CM / fondo no estéril, pHash dist: {distance})"
+            "details": f"Imagen apocrifa (foto tomada por CM / fondo no esteril, pHash dist: {distance})"
         }
+

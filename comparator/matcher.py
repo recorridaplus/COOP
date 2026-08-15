@@ -317,38 +317,27 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
     else:
         logger.info("ℹ️ OpenAI Vision omitido (sin API Key o bandera en False). Funcionando en modo motor local.")
 
-    report = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "total_official_products": len(official_products),
-        "supermarkets_analyzed": list(supermarket_catalogs.keys()),
-        "ai_enabled": ai_active,
-        "discrepancies": [],
-        "matches_summary": summary
-    }
-
-    for sp_name, off_prod, best_sp_prod, score, img_cmp in evaluated_pairs:
+    def _eval_pair_full(item):
+        sp_name, off_prod, best_sp_prod, score, img_cmp = item
         off_name = off_prod["name"]
         sp_name_pub = best_sp_prod["name"]
 
+        ai_result = None
         discrepancy_type = None
         alert_level = None
-        ai_result = None
 
         if ai_active:
             logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
             ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
             
             if ai_result.get("status") == "SUCCESS":
-                # Si la IA determina que NO es el mismo producto, descartar falsa coincidencia
                 if ai_result.get("is_same_product") is False:
                     logger.info(f"   ❌ IA rechazó el match: {ai_result.get('explanation')}")
-                    continue
+                    return ("REJECTED", sp_name, None)
 
-                # Si es el mismo producto
                 verdict = ai_result.get("ai_verdict")
                 if verdict == "MATCH" and ai_result.get("is_same_presentation"):
-                    summary[sp_name]["matches"] += 1
-                    continue
+                    return ("MATCH", sp_name, None)
                 elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE"]:
                     discrepancy_type = "DIFFERENT_IMAGE"
                     alert_level = "YELLOW"
@@ -367,47 +356,62 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                 discrepancy_type = "DIFFERENT_IMAGE"
                 alert_level = "YELLOW"
             elif img_cmp and img_cmp["status"] == "MATCH":
-                # Misma imagen/envase verificado por pHash -> Es coincidencia perfecta
-                summary[sp_name]["matches"] += 1
-                continue
+                return ("MATCH", sp_name, None)
             elif not img_cmp and score < 95.0:
                 discrepancy_type = "NAME_DISCREPANCY"
                 alert_level = "BLUE"
             else:
-                summary[sp_name]["matches"] += 1
-                continue
+                return ("MATCH", sp_name, None)
 
-        if discrepancy_type:
+        discrepancy_item = {
+            "supermarket": sp_name,
+            "conaprole_product": {
+                "id": off_prod["id"],
+                "name": off_name,
+                "category": off_prod.get("category", ""),
+                "image_url": off_prod["images"][0] if off_prod.get("images") else "",
+                "url": off_prod["url"]
+            },
+            "supermarket_product": {
+                "name": sp_name_pub,
+                "image_url": best_sp_prod.get("image_url", ""),
+                "url": best_sp_prod.get("product_url", "")
+            },
+            "name_comparison": {
+                "official_name": off_name,
+                "supermarket_name": sp_name_pub,
+                "similarity_score": score
+            },
+            "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
+            "image_comparison": img_cmp,
+            "discrepancy_type": discrepancy_type,
+            "alert_level": alert_level
+        }
+        if ai_result:
+            discrepancy_item["ai_verification"] = ai_result
+
+        return ("DISCREPANCY", sp_name, discrepancy_item)
+
+    if evaluated_pairs:
+        with ThreadPoolExecutor(max_workers=8 if ai_active else 12) as executor:
+            processed_results = list(executor.map(_eval_pair_full, evaluated_pairs))
+    else:
+        processed_results = []
+
+    report = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "total_official_products": len(official_products),
+        "supermarkets_analyzed": list(supermarket_catalogs.keys()),
+        "ai_enabled": ai_active,
+        "discrepancies": [],
+        "matches_summary": summary
+    }
+
+    for status, sp_name, discrepancy_item in processed_results:
+        if status == "MATCH":
+            summary[sp_name]["matches"] += 1
+        elif status == "DISCREPANCY" and discrepancy_item:
             summary[sp_name]["discrepancies"] += 1
-            
-            discrepancy_item = {
-                "supermarket": sp_name,
-                "conaprole_product": {
-                    "id": off_prod["id"],
-                    "name": off_name,
-                    "category": off_prod.get("category", ""),
-                    "image_url": off_prod["images"][0] if off_prod.get("images") else "",
-                    "url": off_prod["url"]
-                },
-                "supermarket_product": {
-                    "name": sp_name_pub,
-                    "image_url": best_sp_prod.get("image_url", ""),
-                    "url": best_sp_prod.get("product_url", "")
-                },
-                "name_comparison": {
-                    "official_name": off_name,
-                    "supermarket_name": sp_name_pub,
-                    "similarity_score": score
-                },
-                "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
-                "image_comparison": img_cmp,
-                "discrepancy_type": discrepancy_type,
-                "alert_level": alert_level
-            }
-
-            if ai_result:
-                discrepancy_item["ai_verification"] = ai_result
-
             report["discrepancies"].append(discrepancy_item)
 
     report["matches_summary"] = summary
@@ -421,5 +425,6 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
 if __name__ == "__main__":
     run_matching(compare_images_flag=True, min_match_threshold=90.0, use_ai_flag=True)
+
 
 
