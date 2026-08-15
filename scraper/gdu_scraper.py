@@ -2,7 +2,7 @@
 gdu_scraper.py — Scraper para supermercados de Grupo Disco Uruguay (Disco, Devoto, Géant).
 
 Utiliza Playwright para interactuar con la aplicación Blazor (.NET) Ecom.Gdu.Web,
-escribir en la barra de búsqueda y extraer exclusivamente los productos de Conaprole.
+escribir en la barra de búsqueda y extraer productos de Conaprole y sus submarcas.
 """
 
 import json
@@ -36,7 +36,11 @@ CONFIGS = {
     }
 }
 
-DEFAULT_QUERIES = ["conaprole", "colet", "viva", "deleite", "polar food", "blancanube", "conamigos"]
+DEFAULT_QUERIES = [
+    "conaprole", "colet", "viva", "deleite", "polar food", "blancanube", 
+    "conamigos", "biotop", "alpazul", "magretto", "sinfonia", "maxima", 
+    "triffle", "alpa", "lactolate", "conacrem", "conahorro", "baccanal"
+]
 
 class GduScraper(BaseSupermarketScraper):
     def __init__(self, key: str):
@@ -51,7 +55,7 @@ class GduScraper(BaseSupermarketScraper):
         elif isinstance(queries, str):
             queries = [queries]
 
-        logger.info(f"🔎 [{self.supermarket_name}] Abriendo sitio: {self.base_url} (Queries: {queries})")
+        logger.info(f"🔎 [{self.supermarket_name}] Abriendo sitio: {self.base_url} (Submarcas: {len(queries)})")
         results: list[SupermarketProduct] = []
         seen_urls: set[str] = set()
         now_str = datetime.now(timezone.utc).isoformat()
@@ -67,18 +71,25 @@ class GduScraper(BaseSupermarketScraper):
                 for q in queries:
                     target_url = f"{self.base_url}buscar?text={q}"
                     logger.info(f"  [{self.supermarket_name}] NAVEGANDO A: {target_url}")
-                    await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
-                    await asyncio.sleep(4)
+                    try:
+                        await page.goto(target_url, wait_until="domcontentloaded", timeout=25000)
+                        await asyncio.sleep(3)
+                    except Exception:
+                        pass
 
-                    # Scroll gradual
-                    for _ in range(3):
-                        await page.evaluate("window.scrollBy(0, 800)")
-                        await asyncio.sleep(1)
+                    # Scroll gradual para cargar la grilla completa
+                    for _ in range(5):
+                        await page.evaluate("window.scrollBy(0, 900)")
+                        await asyncio.sleep(0.8)
 
                     raw_prods = await page.evaluate('''() => {
                         const results = [];
                         const cards = document.querySelectorAll(".product-item, .card, [class*='product-card'], [class*='product_'], .rz-g-col, article");
-                        const keywords = ["conaprole", "colet", "viva", "deleite", "polar", "blancanube", "sinfonia", "sinfonía", "conamigos", "baccanal", "conahorro", "lactoplus", "maxima", "máxima", "triffle", "orgullo celeste"];
+                        const keywords = [
+                            "conaprole", "colet", "viva", "deleite", "polar", "blancanube", "sinfonia", 
+                            "sinfonía", "conamigos", "baccanal", "conahorro", "lacto", "maxima", "máxima", 
+                            "triffle", "biotop", "alpazul", "magretto", "alpa"
+                        ];
 
                         cards.forEach(card => {
                             const nameEl = card.querySelector("h1, h2, h3, h4, .product-title, .title, .name, span.name");

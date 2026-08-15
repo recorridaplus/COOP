@@ -336,32 +336,32 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     return ("REJECTED", sp_name, None)
 
                 verdict = ai_result.get("ai_verdict")
-                if verdict == "MATCH" and ai_result.get("is_same_presentation"):
-                    return ("MATCH", sp_name, None)
-                elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE"]:
-                    discrepancy_type = "DIFFERENT_IMAGE"
-                    alert_level = "YELLOW"
+                if verdict == "MATCH" and ai_result.get("is_same_presentation", True):
+                    pass
                 elif verdict == "APOCRYPHAL_IMAGE":
                     discrepancy_type = "APOCRYPHAL_IMAGE"
                     alert_level = "RED"
-                elif verdict == "DIFFERENT_PRESENTATION":
-                    discrepancy_type = "NAME_DISCREPANCY"
-                    alert_level = "BLUE"
+                elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE", "DIFFERENT_PRESENTATION"]:
+                    discrepancy_type = "DIFFERENT_IMAGE"
+                    alert_level = "YELLOW"
 
-        if not discrepancy_type:
-            if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
+        if not discrepancy_type and img_cmp:
+            if img_cmp.get("status") == "APOCRYPHAL_IMAGE":
                 discrepancy_type = "APOCRYPHAL_IMAGE"
                 alert_level = "RED"
-            elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
+            elif img_cmp.get("status") == "DIFFERENT_IMAGE":
                 discrepancy_type = "DIFFERENT_IMAGE"
                 alert_level = "YELLOW"
-            elif img_cmp and img_cmp["status"] == "MATCH":
-                return ("MATCH", sp_name, None)
-            elif not img_cmp and score < 95.0:
-                discrepancy_type = "NAME_DISCREPANCY"
-                alert_level = "BLUE"
-            else:
-                return ("MATCH", sp_name, None)
+
+        if discrepancy_type in ["DIFFERENT_IMAGE", "APOCRYPHAL_IMAGE"]:
+            pass
+        elif img_cmp and img_cmp.get("status") == "MATCH":
+            return ("MATCH", sp_name, None)
+        elif score >= 90.0:
+            return ("MATCH", sp_name, None)
+        else:
+            discrepancy_type = "NAME_DISCREPANCY"
+            alert_level = "BLUE"
 
         discrepancy_item = {
             "supermarket": sp_name,

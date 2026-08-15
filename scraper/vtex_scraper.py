@@ -1,5 +1,6 @@
 """
-vtex_scraper.py — Scraper para supermercados basados en VTEX y Tienda Inglesa.
+vtex_scraper.py — Scraper para supermercados basados en VTEX y Tienda Inglesa
+con paginación completa y soporte para todas las submarcas oficiales de Conaprole.
 """
 
 import asyncio
@@ -30,7 +31,11 @@ class SupermarketProduct(TypedDict):
     supermarket: str
     scraped_at: str
 
-DEFAULT_QUERIES = ["conaprole", "colet", "viva", "deleite", "polar food", "blancanube", "conamigos"]
+DEFAULT_QUERIES = [
+    "conaprole", "colet", "viva", "deleite", "polar food", "blancanube", 
+    "conamigos", "biotop", "alpazul", "magretto", "sinfonia", "maxima", 
+    "triffle", "alpa", "lactolate", "conacrem", "conahorro", "baccanal"
+]
 
 def fetch_vtex_api_products(store_account: str, store_name: str, queries: list[str] | str = None) -> list[SupermarketProduct]:
     if queries is None:
@@ -43,39 +48,52 @@ def fetch_vtex_api_products(store_account: str, store_name: str, queries: list[s
     now_str = datetime.now(timezone.utc).isoformat()
 
     for q in queries:
-        url = f"https://{store_account}.vtexcommercestable.com.br/api/catalog_system/pub/products/search?ft={q}&_from=0&_to=49"
-        logger.info(f"🔎 [{store_name}] Consultando API VTEX (query '{q}'): {url}")
+        page_size = 50
+        page_idx = 0
+        while page_idx < 5:  # Paginación hasta 250 productos por término
+            from_idx = page_idx * page_size
+            to_idx = from_idx + page_size - 1
+            url = f"https://{store_account}.vtexcommercestable.com.br/api/catalog_system/pub/products/search?ft={q}&_from={from_idx}&_to={to_idx}"
+            logger.info(f"🔎 [{store_name}] Consultando API VTEX (query '{q}' pág {page_idx+1}): {url}")
 
-        try:
-            resp = httpx.get(url, headers=HEADERS, timeout=15)
-            resp.raise_for_status()
-            data = resp.json()
+            try:
+                resp = httpx.get(url, headers=HEADERS, timeout=15)
+                if resp.status_code in [404, 204]:
+                    break
+                data = resp.json()
+                if not data or not isinstance(data, list):
+                    break
 
-            for prod in data:
-                name = prod.get("productName", "")
-                description = prod.get("description", "") or prod.get("MetaTagDescription", "")
-                link = prod.get("link", "")
+                for prod in data:
+                    name = prod.get("productName", "")
+                    description = prod.get("description", "") or prod.get("MetaTagDescription", "")
+                    link = prod.get("link", "")
 
-                if not link or link in seen_urls:
-                    continue
+                    if not link or link in seen_urls:
+                        continue
 
-                image_url = ""
-                items = prod.get("items", [])
-                if items and items[0].get("images"):
-                    image_url = items[0]["images"][0].get("imageUrl", "")
+                    image_url = ""
+                    items = prod.get("items", [])
+                    if items and items[0].get("images"):
+                        image_url = items[0]["images"][0].get("imageUrl", "")
 
-                seen_urls.add(link)
-                results.append({
-                    "name": name,
-                    "image_url": image_url,
-                    "description": description,
-                    "product_url": link,
-                    "supermarket": store_name,
-                    "scraped_at": now_str
-                })
+                    seen_urls.add(link)
+                    results.append({
+                        "name": name,
+                        "image_url": image_url,
+                        "description": description,
+                        "product_url": link,
+                        "supermarket": store_name,
+                        "scraped_at": now_str
+                    })
 
-        except Exception as e:
-            logger.error(f"❌ [{store_name}] Error en query '{q}': {e}")
+                if len(data) < page_size:
+                    break
+                page_idx += 1
+
+            except Exception as e:
+                logger.error(f"❌ [{store_name}] Error en query '{q}' pág {page_idx+1}: {e}")
+                break
 
     logger.info(f"✅ [{store_name}] Extraídos {len(results)} productos únicos.")
     return results
@@ -87,7 +105,7 @@ async def scrape_tienda_inglesa(queries: list[str] | str = None) -> list[Superma
         queries = [queries]
 
     store_name = "Tienda Inglesa"
-    logger.info(f"🔎 [{store_name}] Scrapeando interactivamente para queries: {queries}")
+    logger.info(f"🔎 [{store_name}] Scrapeando interactivamente para {len(queries)} submarcas...")
     results: list[SupermarketProduct] = []
     seen_urls: set[str] = set()
     now_str = datetime.now(timezone.utc).isoformat()
@@ -100,12 +118,16 @@ async def scrape_tienda_inglesa(queries: list[str] | str = None) -> list[Superma
             for q in queries:
                 url = f"https://www.tiendainglesa.com.uy/busqueda?0,{q}"
                 logger.info(f"  Scrapeando query '{q}' en {url}...")
-                await page.goto(url, wait_until="domcontentloaded", timeout=35000)
-                await asyncio.sleep(3)
+                try:
+                    await page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                    await asyncio.sleep(2)
+                except Exception as e:
+                    logger.warning(f"  ⚠️ Timeout cargando {url}, procesando contenido parcial...")
 
-                for _ in range(3):
-                    await page.evaluate("window.scrollBy(0, 1000)")
-                    await asyncio.sleep(1)
+                # Scroll más profundo para cargar la góndola completa
+                for _ in range(6):
+                    await page.evaluate("window.scrollBy(0, 1200)")
+                    await asyncio.sleep(0.8)
 
                 raw_prods = await page.evaluate('''() => {
                     const results = [];
@@ -181,17 +203,14 @@ async def scrape_tienda_inglesa(queries: list[str] | str = None) -> list[Superma
 def run_vtex_scrapers(queries: list[str] | str = None):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 1. El Dorado vía API
     eldorado_prods = fetch_vtex_api_products("eldoradouy", "El Dorado", queries)
     with open(DATA_DIR / "eldorado.json", "w", encoding="utf-8") as f:
         json.dump({"supermarket": "El Dorado", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(eldorado_prods), "products": eldorado_prods}, f, ensure_ascii=False, indent=2)
 
-    # 2. TATA vía API
     tata_prods = fetch_vtex_api_products("tatauy", "TATA", queries)
     with open(DATA_DIR / "tata.json", "w", encoding="utf-8") as f:
         json.dump({"supermarket": "TATA", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(tata_prods), "products": tata_prods}, f, ensure_ascii=False, indent=2)
 
-    # 3. Tienda Inglesa vía Playwright interactivo
     tienda_prods = asyncio.run(scrape_tienda_inglesa(queries))
     with open(DATA_DIR / "tiendainglesa.json", "w", encoding="utf-8") as f:
         json.dump({"supermarket": "Tienda Inglesa", "scraped_at": datetime.now(timezone.utc).isoformat(), "total_products": len(tienda_prods), "products": tienda_prods}, f, ensure_ascii=False, indent=2)
