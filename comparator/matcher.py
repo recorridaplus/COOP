@@ -43,21 +43,27 @@ CONAPROLE_BRANDS = [
 ]
 
 SUBBRAND_CANONICAL = {
-    "polar food": "polar",
-    "polar": "polar",
     "colet": "colet",
     "viva": "viva",
     "deleite": "deleite",
+    "polar food": "polar",
+    "polar": "polar",
+    "blancanube": "blancanube",
+    "conamigos": "conamigos",
+    "biotop": "biotop",
+    "alpazul": "alpazul",
+    "magretto": "magretto",
     "sinfonia": "sinfonia",
     "sinfonía": "sinfonia",
-    "conamigos": "conamigos",
-    "blancanube": "blancanube",
-    "baccanal": "baccanal",
-    "conahorro": "conahorro",
-    "lactoplus": "lactoplus",
     "máxima": "maxima",
     "maxima": "maxima",
     "triffle": "triffle",
+    "alpa": "alpa",
+    "lactolate": "lactolate",
+    "lactoplus": "lactoplus",
+    "conacrem": "conacrem",
+    "conahorro": "conahorro",
+    "baccanal": "baccanal",
     "orgullo celeste": "orgullo celeste"
 }
 
@@ -214,10 +220,8 @@ def is_valid_match_pair(official_name: str, official_category: str, supermarket_
     off_sub = get_subbrands(off_lower)
     sup_sub = get_subbrands(sup_lower)
 
-    if off_sub and sup_sub and off_sub != sup_sub:
-        return False
-
-    if sup_sub and not off_sub:
+    # Si alguna de las partes menciona una submarca, la otra DEBE pertenecer a la misma submarca
+    if (off_sub or sup_sub) and off_sub != sup_sub:
         return False
 
     for cat_key, synonyms in CATEGORY_KEYWORDS.items():

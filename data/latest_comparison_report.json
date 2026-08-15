@@ -1,78 +1,144 @@
 {
-  "generated_at": "2026-08-15T02:53:54.739376+00:00",
+  "generated_at": "2026-08-15T03:03:22.548003+00:00",
   "total_official_products": 286,
   "supermarkets_analyzed": [
     "El Dorado",
     "TATA",
     "Tienda Inglesa"
   ],
-  "ai_enabled": false,
+  "ai_enabled": true,
   "discrepancies": [
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "blancanuber-leche-entera",
-        "name": "Blancanube Leche Entera",
+        "id": "producto-leche-leche-polvo-descremada-200g",
+        "name": "LECHE EN POLVO DESCREMADA 200g",
         "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193607_1062195687.png",
-        "url": "https://www.conaprole.uy/producto/blancanuber-leche-entera/"
+        "image_url": "https://cdn.conaprole.uy/gallery/202502/20250213150704_1979952473.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-polvo-descremada-200g/"
       },
       "supermarket_product": {
-        "name": "Leche Conaprole Entera 1Lt",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165473/7730105001109.jpg?v=638536502573230000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-conaprole-entera-1lt/p"
+        "name": "Leche En Polvo Conaprole Descremada 200Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165490/7730105004155.jpg?v=638536503825800000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-en-polvo-conaprole-descremada-200gr/p"
       },
       "name_comparison": {
-        "official_name": "Blancanube Leche Entera",
-        "supermarket_name": "Leche Conaprole Entera 1Lt",
-        "similarity_score": 100.0
+        "official_name": "LECHE EN POLVO DESCREMADA 200g",
+        "supermarket_name": "Leche En Polvo Conaprole Descremada 200Gr .",
+        "similarity_score": 97.69
       },
       "description_comparison": {
-        "similarity_score": 55.81,
+        "similarity_score": 20.41,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 10,
+        "official_url": "https://cdn.conaprole.uy/gallery/202502/20250213150704_1979952473.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165490/7730105004155.jpg?v=638536503825800000",
+        "details": "Imagen coincidente (pHash dist: 10)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "200g",
+        "supermarket_label_info": "200Gr",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son leche en polvo descremada de 200g, pero presentan un diseño gráfico diferente.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-bebida-lactea-frutilla",
+        "name": "Bebida Láctea Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Bebida Lactea Conaprole Frutilla 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-frutilla-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Bebida Láctea Frutilla",
+        "supermarket_name": "Bebida Lactea Conaprole Frutilla 1Lt .",
+        "similarity_score": 91.3
+      },
+      "description_comparison": {
+        "similarity_score": 22.81,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 16,
+        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163624_967247170.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165486/7730105002557.jpg?v=638536503521430000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 16)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son la misma bebida láctea de frutilla con el mismo volumen de 1L, pero presentan un diseño gráfico diferente en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-conaprole-bebida-lactea-durazno",
+        "name": "Bebida Láctea Durazno",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
+        "url": "https://www.conaprole.uy/producto/producto-conaprole-bebida-lactea-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Bebida Lactea Conaprole Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/bebida-lactea-conaprole-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Bebida Láctea Durazno",
+        "supermarket_name": "Bebida Lactea Conaprole Durazno 1Lt .",
+        "similarity_score": 90.91
+      },
+      "description_comparison": {
+        "similarity_score": 20.72,
         "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
         "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193607_1062195687.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165473/7730105001109.jpg?v=638536502573230000",
+        "official_url": "https://cdn.conaprole.uy/gallery/202601/20260108163648_1831607913.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165487/7730105002564.jpg?v=638536503580730000",
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-colet-dulce-de-leche",
-        "name": "Colet Dulce de Leche 250 ml",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193733_303553236.png",
-        "url": "https://www.conaprole.uy/producto/producto-colet-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole 250Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Colet Dulce de Leche 250 ml",
-        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
-        "similarity_score": 96.0
-      },
-      "description_comparison": {
-        "similarity_score": 23.33,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 28,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193733_303553236.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 28)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto es el mismo (Bebida Láctea Durazno) y tiene la misma presentación (1L), pero el diseño del envase es diferente.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -105,7 +171,194 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1 kg",
+        "supermarket_label_info": "200cc",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son el mismo yogur de vainilla de la línea Viva de Conaprole, pero presentan una diferencia en la cantidad: el producto oficial es de 1 kg y el del supermercado es de 200 cc.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "yogur-viva-0-durazno-1kg",
+        "name": "Yogur Viva 0% Durazno 1kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
+        "url": "https://www.conaprole.uy/producto/yogur-viva-0-durazno-1kg/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Durazno 1kg",
+        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "similarity_score": 96.47
+      },
+      "description_comparison": {
+        "similarity_score": 19.92,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 2,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "details": "Imagen coincidente (pHash dist: 2)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "Yogur Viva 0% Durazno 1kg",
+        "supermarket_label_info": "Yogur Conaprole Viva 0% Durazno 1Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son del mismo tipo y sabor, pero hay una diferencia en la presentación, ya que uno es de 1 kg y el otro de 1 litro.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-saborizados-vainilla",
+        "name": "Yogur Viva 0% Vainilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-vainilla/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Vainilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "similarity_score": 96.67
+      },
+      "description_comparison": {
+        "similarity_score": 18.49,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 4,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "details": "Imagen coincidente (pHash dist: 4)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "200cc",
+        "supermarket_label_info": "200cc",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Ambos productos son el mismo yogur de vainilla 0%, pero la presentación en el supermercado es de 200cc, lo que coincide con la información del producto oficial. Sin embargo, se considera que hay una diferencia de presentación debido a la posible variación en el diseño gráfico del envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-saborizados-frutilla",
+        "name": "Yogur Viva 0% Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutilla-200cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Frutilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "similarity_score": 96.67
+      },
+      "description_comparison": {
+        "similarity_score": 18.88,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 2,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "details": "Imagen coincidente (pHash dist: 2)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "200Cc",
+        "supermarket_label_info": "200Cc",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo yogur de frutilla y tienen la misma presentación de 200Cc, pero el diseño gráfico del envase es diferente.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-fondo-de-pote-durazno",
+        "name": "Yogur Viva 0% Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-fondo-de-pote-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-natural-200cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Natural",
+        "supermarket_name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "similarity_score": 96.47
+      },
+      "description_comparison": {
+        "similarity_score": 20.83,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 2,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "details": "Imagen coincidente (pHash dist: 2)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "Yogur Viva 0% Natural",
+        "supermarket_label_info": "Yogur Conaprole Viva 0% Natural 200Cc",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto oficial y el publicado en el supermercado son el mismo yogur, pero el envase del supermercado indica un volumen de 200cc, lo que representa una diferencia de presentación en comparación con el producto oficial.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -138,73 +391,62 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1l",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son el mismo yogur de durazno, pero la presentación en el supermercado indica un volumen diferente (1l vs 1Lt).",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "manjar-dulce-leche",
-        "name": "Manjar Dulce de Leche",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
-        "url": "https://www.conaprole.uy/producto/manjar-dulce-leche/"
+        "id": "queso-rallado-200g",
+        "name": "Queso rallado Sbrinz deshidratado 200g",
+        "category": "Quesos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504154025_583768674.png",
+        "url": "https://www.conaprole.uy/producto/queso-rallado-200g/"
       },
       "supermarket_product": {
-        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
+        "name": "Queso Rallado Conaprole Sbriz Deshidratado 200gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177245/7730105010026.jpg?v=638887873801470000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/queso-rallado-conaprole-sbriz-deshidratado-200gr/p"
       },
       "name_comparison": {
-        "official_name": "Manjar Dulce de Leche",
-        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg .",
-        "similarity_score": 97.27
+        "official_name": "Queso rallado Sbrinz deshidratado 200g",
+        "supermarket_name": "Queso Rallado Conaprole Sbriz Deshidratado 200gr",
+        "similarity_score": 98.46
       },
       "description_comparison": {
-        "similarity_score": 31.37,
+        "similarity_score": 31.63,
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203706_1575651939.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 22)"
+        "status": "MATCH",
+        "phash_distance": 10,
+        "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504154025_583768674.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177245/7730105010026.jpg?v=638887873801470000",
+        "details": "Imagen coincidente (pHash dist: 10)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-deleite-dulce-de-leche",
-        "name": "Deleite Dulce de Leche",
-        "category": "Postres",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195652_1829074898.png",
-        "url": "https://www.conaprole.uy/producto/producto-deleite-dulce-de-leche/"
-      },
-      "supermarket_product": {
-        "name": "Dulce De Leche Conaprole 250Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
-      },
-      "name_comparison": {
-        "official_name": "Deleite Dulce de Leche",
-        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
-        "similarity_score": 96.0
-      },
-      "description_comparison": {
-        "similarity_score": 28.57,
-        "status": "compared"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195652_1829074898.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "200g",
+        "supermarket_label_info": "200gr",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Los productos son el mismo queso rallado Sbrinz deshidratado de 200g, pero presentan un rediseño gráfico en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -237,7 +479,150 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 16)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "3 unidades",
+        "supermarket_label_info": "210gr",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "El producto es el mismo en cuanto a contenido y presentación (3 unidades), pero el diseño gráfico del envase ha cambiado.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "vasito-helado-sinfonia-sabores-super-dulce-leche",
+        "name": "Vasito Helado Sinfonia de Sabores Super dulce de leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
+        "url": "https://www.conaprole.uy/producto/vasito-helado-sinfonia-sabores-super-dulce-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Sinfonia De Sabores Super Dulce De Leche 25",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-sinfonia-de-sabores-super-dulce-de-leche-25/p"
+      },
+      "name_comparison": {
+        "official_name": "Vasito Helado Sinfonia de Sabores Super dulce de leche",
+        "supermarket_name": "Helado Conaprole Sinfonia De Sabores Super Dulce De Leche 25",
+        "similarity_score": 91.38
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 0,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200040_283814014.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166528/7730105917776.jpg?v=638556959554200000",
+        "details": "Imagen coincidente (pHash dist: 0)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "N/A",
+        "supermarket_label_info": "25",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "El producto es el mismo, pero presenta un rediseño gráfico en el envase, manteniendo el mismo volumen.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-impagua-helado-palito-de-agua-frutilla",
+        "name": "Helado Palito Frutilla",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202605/20260504154517_1856306981.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-impagua-helado-palito-de-agua-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Palito Frutilla 60Ml .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166565/77301581.jpg?v=638556962268170000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-palito-frutilla-60ml/p"
+      },
+      "name_comparison": {
+        "official_name": "Helado Palito Frutilla",
+        "supermarket_name": "Helado Conaprole Palito Frutilla 60Ml .",
+        "similarity_score": 97.39
+      },
+      "description_comparison": {
+        "similarity_score": 22.71,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 14,
+        "official_url": "https://cdn.conaprole.uy/gallery/202605/20260504154517_1856306981.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166565/77301581.jpg?v=638556962268170000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 14)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "Peso Neto 58g",
+        "supermarket_label_info": "60ml",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto oficial y el del supermercado son el mismo helado de frutilla, pero hay una diferencia en la presentación, ya que el peso neto del producto oficial es de 58g y el del supermercado se indica como 60ml.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-imp-crema-alfajor-helado-dulce-de-leche",
+        "name": "Alfajor Helado Dulce de Leche",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200112_646088168.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-alfajor-helado-dulce-de-leche/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Alfajor Dulce De Leche .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166508/7730105903403.jpg?v=638556958113630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-alfajor-dulce-de-leche/p"
+      },
+      "name_comparison": {
+        "official_name": "Alfajor Helado Dulce de Leche",
+        "supermarket_name": "Helado Conaprole Alfajor Dulce De Leche .",
+        "similarity_score": 98.0
+      },
+      "description_comparison": {
+        "similarity_score": 21.74,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 22,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200112_646088168.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166508/7730105903403.jpg?v=638556958113630000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 22)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "66g",
+        "supermarket_label_info": "66g",
+        "ai_verdict": "MATCH",
+        "suggested_alert_level": "NONE",
+        "explanation": "Los productos son el mismo, con la misma presentación de 66g y diseño de envase idéntico.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -270,40 +655,106 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 18)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "66g",
+        "supermarket_label_info": "66g",
+        "ai_verdict": "MATCH",
+        "suggested_alert_level": "NONE",
+        "explanation": "Los productos son el mismo, con la misma presentación y diseño de envase idéntico.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-helados-imp-crema-maxima-dulce-de-leche",
-        "name": "Máxima Dulce de Leche",
+        "id": "producto-helados-imp-crema-dulce-de-leche-granizado",
+        "name": "Vasito Helado Dulce de Leche Granizado",
         "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115150120_15934365.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-maxima-dulce-de-leche/"
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-dulce-de-leche-granizado/"
       },
       "supermarket_product": {
-        "name": "Dulce De Leche Conaprole 250Gr .",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
+        "name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-dulce-de-leche-granizado-2lt/p"
       },
       "name_comparison": {
-        "official_name": "Máxima Dulce de Leche",
-        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
-        "similarity_score": 96.0
+        "official_name": "Vasito Helado Dulce de Leche Granizado",
+        "supermarket_name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "similarity_score": 93.91
       },
       "description_comparison": {
-        "similarity_score": 10.82,
+        "similarity_score": 24.31,
         "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 32,
-        "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115150120_15934365.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 32)"
+        "phash_distance": 26,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200131_1743413400.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "No especificado en el texto",
+        "supermarket_label_info": "2Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto oficial y el del supermercado son el mismo sabor, pero el del supermercado tiene una presentación diferente de 2 litros, mientras que el oficial no especifica el volumen.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-helados-2litros-dulce-de-leche-granizado",
+        "name": "Helado Dulce de Leche Granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-dulce-de-leche-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-dulce-de-leche-granizado-2lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Helado Dulce de Leche Granizado",
+        "supermarket_name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 25.26,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 4,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200253_1434419672.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "details": "Imagen coincidente (pHash dist: 4)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1kg",
+        "supermarket_label_info": "2lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son el mismo tipo de helado, pero presentan una diferencia en la cantidad: el producto oficial es de 1kg y el del supermercado es de 2lt.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -336,7 +787,62 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1kg/2L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son el mismo tipo de helado (Helado Crema), pero la presentación en el supermercado es de 1Lt, mientras que el producto oficial es de 1kg/2L, lo que indica una diferencia en el volumen.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "helado-granel-dulce-leche-granizado",
+        "name": "Helado a granel Dulce de leche Granizado",
+        "category": "Helados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
+        "url": "https://www.conaprole.uy/producto/helado-granel-dulce-leche-granizado/"
+      },
+      "supermarket_product": {
+        "name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-dulce-de-leche-granizado-2lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Helado a granel Dulce de leche Granizado",
+        "supermarket_name": "Helado Conaprole Dulce De Leche Granizado 2Lt",
+        "similarity_score": 92.39
+      },
+      "description_comparison": {
+        "similarity_score": 100.0,
+        "status": "official_missing"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 22,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200656_931164738.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1180671/1638205.jpg.jpg?v=639102363465700000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 22)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "N/A",
+        "supermarket_label_info": "2Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto oficial no especifica el volumen, mientras que el producto del supermercado es de 2 litros, lo que indica una diferencia de presentación.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "El Dorado",
@@ -369,7 +875,150 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 20)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto es el mismo (jugo de pera) y tiene la misma presentación (1L), pero el diseño del envase es diferente.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-naranja-light-1l",
+        "name": "Jugo Naranja Light 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
+        "url": "https://www.conaprole.uy/producto/jugo-naranja-light-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Naranja Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-naranja-slim-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Jugo Naranja Light 1L",
+        "supermarket_name": "Jugo Conaprole Light Naranja Slim 1Lt .",
+        "similarity_score": 90.23
+      },
+      "description_comparison": {
+        "similarity_score": 27.47,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 30,
+        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170932_1842576378.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165633/7730105025235.jpg?v=638537129670730000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo jugo de naranja light de 1L, pero presentan un rediseño gráfico en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-manzana-light-1l",
+        "name": "Jugo Manzana Light 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
+        "url": "https://www.conaprole.uy/producto/jugo-manzana-light-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Manzana Slim 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-slim-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Jugo Manzana Light 1L",
+        "supermarket_name": "Jugo Conaprole Light Manzana Slim 1Lt .",
+        "similarity_score": 90.23
+      },
+      "description_comparison": {
+        "similarity_score": 24.74,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 30,
+        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219170943_482811326.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165632/7730105025228.jpg?v=638537129600630000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Ambos productos son el mismo jugo de manzana light en presentación de 1L, pero presentan un rediseño gráfico en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-jugos-manzanabebebe",
+        "name": "Jugo Manzana Light",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
+        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Light Manzana 250Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-light-manzana-250cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Jugo Manzana Light",
+        "supermarket_name": "Jugo Conaprole Light Manzana 250Cc .",
+        "similarity_score": 96.84
+      },
+      "description_comparison": {
+        "similarity_score": 23.04,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 4,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165533/7730105015601.jpg?v=638536506842900000",
+        "details": "Imagen coincidente (pHash dist: 4)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "250Cc",
+        "supermarket_label_info": "200cc",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto oficial tiene un volumen de 250cc, mientras que el producto en el supermercado es de 200cc, lo que indica una diferencia de presentación.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     },
     {
       "supermarket": "Tienda Inglesa",
@@ -402,13 +1051,24 @@
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1 L",
+        "supermarket_label_info": "1 L",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto es el mismo (Leche Fresca Entera) y tiene la misma presentación (1 L), pero el diseño del envase es diferente.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
     }
   ],
   "matches_summary": {
     "El Dorado": {
-      "matches": 12,
-      "discrepancies": 11
+      "matches": 14,
+      "discrepancies": 23
     },
     "TATA": {
       "matches": 1,
