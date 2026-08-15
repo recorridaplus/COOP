@@ -393,9 +393,10 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
         return ("DISCREPANCY", sp_name, discrepancy_item)
 
     if evaluated_pairs:
-        with ThreadPoolExecutor(max_workers=8 if ai_active else 12) as executor:
+        with ThreadPoolExecutor(max_workers=3 if ai_active else 12) as executor:
             processed_results = list(executor.map(_eval_pair_full, evaluated_pairs))
     else:
+
         processed_results = []
 
     report = {

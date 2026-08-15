@@ -150,38 +150,44 @@ def verify_product_match_with_ai(
 
 
 
-    try:
-        response = client.chat.completions.create(
-            model=model_name,
-            response_format={"type": "json_object"},
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "Eres un experto auditor de catálogo de productos lácteos y supermercados para Conaprole Uruguay. "
-                        "Tu objetivo es inspeccionar el packaging, etiquetas (gramos, ml, porcentaje grasa, sabor) y determinar "
-                        "si el producto publicado en el supermercado coincide exactamente con el producto oficial."
-                    )
-                },
-                {
-                    "role": "user",
-                    "content": user_content
-                }
-            ],
-            temperature=0.1,
-            max_tokens=400
-        )
+    import time
+    for attempt in range(4):
+        try:
+            response = client.chat.completions.create(
+                model=model_name,
+                response_format={"type": "json_object"},
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "Eres un experto auditor de catálogo de productos lácteos y supermercados para Conaprole Uruguay. "
+                            "Tu objetivo es inspeccionar el packaging, etiquetas (gramos, ml, porcentaje grasa, sabor) y determinar "
+                            "si el producto publicado en el supermercado coincide exactamente con el producto oficial."
+                        )
+                    },
+                    {
+                        "role": "user",
+                        "content": user_content
+                    }
+                ],
+                temperature=0.1,
+                max_tokens=400
+            )
 
-        result_text = response.choices[0].message.content
-        ai_data = json.loads(result_text)
-        ai_data["status"] = "SUCCESS"
-        ai_data["model_used"] = model_name
+            result_text = response.choices[0].message.content
+            ai_data = json.loads(result_text)
+            ai_data["status"] = "SUCCESS"
+            ai_data["model_used"] = model_name
+            return ai_data
 
-        return ai_data
+        except Exception as e:
+            err_str = str(e)
+            if ("429" in err_str or "rate_limit" in err_str.lower()) and attempt < 3:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            logger.warning(f"Error consultando API de OpenAI Vision: {e}")
+            return {
+                "status": "ERROR",
+                "error": err_str
+            }
 
-    except Exception as e:
-        logger.warning(f"Error consultando API de OpenAI Vision: {e}")
-        return {
-            "status": "ERROR",
-            "error": str(e)
-        }
