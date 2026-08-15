@@ -228,7 +228,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             spinnerLabel.innerText = statusData.current_step || "Scrapeando supermercados...";
                         } else {
                             clearInterval(pollInterval);
-                            await loadReportData();
+                            if (statusData.current_step && statusData.current_step.startsWith("Error")) {
+                                alert("⚠️ Ocurrió un inconveniente al ejecutar el recorrido completo:\n\n" + statusData.current_step + "\n\nSi estás usando la versión en Vercel, recuerda que el scraping de supermercados con navegador debe ejecutarse localmente en tu PC.");
+                            } else {
+                                await loadReportData();
+                            }
                             setProcessingState(false);
                         }
                     } catch (err) {
@@ -240,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 setProcessingState(false);
             }
         } catch (e) {
-            alert("Error iniciando el recorrido completo.");
+            alert("Error iniciando el recorrido completo. Verifica la conexión con el servidor backend.");
             setProcessingState(false);
         }
     });

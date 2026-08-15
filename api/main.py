@@ -95,6 +95,8 @@ def _execute_full_rescrape_task():
 
         scraping_status["current_step"] = "Finalizado"
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         scraping_status["current_step"] = f"Error: {e}"
     finally:
         scraping_status["is_running"] = False
