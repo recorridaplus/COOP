@@ -113,16 +113,15 @@ def verify_product_match_with_ai(
                 f"--- PRODUCTO EN SUPERMERCADO ---\n"
                 f"Nombre publicado: {sup_name}\n"
                 f"Descripción: {sup_desc[:200] if sup_desc else 'N/A'}\n\n"
-                "Por favor analiza las imágenes de los packagings (si están disponibles) y el texto. "
-                "Responde EXCLUSIVAMENTE en formato JSON con la siguiente estructura exacta:\n"
+                "Analiza las imágenes de packaging y el texto. Responde EXCLUSIVAMENTE en formato JSON con la siguiente estructura:\n"
                 "{\n"
                 '  "is_same_product": true|false,\n'
                 '  "is_same_presentation": true|false,\n'
                 '  "official_label_info": "información o gramos/ml leídos en envase oficial",\n'
                 '  "supermarket_label_info": "información o gramos/ml leídos en envase supermercado",\n'
-                '  "ai_verdict": "MATCH" | "DIFFERENT_PRESENTATION" | "DIFFERENT_FLAVOR" | "PACKAGING_REDESIGN" | "APOCRYPHAL_IMAGE",\n'
-                '  "suggested_alert_level": "NONE" | "BLUE" | "YELLOW" | "RED",\n'
-                '  "explanation": "breve justificación de tu dictamen en español"\n'
+                '  "ai_verdict": "MATCH" | "PACKAGING_REDESIGN" | "DIFFERENT_PRESENTATION" | "DIFFERENT_FLAVOR" | "APOCRYPHAL_IMAGE",\n'
+                '  "suggested_alert_level": "NONE" | "YELLOW" | "BLUE" | "RED",\n'
+                '  "explanation": "justificación en español indicando si es coincidencia, rediseño gráfico de envase o diferencia de tamaño"\n'
                 "}"
             )
         }
@@ -148,8 +147,6 @@ def verify_product_match_with_ai(
                     "image_url": {"url": b64_sup, "detail": "low"}
                 })
 
-
-
     import time
     for attempt in range(4):
         try:
@@ -160,9 +157,13 @@ def verify_product_match_with_ai(
                     {
                         "role": "system",
                         "content": (
-                            "Eres un experto auditor de catálogo de productos lácteos y supermercados para Conaprole Uruguay. "
-                            "Tu objetivo es inspeccionar el packaging, etiquetas (gramos, ml, porcentaje grasa, sabor) y determinar "
-                            "si el producto publicado en el supermercado coincide exactamente con el producto oficial."
+                            "Eres un experto auditor de catálogo de productos lácteos y supermercados para Conaprole Uruguay.\n"
+                            "Reglas de clasificación estricta para 'ai_verdict':\n"
+                            "1. 'MATCH': Mismo producto, misma presentación (volumen/peso) y diseño de envase idéntico o muy similar.\n"
+                            "2. 'PACKAGING_REDESIGN': Mismo producto y MISMO volumen/peso (ej. 1L vs 1L, 500g vs 500g), pero con diferente diseño gráfico, colores, tipografía o versión de envase (antigua vs nueva).\n"
+                            "3. 'DIFFERENT_PRESENTATION': Mismo producto pero DIFERENTE cantidad o volumen (ej. 500g vs 1kg, 250ml vs 1L).\n"
+                            "4. 'DIFFERENT_FLAVOR': Sabores o líneas distintas (ej. Frutilla vs Durazno, Con Sal vs Sin Sal, Normal vs Deslactosada).\n"
+                            "5. 'APOCRYPHAL_IMAGE': Foto casera tomada en tienda por el CM en lugar de foto de catálogo de estudio."
                         )
                     },
                     {
@@ -173,6 +174,7 @@ def verify_product_match_with_ai(
                 temperature=0.1,
                 max_tokens=400
             )
+
 
             result_text = response.choices[0].message.content
             ai_data = json.loads(result_text)

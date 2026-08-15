@@ -186,11 +186,34 @@ def scrape_conaprole() -> list[dict]:
                 if r:
                     all_products.append(r)
 
-    return all_products
+    deduped = deduplicate_catalog_products(all_products)
+    logger.info(f"  Total productos limpios tras deduplicación de slugs genéricos: {len(deduped)} (de {len(all_products)})")
+    return deduped
+
+def deduplicate_catalog_products(products: list[dict]) -> list[dict]:
+    """
+    Si existen productos con el mismo nombre y categoría pero diferente slug/id,
+    prioriza los slugs de presentación específica (ej. 'dulce-leche-clasico-970g')
+    sobre los slugs genéricos heredados (ej. 'producto-conaprole-dulce-de-leche-clasico-970g').
+    """
+    by_key = {}
+    for p in products:
+        key = (p["name"].strip().lower(), p["category"].strip().lower())
+        if key not in by_key:
+            by_key[key] = p
+        else:
+            existing = by_key[key]
+            # Si el nuevo no empieza con 'producto-conaprole' y el viejo sí, preferir el nuevo
+            if existing["id"].startswith("producto-conaprole") and not p["id"].startswith("producto-conaprole"):
+                by_key[key] = p
+            elif not existing.get("images") and p.get("images"):
+                by_key[key] = p
+    return list(by_key.values())
 
 def main():
     logger.info("🐄 Iniciando scraper oficial Conaprole en paralelo con extracción de Gramaje...")
     products = scrape_conaprole()
+
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     catalog = {

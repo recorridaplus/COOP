@@ -1,176 +1,129 @@
 {
-  "generated_at": "2026-08-15T02:25:07.856697+00:00",
-  "total_official_products": 296,
+  "generated_at": "2026-08-15T02:46:23.760539+00:00",
+  "total_official_products": 286,
   "supermarkets_analyzed": [
-    "Devoto",
-    "Disco",
     "El Dorado",
-    "Géant",
     "TATA",
     "Tienda Inglesa"
   ],
   "ai_enabled": true,
   "discrepancies": [
     {
-      "supermarket": "Devoto",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-leche-leche-fresca-descremada-pasteurizada",
-        "name": "Leche Fresca Descremada",
+        "id": "producto-colet-dulce-de-leche",
+        "name": "Colet Dulce de Leche 250 ml",
         "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-fresca-descremada-pasteurizada/"
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193733_303553236.png",
+        "url": "https://www.conaprole.uy/producto/producto-colet-dulce-de-leche/"
       },
       "supermarket_product": {
-        "name": "Leche fresca CONAPROLE descremada 1 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "url": "https://www.devoto.com.uy/product/leche-fresca-conaprole-descremada-1-l/240510"
+        "name": "Dulce De Leche Conaprole 250Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
       },
       "name_comparison": {
-        "official_name": "Leche Fresca Descremada",
-        "supermarket_name": "Leche fresca CONAPROLE descremada 1 L",
-        "similarity_score": 100.0
+        "official_name": "Colet Dulce de Leche 250 ml",
+        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
+        "similarity_score": 96.0
       },
       "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
+        "similarity_score": 23.33,
+        "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
+        "phash_distance": 28,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193733_303553236.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 28)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE",
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "1 L",
-        "supermarket_label_info": "1 L",
+        "official_label_info": "250 ml",
+        "supermarket_label_info": "250 gr",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "Ambos productos son leche fresca descremada de Conaprole, pero presentan un diseño de empaque diferente.",
+        "explanation": "Ambos productos son dulce de leche de la marca Conaprole, pero el producto oficial tiene una presentación de 250 ml, mientras que el del supermercado es de 250 gr, lo que indica una diferencia en la cantidad.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
     },
     {
-      "supermarket": "Devoto",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-fontina",
-        "name": "Queso Fontina",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
+        "id": "yogur-viva-vainilla",
+        "name": "Yogur Viva vainilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202501/20250115151543_505934518.png",
+        "url": "https://www.conaprole.uy/producto/yogur-viva-vainilla/"
       },
       "supermarket_product": {
-        "name": "Queso fontina CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "url": "https://www.devoto.com.uy/product/queso-fontina-conaprole-50-g/270128"
+        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
       },
       "name_comparison": {
-        "official_name": "Queso Fontina",
-        "supermarket_name": "Queso fontina CONAPROLE 50 g",
-        "similarity_score": 100.0
+        "official_name": "Yogur Viva vainilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "similarity_score": 90.91
       },
       "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
+        "similarity_score": 20.97,
+        "status": "compared"
       },
       "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 26,
+        "official_url": "https://cdn.conaprole.uy/gallery/202501/20250115151543_505934518.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE",
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "Queso Fontina, 50 g",
-        "supermarket_label_info": "Queso fontina CONAPROLE 50 g",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "NONE",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo tipo de queso, pero la presentación en el supermercado incluye el nombre de la marca y el peso, lo que indica que son versiones distintas del mismo producto.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Devoto",
-      "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.devoto.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Queso Cuartirolo, 200 g",
-        "supermarket_label_info": "Queso cuartirolo CONAPROLE 50 g",
+        "official_label_info": "Yogur Viva vainilla, 1 kg",
+        "supermarket_label_info": "Yogur Conaprole Viva 0% Vainilla 200Cc",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un queso cuartirolo de 200 g, mientras que el producto en el supermercado es de 50 g, lo que indica una presentación diferente.",
+        "explanation": "El producto oficial es un yogur de 1 kg, mientras que el producto en el supermercado es de 200 cc, lo que indica una diferencia en la presentación del mismo producto.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
     },
     {
-      "supermarket": "Devoto",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
+        "id": "yogur-viva-0-durazno-1kg",
+        "name": "Yogur Viva 0% Durazno 1kg",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
+        "url": "https://www.conaprole.uy/producto/yogur-viva-0-durazno-1kg/"
       },
       "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.devoto.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
+        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
       },
       "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "similarity_score": 100.0
+        "official_name": "Yogur Viva 0% Durazno 1kg",
+        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "similarity_score": 96.47
       },
       "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
+        "similarity_score": 19.92,
+        "status": "compared"
       },
       "image_comparison": {
         "status": "MATCH",
         "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194854_1255205191.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
         "details": "Imagen coincidente (pHash dist: 2)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
@@ -178,187 +131,11 @@
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "9",
-        "supermarket_label_info": "60 cc",
+        "official_label_info": "1kg",
+        "supermarket_label_info": "1Lt",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial tiene una presentación de 9, mientras que el producto en el supermercado indica 60 cc, lo que sugiere una diferencia en la cantidad ofrecida.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-leche-leche-fresca-descremada-pasteurizada",
-        "name": "Leche Fresca Descremada",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-fresca-descremada-pasteurizada/"
-      },
-      "supermarket_product": {
-        "name": "Leche fresca CONAPROLE descremada 1 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "url": "https://www.disco.com.uy/product/leche-fresca-conaprole-descremada-1-l/240510"
-      },
-      "name_comparison": {
-        "official_name": "Leche Fresca Descremada",
-        "supermarket_name": "Leche fresca CONAPROLE descremada 1 L",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "1 L",
-        "supermarket_label_info": "1 L",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "Ambos productos son leche fresca descremada de Conaprole, pero presentan diferencias en el diseño del packaging.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-fontina",
-        "name": "Queso Fontina",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-fontina/"
-      },
-      "supermarket_product": {
-        "name": "Queso fontina CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "url": "https://www.disco.com.uy/product/queso-fontina-conaprole-50-g/270128"
-      },
-      "name_comparison": {
-        "official_name": "Queso Fontina",
-        "supermarket_name": "Queso fontina CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202823_904190462.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/80731ad1-6503-4552-8fca-46089ac82b2d/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Queso Fontina, 50 g",
-        "supermarket_label_info": "Queso fontina CONAPROLE 50 g",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "NONE",
-        "explanation": "Ambos productos son Queso Fontina de Conaprole, pero la presentación en el supermercado se indica como 50 g, lo cual coincide con el producto oficial. Sin embargo, la falta de información adicional en la descripción del supermercado limita la comparación completa.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.disco.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Queso Cuartirolo, 200 g",
-        "supermarket_label_info": "Queso cuartirolo CONAPROLE 50 g",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un Queso Cuartirolo de 200 g, mientras que el producto en el supermercado es de 50 g, lo que indica una presentación diferente.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Disco",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
-        "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
-      },
-      "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.disco.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
-      },
-      "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "details": "Imagen coincidente (pHash dist: 2)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "9",
-        "supermarket_label_info": "60 cc",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial tiene una presentación de 9, mientras que el producto en el supermercado indica 60 cc, lo que sugiere una diferencia en la cantidad ofrecida.",
+        "explanation": "Los productos son del mismo tipo y sabor, pero hay una diferencia en la presentación, ya que uno es de 1kg y el otro de 1Lt.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -373,36 +150,212 @@
         "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-vainilla/"
       },
       "supermarket_product": {
-        "name": "Yogur Conaprole 0% Vainilla 1.2Lt",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165648/7730105026591.jpg?v=638537130796700000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-0-vainilla-1-2lt/p"
+        "name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-vainilla-200cc/p"
       },
       "name_comparison": {
         "official_name": "Yogur Viva 0% Vainilla",
-        "supermarket_name": "Yogur Conaprole 0% Vainilla 1.2Lt",
-        "similarity_score": 95.14
+        "supermarket_name": "Yogur Conaprole Viva 0% Vainilla 200Cc .",
+        "similarity_score": 96.67
       },
       "description_comparison": {
-        "similarity_score": 16.84,
+        "similarity_score": 18.49,
         "status": "compared"
       },
       "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
+        "status": "MATCH",
+        "phash_distance": 4,
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194904_1749604794.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165648/7730105026591.jpg?v=638537130796700000",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165621/7730105022326.jpg?v=638537128870330000",
+        "details": "Imagen coincidente (pHash dist: 4)"
       },
       "discrepancy_type": "NAME_DISCREPANCY",
       "alert_level": "BLUE",
       "ai_verification": {
         "is_same_product": true,
         "is_same_presentation": false,
-        "official_label_info": "Yogur Viva 0% Vainilla",
-        "supermarket_label_info": "Yogur Conaprole 0% Vainilla 1.2Lt",
+        "official_label_info": "200Cc",
+        "supermarket_label_info": "200cc",
         "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "BLUE",
-        "explanation": "El producto oficial es un yogur Viva 0% Vainilla, mientras que el producto en el supermercado se presenta como Yogur Conaprole 0% Vainilla en un envase de 1.2 litros, lo que indica una diferencia en la presentación.",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo yogur de vainilla 0%, pero la presentación en el supermercado indica 200cc, que es la misma cantidad que el producto oficial, por lo que se considera una diferencia de presentación.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-saborizados-frutilla",
+        "name": "Yogur Viva 0% Frutilla",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-saborizados-frutilla/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-frutilla-200cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Frutilla",
+        "supermarket_name": "Yogur Conaprole Viva 0% Frutilla 200Cc .",
+        "similarity_score": 96.67
+      },
+      "description_comparison": {
+        "similarity_score": 18.88,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 2,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194911_728445379.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165619/7730105022296.jpg?v=638537106144570000",
+        "details": "Imagen coincidente (pHash dist: 2)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "200Cc",
+        "supermarket_label_info": "200Cc",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo yogur de frutilla 0%, pero presentan un rediseño gráfico en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-fondo-de-pote-durazno",
+        "name": "Yogur Viva 0% Natural",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-fondo-de-pote-durazno/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-natural-200cc/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Natural",
+        "supermarket_name": "Yogur Conaprole Viva 0% Natural 200Cc .",
+        "similarity_score": 96.47
+      },
+      "description_comparison": {
+        "similarity_score": 20.83,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 2,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194918_627932815.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165618/7730105022319.jpg?v=638537105572300000",
+        "details": "Imagen coincidente (pHash dist: 2)"
+      },
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "200cc",
+        "supermarket_label_info": "200Cc",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo yogur, pero la presentación en el supermercado indica 200Cc, que es la misma cantidad que el producto oficial, por lo que se considera una diferencia de presentación.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "producto-viva-yogures-viva-0-durazno-1l",
+        "name": "Yogur Viva 0% Durazno 1l",
+        "category": "Yogures",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
+        "url": "https://www.conaprole.uy/producto/producto-viva-yogures-viva-0-durazno-1l/"
+      },
+      "supermarket_product": {
+        "name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/yogur-conaprole-viva-0-durazno-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Yogur Viva 0% Durazno 1l",
+        "supermarket_name": "Yogur Conaprole Viva 0% Durazno 1Lt .",
+        "similarity_score": 96.47
+      },
+      "description_comparison": {
+        "similarity_score": 19.85,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 26,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130194926_1277454875.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165638/7730105026317.jpg?v=638537130103300000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
+      },
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1l",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "NONE",
+        "explanation": "Los productos son el mismo yogur de durazno 0%, pero la presentación en el supermercado indica un volumen de 1Lt, que es equivalente a 1l, aunque hay una diferencia en la forma de escribirlo. Sin embargo, se considera que hay una diferencia de presentación.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "manjar-dulce-leche-1-kg",
+        "name": "Manjar Dulce de Leche 1 kg",
+        "category": "Dulce de leche",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203705_1119965188.png",
+        "url": "https://www.conaprole.uy/producto/manjar-dulce-leche-1-kg/"
+      },
+      "supermarket_product": {
+        "name": "Dulce De Leche Conaprole Manjar 1Kg .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-manjar-1kg/p"
+      },
+      "name_comparison": {
+        "official_name": "Manjar Dulce de Leche 1 kg",
+        "supermarket_name": "Dulce De Leche Conaprole Manjar 1Kg .",
+        "similarity_score": 97.27
+      },
+      "description_comparison": {
+        "similarity_score": 32.21,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "MATCH",
+        "phash_distance": 0,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203705_1119965188.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165502/7730105005435.jpg?v=638536504670630000",
+        "details": "Imagen coincidente (pHash dist: 0)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1 kg",
+        "supermarket_label_info": "1Kg",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Ambos productos son el mismo dulce de leche Manjar de 1 kg, pero presentan un rediseño gráfico en el envase.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -446,160 +399,204 @@
         "supermarket_label_info": "1kg",
         "ai_verdict": "DIFFERENT_PRESENTATION",
         "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es de 500g, mientras que el producto en el supermercado es de 1kg, lo que indica una diferencia en la presentación del producto.",
+        "explanation": "Los productos son el mismo dulce de leche Manjar, pero presentan una diferencia en la cantidad: 500g en el catálogo oficial y 1kg en la publicación del supermercado.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
     },
     {
-      "supermarket": "Géant",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-leche-leche-fresca-descremada-pasteurizada",
-        "name": "Leche Fresca Descremada",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-fresca-descremada-pasteurizada/"
+        "id": "producto-deleite-dulce-de-leche",
+        "name": "Deleite Dulce de Leche",
+        "category": "Postres",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195652_1829074898.png",
+        "url": "https://www.conaprole.uy/producto/producto-deleite-dulce-de-leche/"
       },
       "supermarket_product": {
-        "name": "Leche fresca CONAPROLE descremada 1 L",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
-        "url": "https://www.geant.com.uy/product/leche-fresca-conaprole-descremada-1-l/240510"
+        "name": "Dulce De Leche Conaprole 250Gr .",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/dulce-de-leche-conaprole-250gr/p"
       },
       "name_comparison": {
-        "official_name": "Leche Fresca Descremada",
-        "supermarket_name": "Leche fresca CONAPROLE descremada 1 L",
-        "similarity_score": 100.0
+        "official_name": "Deleite Dulce de Leche",
+        "supermarket_name": "Dulce De Leche Conaprole 250Gr .",
+        "similarity_score": 96.0
       },
       "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
+        "similarity_score": 28.57,
+        "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
         "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193537_261477252.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/cf221193-63bc-4e72-9e94-9283902a3999/content",
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195652_1829074898.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165498/7730105005121.jpg?v=638536504377070000",
         "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 30)"
       },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
       "ai_verification": {
         "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "1 L",
-        "supermarket_label_info": "1 L",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "is_same_presentation": true,
+        "official_label_info": "250g",
+        "supermarket_label_info": "250gr",
+        "ai_verdict": "PACKAGING_REDESIGN",
         "suggested_alert_level": "YELLOW",
-        "explanation": "Ambos productos son leche fresca descremada de Conaprole, pero presentan un diseño de empaque diferente.",
+        "explanation": "El producto es el mismo (Dulce de Leche Conaprole) y tiene la misma presentación (250g), pero el diseño del envase es diferente.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
     },
     {
-      "supermarket": "Géant",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-quesos-procesados-requeson-cremoso-2",
-        "name": "Requesón",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202816_611378910.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-procesados-requeson-cremoso-2/"
+        "id": "empanadas-polar-food-queso-y-aceitunas-x-3-unidades",
+        "name": "Empanadas Polar food queso y aceitunas x 3 unidades",
+        "category": "Congelados",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195719_1132030713.png",
+        "url": "https://www.conaprole.uy/producto/empanadas-polar-food-queso-y-aceitunas-x-3-unidades/"
       },
       "supermarket_product": {
-        "name": "Requesón CONAPROLE 250 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8a8e34de-2905-4e6e-9806-5f7643625079/content",
-        "url": "https://www.geant.com.uy/product/requeson-conaprole-250-g/240186"
+        "name": "Empanada Polar Food Queso Y Aceitunas 210gr",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1173804/1653198.jpg?v=638712504341030000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/empanada-polar-food-queso-y-aceitunas-210gr/p"
       },
       "name_comparison": {
-        "official_name": "Requesón",
-        "supermarket_name": "Requesón CONAPROLE 250 g",
-        "similarity_score": 100.0
+        "official_name": "Empanadas Polar food queso y aceitunas x 3 unidades",
+        "supermarket_name": "Empanada Polar Food Queso Y Aceitunas 210gr",
+        "similarity_score": 94.55
       },
       "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
+        "similarity_score": 20.45,
+        "status": "compared"
       },
       "image_comparison": {
         "status": "DIFFERENT_IMAGE",
-        "phash_distance": 22,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202816_611378910.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/8a8e34de-2905-4e6e-9806-5f7643625079/content",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 22)"
+        "phash_distance": 16,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195719_1132030713.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1173804/1653198.jpg?v=638712504341030000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 16)"
       },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
       "ai_verification": {
         "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "250 g",
-        "supermarket_label_info": "250 g",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "Ambos productos son requesón de Conaprole y tienen la misma cantidad, pero los envases presentan diferencias en el diseño y etiquetado.",
+        "is_same_presentation": true,
+        "official_label_info": "3 unidades",
+        "supermarket_label_info": "210gr",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "El producto oficial y el del supermercado son el mismo, pero el envase ha tenido un rediseño gráfico. Ambos contienen 3 unidades, pero el peso total es de 210 gramos.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
     },
     {
-      "supermarket": "Géant",
+      "supermarket": "El Dorado",
       "conaprole_product": {
-        "id": "producto-quesos-pastablanda-cuartirolo",
-        "name": "Queso Cuartirolo",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastablanda-cuartirolo/"
-      },
-      "supermarket_product": {
-        "name": "Queso cuartirolo CONAPROLE 50 g",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "url": "https://www.geant.com.uy/product/queso-cuartirolo-conaprole-50-g/270110"
-      },
-      "name_comparison": {
-        "official_name": "Queso Cuartirolo",
-        "supermarket_name": "Queso cuartirolo CONAPROLE 50 g",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "MATCH",
-        "phash_distance": 4,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203538_218432235.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/5aa575e8-0e4a-4dbf-ae1f-87e24732c472/content",
-        "details": "Imagen coincidente (pHash dist: 4)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Queso Cuartirolo, 200 g",
-        "supermarket_label_info": "Queso cuartirolo CONAPROLE 50 g",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es un queso cuartirolo de 200 g, mientras que el producto en el supermercado es de 50 g, lo que indica una presentación diferente.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Géant",
-      "conaprole_product": {
-        "id": "producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce",
-        "name": "Helado Barrita Dulce de Leche",
+        "id": "producto-helados-2litros-crema-sabor-vainilla",
+        "name": "Helado Crema",
         "category": "Helados",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "url": "https://www.conaprole.uy/producto/producto-helados-imp-crema-barrita-conaprole-dulce-de-lehce/"
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130200256_1814422869.png",
+        "url": "https://www.conaprole.uy/producto/producto-helados-2litros-crema-sabor-vainilla/"
       },
       "supermarket_product": {
-        "name": "Helado barrita dulce de leche CONAPROLE 60 cc",
-        "image_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "url": "https://www.geant.com.uy/product/helado-barrita-dulce-de-leche-conaprole-60-cc/236221"
+        "name": "Helado Conaprole 1Lt Crema",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/helado-conaprole-1lt-crema/p"
       },
       "name_comparison": {
-        "official_name": "Helado Barrita Dulce de Leche",
-        "supermarket_name": "Helado barrita dulce de leche CONAPROLE 60 cc",
+        "official_name": "Helado Crema",
+        "supermarket_name": "Helado Conaprole 1Lt Crema",
+        "similarity_score": 100.0
+      },
+      "description_comparison": {
+        "similarity_score": 17.24,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 20,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200256_1814422869.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1166518/7730105913549.jpg?v=638556958793930000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 20)"
+      },
+      "discrepancy_type": "NAME_DISCREPANCY",
+      "alert_level": "BLUE",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": false,
+        "official_label_info": "1kg/2L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "DIFFERENT_PRESENTATION",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "Los productos son el mismo tipo de helado (Helado Crema), pero la presentación en el supermercado es de 1 litro, mientras que el producto oficial es de 1 kg/2 litros, lo que indica una diferencia en la cantidad.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "El Dorado",
+      "conaprole_product": {
+        "id": "jugo-pera-1l",
+        "name": "Jugo de Pera 1L",
+        "category": "Jugos",
+        "image_url": "https://cdn.conaprole.uy/gallery/202412/20241219171058_1389795533.png",
+        "url": "https://www.conaprole.uy/producto/jugo-pera-1l/"
+      },
+      "supermarket_product": {
+        "name": "Jugo Conaprole Pera 1Lt",
+        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165635/7730105025365.jpg?v=638537129799570000",
+        "url": "https://eldoradouy.vtexcommercestable.com.br/jugo-conaprole-pera-1lt/p"
+      },
+      "name_comparison": {
+        "official_name": "Jugo de Pera 1L",
+        "supermarket_name": "Jugo Conaprole Pera 1Lt",
+        "similarity_score": 91.43
+      },
+      "description_comparison": {
+        "similarity_score": 29.63,
+        "status": "compared"
+      },
+      "image_comparison": {
+        "status": "DIFFERENT_IMAGE",
+        "phash_distance": 20,
+        "official_url": "https://cdn.conaprole.uy/gallery/202412/20241219171058_1389795533.png",
+        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165635/7730105025365.jpg?v=638537129799570000",
+        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 20)"
+      },
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
+      "ai_verification": {
+        "is_same_product": true,
+        "is_same_presentation": true,
+        "official_label_info": "1L",
+        "supermarket_label_info": "1Lt",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "El producto es el mismo (Jugo de Pera 1L), pero presenta un rediseño gráfico en el envase.",
+        "status": "SUCCESS",
+        "model_used": "gpt-4o-mini"
+      }
+    },
+    {
+      "supermarket": "Tienda Inglesa",
+      "conaprole_product": {
+        "id": "producto-leche-leche-larga-vida-entera",
+        "name": "Leche UHT Larga Vida Entera",
+        "category": "Leches",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193603_864433867.png",
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-larga-vida-entera/"
+      },
+      "supermarket_product": {
+        "name": "Leche UHT Entera CONAPROLE Larga Vida 1 L",
+        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000738-1.jpg?20230228081259,Leche-UHT-Entera-CONAPROLE-Larga-Vida-1-L-en-Tienda-Inglesa",
+        "url": "https://www.tiendainglesa.com.uy/supermercado/leche-uht-entera-conaprole-larga-vida-1-l.producto?23094,,42"
+      },
+      "name_comparison": {
+        "official_name": "Leche UHT Larga Vida Entera",
+        "supermarket_name": "Leche UHT Entera CONAPROLE Larga Vida 1 L",
         "similarity_score": 100.0
       },
       "description_comparison": {
@@ -608,21 +605,21 @@
       },
       "image_comparison": {
         "status": "MATCH",
-        "phash_distance": 2,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130200119_1548915409.png",
-        "supermarket_url": "https://gdu-multimedia.azurewebsites.net/api/gdu/multimedia/c52f1e3b-2c2e-45b9-88d9-f8a52a575169/content",
-        "details": "Imagen coincidente (pHash dist: 2)"
+        "phash_distance": 0,
+        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193603_864433867.png",
+        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P000738-1.jpg?20230228081259,Leche-UHT-Entera-CONAPROLE-Larga-Vida-1-L-en-Tienda-Inglesa",
+        "details": "Imagen coincidente (pHash dist: 0)"
       },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
+      "discrepancy_type": "DIFFERENT_IMAGE",
+      "alert_level": "YELLOW",
       "ai_verification": {
         "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "9",
-        "supermarket_label_info": "60 cc",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial es una barrita de helado de 9, mientras que el producto en el supermercado indica un volumen de 60 cc, lo que sugiere una diferencia en la presentación del producto.",
+        "is_same_presentation": true,
+        "official_label_info": "1 L",
+        "supermarket_label_info": "1 L",
+        "ai_verdict": "PACKAGING_REDESIGN",
+        "suggested_alert_level": "NONE",
+        "explanation": "Los productos son el mismo, pero presentan un rediseño gráfico en el envase.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
       }
@@ -660,197 +657,30 @@
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW",
       "ai_verification": {
-        "status": "ERROR",
-        "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-mQkdHnZCz5scE6ajBlomxHVv on tokens per min (TPM): Limit 200000, Used 200000, Requested 1849. Please try again in 554ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
-      }
-    },
-    {
-      "supermarket": "Tienda Inglesa",
-      "conaprole_product": {
-        "id": "producto-quesos-pastasemidura-semiduro",
-        "name": "Queso Semiduro",
-        "category": "Quesos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130202819_136307800.png",
-        "url": "https://www.conaprole.uy/producto/producto-quesos-pastasemidura-semiduro/"
-      },
-      "supermarket_product": {
-        "name": "Queso Semiduro CONAPROLE (Kg)",
-        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P011997-1.jpg?20220824200055,Queso-Semiduro-CONAPROLE-Kg-en-Tienda-Inglesa",
-        "url": "https://www.tiendainglesa.com.uy/supermercado/queso-semiduro-conaprole-kg.producto?639,,42"
-      },
-      "name_comparison": {
-        "official_name": "Queso Semiduro",
-        "supermarket_name": "Queso Semiduro CONAPROLE (Kg)",
-        "similarity_score": 90.91
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 20,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130202819_136307800.png",
-        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P011997-1.jpg?20220824200055,Queso-Semiduro-CONAPROLE-Kg-en-Tienda-Inglesa",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 20)"
-      },
-      "discrepancy_type": "NAME_DISCREPANCY",
-      "alert_level": "BLUE",
-      "ai_verification": {
         "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Queso Semiduro, 1 Kg",
-        "supermarket_label_info": "Queso Semiduro CONAPROLE (Kg)",
-        "ai_verdict": "DIFFERENT_PRESENTATION",
-        "suggested_alert_level": "YELLOW",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo tipo de queso, pero la presentación en el supermercado no especifica el peso exacto, lo que puede generar confusión.",
-        "status": "SUCCESS",
-        "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Tienda Inglesa",
-      "conaprole_product": {
-        "id": "dulce-leche-clasico-500g",
-        "name": "Dulce de Leche Clásico 500g",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203701_1891510182.png",
-        "url": "https://www.conaprole.uy/producto/dulce-leche-clasico-500g/"
-      },
-      "supermarket_product": {
-        "name": "Dulce de Leche CONAPROLE Clásico 500 gr",
-        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
-        "url": "https://www.tiendainglesa.com.uy/supermercado/dulce-de-leche-conaprole-clasico-500-gr.producto?1048,,42"
-      },
-      "name_comparison": {
-        "official_name": "Dulce de Leche Clásico 500g",
-        "supermarket_name": "Dulce de Leche CONAPROLE Clásico 500 gr",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 24,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203701_1891510182.png",
-        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P014587-1.jpg?20220705194926,Dulce-de-Leche-CONAPROLE-Clasico-500-gr-en-Tienda-Inglesa",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW",
-      "ai_verification": {
-        "is_same_product": true,
-        "is_same_presentation": false,
-        "official_label_info": "Dulce de Leche Clásico 500g",
-        "supermarket_label_info": "Dulce de Leche CONAPROLE Clásico 500 gr",
+        "is_same_presentation": true,
+        "official_label_info": "1 Litro",
+        "supermarket_label_info": "1 L",
         "ai_verdict": "PACKAGING_REDESIGN",
-        "suggested_alert_level": "BLUE",
-        "explanation": "El producto oficial y el publicado en el supermercado son el mismo dulce de leche, pero el packaging ha sido rediseñado, lo que puede causar confusión en los consumidores.",
+        "suggested_alert_level": "YELLOW",
+        "explanation": "El producto es el mismo (Leche Fresca Entera) y tiene la misma presentación (1 litro), pero el diseño gráfico del envase es diferente.",
         "status": "SUCCESS",
         "model_used": "gpt-4o-mini"
-      }
-    },
-    {
-      "supermarket": "Tienda Inglesa",
-      "conaprole_product": {
-        "id": "producto-conaprole-dulce-de-leche-clasico-970g",
-        "name": "Dulce de Leche Clásico 970g",
-        "category": "Dulce de leche",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130203703_1500332162.png",
-        "url": "https://www.conaprole.uy/producto/producto-conaprole-dulce-de-leche-clasico-970g/"
-      },
-      "supermarket_product": {
-        "name": "Dulce de Leche Clásico CONAPROLE 970 gr",
-        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P001375-2.jpg?20220214105554,Dulce-de-Leche-Clasico-CONAPROLE-970-gr-en-Tienda-Inglesa",
-        "url": "https://www.tiendainglesa.com.uy/supermercado/dulce-de-leche-clasico-conaprole-970-gr.producto?23204,,42"
-      },
-      "name_comparison": {
-        "official_name": "Dulce de Leche Clásico 970g",
-        "supermarket_name": "Dulce de Leche Clásico CONAPROLE 970 gr",
-        "similarity_score": 100.0
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 26,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130203703_1500332162.png",
-        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P001375-2.jpg?20220214105554,Dulce-de-Leche-Clasico-CONAPROLE-970-gr-en-Tienda-Inglesa",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 26)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW",
-      "ai_verification": {
-        "status": "ERROR",
-        "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-mQkdHnZCz5scE6ajBlomxHVv on tokens per min (TPM): Limit 200000, Used 200000, Requested 1877. Please try again in 563ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
-      }
-    },
-    {
-      "supermarket": "Tienda Inglesa",
-      "conaprole_product": {
-        "id": "producto-jugos-manzanabebebe",
-        "name": "Jugo Manzana Light",
-        "category": "Jugos",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "url": "https://www.conaprole.uy/producto/producto-jugos-manzanabebebe/"
-      },
-      "supermarket_product": {
-        "name": "Jugo CONAPROLE Sabor Manzana Light 1 L",
-        "image_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P294852-3.jpg?20250228153032,Jugo-CONAPROLE-Sabor-Manzana-Light-1-L-en-Tienda-Inglesa",
-        "url": "https://www.tiendainglesa.com.uy/supermercado/jugo-conaprole-sabor-manzana-light-1-l.producto?224024,,42"
-      },
-      "name_comparison": {
-        "official_name": "Jugo Manzana Light",
-        "supermarket_name": "Jugo CONAPROLE Sabor Manzana Light 1 L",
-        "similarity_score": 91.43
-      },
-      "description_comparison": {
-        "similarity_score": 0.0,
-        "status": "supermarket_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 14,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130195240_323779624.png",
-        "supermarket_url": "https://prod-resize.tiendainglesa.com.uy/images/small/P294852-3.jpg?20250228153032,Jugo-CONAPROLE-Sabor-Manzana-Light-1-L-en-Tienda-Inglesa",
-        "details": "Imagen diferente (fondo blanco de catalogo, pHash dist: 14)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW",
-      "ai_verification": {
-        "status": "ERROR",
-        "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-mQkdHnZCz5scE6ajBlomxHVv on tokens per min (TPM): Limit 200000, Used 200000, Requested 1890. Please try again in 567ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
       }
     }
   ],
   "matches_summary": {
-    "Devoto": {
-      "matches": 6,
-      "discrepancies": 4
-    },
-    "Disco": {
-      "matches": 6,
-      "discrepancies": 4
-    },
     "El Dorado": {
-      "matches": 5,
-      "discrepancies": 2
-    },
-    "Géant": {
-      "matches": 6,
-      "discrepancies": 4
+      "matches": 8,
+      "discrepancies": 13
     },
     "TATA": {
-      "matches": 0,
+      "matches": 1,
       "discrepancies": 0
     },
     "Tienda Inglesa": {
-      "matches": 10,
-      "discrepancies": 5
+      "matches": 1,
+      "discrepancies": 2
     }
   }
 }
