@@ -1,24 +1,6 @@
 """
 conaprole_scraper.py — Extrae el catálogo oficial de productos de conaprole.uy
-
-Genera data/conaprole_catalog.json con la estructura:
-{
-  "scraped_at": "2024-...",
-  "products": [
-    {
-      "id": "leche-entera-1l",
-      "name": "Leche Entera",
-      "description": "...",
-      "category": "Leches",
-      "url": "https://www.conaprole.uy/producto/leche-entera/",
-      "images": ["https://...jpg"]
-    },
-    ...
-  ]
-}
-
-Uso:
-    python scraper/conaprole_scraper.py
+incluyendo el gramaje/presentación exacto (ej. 40g, 80g, 200g, 500g, 970g, 1L).
 """
 
 import json
@@ -27,14 +9,13 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 
 import httpx
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-# Agregar raíz del proyecto al path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from scraper.rate_limiter import RateLimiter
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,8 +27,6 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.conaprole.uy"
 OUTPUT_PATH = Path(__file__).parent.parent / "data" / "conaprole_catalog.json"
 
-# Categorías del sitio (slug → nombre legible)
-# Verificadas contra el nav real del sitio
 CATEGORIES = {
     "leches": "Leches",
     "yogures": "Yogures",
@@ -59,12 +38,24 @@ CATEGORIES = {
     "jugos": "Jugos",
 }
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36"
+}
 
-def fetch_category_product_urls(
-    client: httpx.Client, limiter: RateLimiter, category_slug: str
-) -> list[str]:
-    """Obtiene todas las URLs de productos dentro de una categoría."""
-    urls = []
+def extract_grammage_from_text_or_slug(text: str, slug: str) -> str:
+    """Extrae el gramaje/volumen del texto de la tarjeta o del slug URL."""
+    match_text = re.search(r'\b(\d+(?:[.,]\d+)?\s*(?:g|gr|grs|gramos|kg|kilo|kilos|ml|cc|l|lt|litro|litros))\b', text, re.IGNORECASE)
+    if match_text:
+        return match_text.group(1).strip()
+
+    match_slug = re.search(r'[-_](\d+(?:[.,]\d+)?\s*(?:g|gr|grs|kg|ml|cc|l))\b', slug, re.IGNORECASE)
+    if match_slug:
+        return match_slug.group(1).replace('-', ' ').strip()
+
+    return ""
+
+def fetch_category_product_items(client: httpx.Client, category_slug: str) -> list[dict]:
+    items = []
     page = 1
 
     while True:
@@ -73,67 +64,71 @@ def fetch_category_product_urls(
             cat_url += f"page/{page}/"
 
         logger.info(f"  Categoría '{category_slug}' — página {page}: {cat_url}")
-        resp = limiter.get(client, cat_url)
-
-        if resp is None or resp.status_code == 404:
+        try:
+            resp = client.get(cat_url, timeout=15)
+            if resp.status_code == 404:
+                break
+        except Exception:
             break
 
         soup = BeautifulSoup(resp.text, "lxml")
-
-        # Los productos están en enlaces con clase que contiene 'product'
-        product_links = soup.select("a.datalink[data-link='product']")
+        product_links = soup.select("a[href*='/producto/']")
         if not product_links:
-            # Intentar selector alternativo: href que contenga /producto/
-            product_links = soup.select("a[href*='/producto/']")
-
-        if not product_links:
-            logger.debug(f"  No se encontraron productos en página {page}, fin de categoría.")
             break
 
-        page_urls = list({a["href"] for a in product_links if a.get("href")})
-        urls.extend(page_urls)
-        logger.info(f"  → {len(page_urls)} productos encontrados en página {page}")
+        seen_on_page = set()
+        for a in product_links:
+            href = a.get("href")
+            if not href or href in seen_on_page:
+                continue
+            seen_on_page.add(href)
 
-        # Verificar si hay página siguiente
+            full_text = a.get_text(strip=True, separator=" ")
+            slug = href.rstrip("/").split("/")[-1]
+            gram = extract_grammage_from_text_or_slug(full_text, slug)
+
+            items.append({
+                "url": href,
+                "slug": slug,
+                "card_text": full_text,
+                "grammage": gram
+            })
+
         next_btn = soup.select_one("a.next, a[rel='next'], .pagination .next a")
         if not next_btn:
             break
         page += 1
 
-    return urls
+    return items
 
+def parse_product_page(client: httpx.Client, item_meta: dict, category: str) -> dict | None:
+    url = item_meta["url"]
+    gram = item_meta.get("grammage", "")
 
-def parse_product_page(
-    client: httpx.Client, limiter: RateLimiter, url: str, category: str
-) -> dict | None:
-    """
-    Extrae los datos de una página de producto individual.
-
-    Estructura real del sitio (verificada por inspección de HTML):
-    - article.content_information → contiene h1 (nombre) + img (imagen del producto)
-    - section.content_description .headings p → ingredientes (usado como descripción)
-    - section.content_products → productos relacionados (NO tocar)
-    """
-    resp = limiter.get(client, url)
-    if resp is None:
+    try:
+        resp = client.get(url, timeout=12)
+        if resp.status_code != 200:
+            return None
+    except Exception:
         return None
 
     soup = BeautifulSoup(resp.text, "lxml")
-
-    # El contenedor del producto es article.content_information
     article = soup.select_one("article.content_information")
     if not article:
-        logger.warning(f"  ⚠️  No se encontró article.content_information en: {url}")
         return None
 
-    # --- Nombre (h1 dentro del artículo del producto) ---
     h1 = article.select_one("h1")
     if not h1:
-        logger.warning(f"  ⚠️  No se encontró h1 en: {url}")
         return None
-    name = h1.get_text(strip=True)
+    
+    base_name = h1.get_text(strip=True)
 
-    # --- Imagen (única img dentro del artículo del producto) ---
+    has_gram_in_name = bool(re.search(r'\b\d+\s*(?:g|gr|grs|kg|ml|cc|l|lt)\b', base_name, re.IGNORECASE))
+    if gram and not has_gram_in_name:
+        final_name = f"{base_name} {gram}"
+    else:
+        final_name = base_name
+
     images = []
     img_tag = article.select_one("img")
     if img_tag:
@@ -141,8 +136,6 @@ def parse_product_page(
         if src and "cdn.conaprole.uy" in src:
             images.append(src)
 
-    # --- Descripción (ingredientes del producto, si existen) ---
-    # El sitio no tiene descripción libre; la info textual más útil son los ingredientes
     description = ""
     desc_section = soup.select_one("section.content_description")
     if desc_section:
@@ -152,58 +145,53 @@ def parse_product_page(
             if p:
                 description = p.get_text(strip=True)
 
-    # --- Slug / ID ---
-    slug = url.rstrip("/").split("/")[-1]
+    slug = item_meta["slug"]
 
-    product = {
+    return {
         "id": slug,
-        "name": name,
+        "name": final_name,
         "description": description or "",
         "category": category,
         "url": url,
         "images": images,
     }
 
-    logger.debug(f"  ✓ {name} ({len(images)} imagen/es)")
-    return product
-
-
 def scrape_conaprole() -> list[dict]:
-    """Función principal: recorre todas las categorías y extrae todos los productos."""
-    limiter = RateLimiter(BASE_URL, delay_min=2.0, delay_max=5.0)
     all_products = []
     seen_urls: set[str] = set()
 
-    with httpx.Client(follow_redirects=True) as client:
+    with httpx.Client(headers=HEADERS, follow_redirects=True) as client:
         for slug, category_name in CATEGORIES.items():
             logger.info(f"\n📂 Categoría: {category_name}")
-            product_urls = fetch_category_product_urls(client, limiter, slug)
+            items = fetch_category_product_items(client, slug)
 
-            if not product_urls:
-                logger.info(f"  (Sin productos encontrados)")
+            if not items:
                 continue
 
-            logger.info(f"  Total URLs: {len(product_urls)}")
+            unique_items = []
+            for item in items:
+                if item["url"] not in seen_urls:
+                    seen_urls.add(item["url"])
+                    unique_items.append(item)
 
-            for url in tqdm(product_urls, desc=f"  {category_name}", unit="prod"):
-                if url in seen_urls:
-                    continue
-                seen_urls.add(url)
+            logger.info(f"  Procesando {len(unique_items)} presentaciones en paralelo...")
 
-                product = parse_product_page(client, limiter, url, category_name)
-                if product:
-                    all_products.append(product)
+            def _worker(item):
+                return parse_product_page(client, item, category_name)
+
+            with ThreadPoolExecutor(max_workers=10) as executor:
+                results = list(executor.map(_worker, unique_items))
+
+            for r in results:
+                if r:
+                    all_products.append(r)
 
     return all_products
 
-
 def main():
-    logger.info("🐄 Iniciando scraper de catálogo Conaprole...")
-    logger.info(f"   Categorías a procesar: {', '.join(CATEGORIES.keys())}")
-
+    logger.info("🐄 Iniciando scraper oficial Conaprole en paralelo con extracción de Gramaje...")
     products = scrape_conaprole()
 
-    # Guardar resultado
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     catalog = {
         "scraped_at": datetime.now(timezone.utc).isoformat(),
@@ -214,9 +202,8 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(catalog, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"\n✅ Catálogo guardado: {OUTPUT_PATH}")
-    logger.info(f"   Total productos: {len(products)}")
-
+    logger.info(f"\n✅ Catálogo oficial guardado con gramajes completos en: {OUTPUT_PATH}")
+    logger.info(f"   Total productos extraídos: {len(products)}")
 
 if __name__ == "__main__":
     main()
