@@ -17,7 +17,7 @@
                 <div>
                     <div class="logo-title-row">
                         <h1>COOP</h1>
-                        <span class="version-badge">v1.6.0</span>
+                        <span class="version-badge">v1.7.0</span>
                     </div>
                     <p class="subtitle">Monitoreo de Fidelidad de Catálogo Conaprole vs. Supermercados</p>
                 </div>
@@ -53,6 +53,10 @@
                 <span class="stat-label">Productos Conaprole Analizados</span>
                 <span class="stat-value" id="statTotalOfficial">-</span>
             </div>
+            <div class="stat-card stat-green">
+                <span class="stat-label">🟢 Coincidencias Verificadas</span>
+                <span class="stat-value" id="statTotalMatches">-</span>
+            </div>
             <div class="stat-card stat-alert">
                 <span class="stat-label">Discrepancias Totales</span>
                 <span class="stat-value" id="statTotalDiscrepancies">-</span>
@@ -62,9 +66,19 @@
                 <span class="stat-value" id="statRedAlerts">-</span>
             </div>
             <div class="stat-card stat-yellow">
-                <span class="stat-label">🟡 Imágenes Diferentes / Versiones</span>
+                <span class="stat-label">🟡 Imágenes Diferentes</span>
                 <span class="stat-value" id="statYellowAlerts">-</span>
             </div>
+        </section>
+
+        <!-- Navigation Tabs Bar -->
+        <section class="tabs-bar">
+            <button id="tabDiscrepancies" class="tab-btn active">
+                <span class="tab-icon">⚠️</span> Discrepancias (<span id="countDiscrepanciesTab">0</span>)
+            </button>
+            <button id="tabMatches" class="tab-btn">
+                <span class="tab-icon">✅</span> Coincidencias Correctas (<span id="countMatchesTab">0</span>)
+            </button>
         </section>
 
         <!-- Filters Section -->

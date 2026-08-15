@@ -217,6 +217,15 @@ body {
 
 }
 
+.stat-card.stat-green {
+    border-color: rgba(34, 197, 94, 0.4);
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.stat-card.stat-green .stat-value {
+    color: #4ade80;
+}
+
 .stat-card.stat-red {
     border-color: var(--red-border);
     background: var(--red-bg);
@@ -236,6 +245,51 @@ body {
 .stat-value {
     font-size: 2rem;
     font-weight: 700;
+}
+
+/* Tabs Bar */
+.tabs-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    color: #ffffff;
+    background: var(--purple-main);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.badge-green {
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.badge-green-tag {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 /* Filters */

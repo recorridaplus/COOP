@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let allDiscrepancies = [];
+    let allMatches = [];
+    let activeTab = "DISCREPANCIES"; // "DISCREPANCIES" or "MATCHES"
     let isProcessing = false;
 
     const searchInput = document.getElementById("searchFilter");
@@ -8,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("discrepanciesGrid");
     const emptyState = document.getElementById("emptyState");
     const resultsCount = document.getElementById("resultsCount");
+
+    const tabDiscrepancies = document.getElementById("tabDiscrepancies");
+    const tabMatches = document.getElementById("tabMatches");
+    const countDiscrepanciesTab = document.getElementById("countDiscrepanciesTab");
+    const countMatchesTab = document.getElementById("countMatchesTab");
 
     const btnRunFast = document.getElementById("btnRunFast");
     const btnRunFull = document.getElementById("btnRunFull");
@@ -21,8 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             document.getElementById("statTotalOfficial").innerText = data.total_official_products || 0;
             allDiscrepancies = data.discrepancies || [];
+            allMatches = data.matches_list || [];
 
+            document.getElementById("statTotalMatches").innerText = allMatches.length;
             document.getElementById("statTotalDiscrepancies").innerText = allDiscrepancies.length;
+
+            countDiscrepanciesTab.innerText = allDiscrepancies.length;
+            countMatchesTab.innerText = allMatches.length;
 
             const redCount = allDiscrepancies.filter(d => d.alert_level === "RED").length;
             const yellowCount = allDiscrepancies.filter(d => d.alert_level === "YELLOW").length;
@@ -30,29 +42,36 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("statRedAlerts").innerText = redCount;
             document.getElementById("statYellowAlerts").innerText = yellowCount;
 
-            renderDiscrepancies();
+            renderGrid();
         } catch (err) {
             console.error("Error cargando reporte:", err);
         }
     }
 
-    function renderDiscrepancies() {
+    function renderGrid() {
         const searchTerm = searchInput.value.toLowerCase().trim();
         const selectedSp = spSelect.value;
         const selectedAlert = alertSelect.value;
 
-        const filtered = allDiscrepancies.filter(item => {
+        const currentDataset = activeTab === "DISCREPANCIES" ? allDiscrepancies : allMatches;
+
+        const filtered = currentDataset.filter(item => {
             const offName = item.conaprole_product.name.toLowerCase();
             const spName = item.supermarket_product.name.toLowerCase();
 
             const matchesSearch = !searchTerm || offName.includes(searchTerm) || spName.includes(searchTerm);
             const matchesSp = selectedSp === "ALL" || item.supermarket === selectedSp;
-            const matchesAlert = selectedAlert === "ALL" || item.alert_level === selectedAlert;
+            
+            let matchesAlert = true;
+            if (activeTab === "DISCREPANCIES") {
+                matchesAlert = selectedAlert === "ALL" || item.alert_level === selectedAlert;
+            }
 
             return matchesSearch && matchesSp && matchesAlert;
         });
 
-        resultsCount.innerText = `Mostrando ${filtered.length} de ${allDiscrepancies.length} discrepancias`;
+        const tabNameText = activeTab === "DISCREPANCIES" ? "discrepancias" : "coincidencias correctas";
+        resultsCount.innerText = `Mostrando ${filtered.length} de ${currentDataset.length} ${tabNameText}`;
 
         if (filtered.length === 0) {
             grid.innerHTML = "";
@@ -67,24 +86,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function createCardHtml(item, index) {
-        const type = item.discrepancy_type || (item.alert_level === "RED" ? "APOCRYPHAL_IMAGE" : "DIFFERENT_IMAGE");
-
         let badgeClass = "badge-yellow-tag";
         let badgeLabel = "🟡 FOTO DIFERENTE";
         let cardBorderClass = "badge-yellow";
 
-        if (type === "APOCRYPHAL_IMAGE" || item.alert_level === "RED") {
-            badgeClass = "badge-red-tag";
-            badgeLabel = "🔴 FOTO APÓCRIFA (CM)";
-            cardBorderClass = "badge-red";
-        } else if (type === "NAME_DISCREPANCY" || item.alert_level === "BLUE") {
-            badgeClass = "badge-blue-tag";
-            badgeLabel = "📝 DIFERENCIA DE NOMBRE";
-            cardBorderClass = "badge-blue";
+        if (activeTab === "MATCHES") {
+            badgeClass = "badge-green-tag";
+            badgeLabel = "🟢 COINCIDENCIA VERIFICADA";
+            cardBorderClass = "badge-green";
         } else {
-            badgeClass = "badge-yellow-tag";
-            badgeLabel = "🟡 FOTO DIFERENTE";
-            cardBorderClass = "badge-yellow";
+            const type = item.discrepancy_type || (item.alert_level === "RED" ? "APOCRYPHAL_IMAGE" : "DIFFERENT_IMAGE");
+
+            if (type === "APOCRYPHAL_IMAGE" || item.alert_level === "RED") {
+                badgeClass = "badge-red-tag";
+                badgeLabel = "🔴 FOTO APÓCRIFA (CM)";
+                cardBorderClass = "badge-red";
+            } else if (type === "NAME_DISCREPANCY" || item.alert_level === "BLUE") {
+                badgeClass = "badge-blue-tag";
+                badgeLabel = "📝 DIFERENCIA DE NOMBRE";
+                cardBorderClass = "badge-blue";
+            } else {
+                badgeClass = "badge-yellow-tag";
+                badgeLabel = "🟡 FOTO DIFERENTE";
+                cardBorderClass = "badge-yellow";
+            }
         }
 
         const offImg = item.conaprole_product.image_url || "/static/no-img.png";
@@ -156,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-
     function attachCardInteractions() {
         document.querySelectorAll(".tight-img-box").forEach(box => {
             const imgEl = box.querySelector("img");
@@ -183,6 +207,23 @@ document.addEventListener("DOMContentLoaded", () => {
             box.addEventListener("touchend", restoreOriginal);
         });
     }
+
+    // Manejo de Solapas (Tabs)
+    tabDiscrepancies.addEventListener("click", () => {
+        activeTab = "DISCREPANCIES";
+        tabDiscrepancies.classList.add("active");
+        tabMatches.classList.remove("active");
+        alertSelect.disabled = false;
+        renderGrid();
+    });
+
+    tabMatches.addEventListener("click", () => {
+        activeTab = "MATCHES";
+        tabMatches.classList.add("active");
+        tabDiscrepancies.classList.remove("active");
+        alertSelect.disabled = true;
+        renderGrid();
+    });
 
     function setProcessingState(active, labelText = "Procesando...") {
         isProcessing = active;
@@ -249,9 +290,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    searchInput.addEventListener("input", renderDiscrepancies);
-    spSelect.addEventListener("change", renderDiscrepancies);
-    alertSelect.addEventListener("change", renderDiscrepancies);
+    searchInput.addEventListener("input", renderGrid);
+    spSelect.addEventListener("change", renderGrid);
+    alertSelect.addEventListener("change", renderGrid);
 
     loadReportData();
 });

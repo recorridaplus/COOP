@@ -1,45 +1,50 @@
 """
-matcher.py — Motor de matching inteligente entre catálogo Conaprole y supermercados.
+matcher.py — Motor de matching inteligente entre el catálogo oficial de Conaprole
+y las publicaciones capturadas de los supermercados (El Dorado, TATA, Tienda Inglesa, Devoto, Disco, Géant).
 
-Reglas avanzadas:
-1. Si la imagen coincide (status == 'MATCH', pHash <= 12) y el nombre es compatible (>= 90%), es una COINCIDENCIA PERFECTA (no genera discrepancia).
-2. Discrepancias reales reportadas:
-   - 🔴 APOCRYPHAL_IMAGE: Foto casera/propia tomada en tienda por el CM.
-   - 🟡 DIFFERENT_IMAGE: Foto de catálogo pero otra versión/diseño diferente.
-   - 📝 NAME_DISCREPANCY: Nombre con baja similitud sin coincidencia de foto.
+Reglas de Negocio:
+1. Similitud mínima de nombre configurable (default 90.0%).
+2. Exclusión de Marcas Propias de supermercados.
+3. Exclusión por coincidencia estricta de Submarcas (ej: Colet, Viva, Deleite, Biotop, Alpazul, etc.).
+4. Compatibilidad de Presentación/Volumen (ml vs l, g vs kg).
+5. Incompatibilidad de Atributos Críticos (Lactosa, Materia Grasa, Sal, Sabores).
+6. Clasificación de Discrepancias de Imagen:
+   - APOCRYPHAL_IMAGE (Roja): Packaging alterado o de otra marca.
+   - DIFFERENT_IMAGE (Amarilla): Rediseño de packaging o ángulo diferente.
+   - NAME_DISCREPANCY (Azul): Nombre con diferencias significativas.
+7. Soporte para auditoría visual opcional con OpenAI Vision.
+8. Registro de coincidencias verificadas (matches_list) para validación de efectividad.
 """
 
 import json
 import logging
 import re
 import sys
-from pathlib import Path
-from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
+from pathlib import Path
+
+from fuzzywuzzy import fuzz
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from rapidfuzz import fuzz
-from comparator.text_comparator import compare_descriptions
 from comparator.image_comparator import compare_images
-from comparator.ai_verifier import is_openai_available, verify_product_match_with_ai
+from comparator.ai_verifier import verify_product_match_with_ai, is_openai_available
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S",
+)
 logger = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 CONAPROLE_PATH = DATA_DIR / "conaprole_catalog.json"
 SUPERMARKETS_DIR = DATA_DIR / "supermarkets"
-REPORT_OUTPUT_PATH = DATA_DIR / "latest_comparison_report.json"
+OUTPUT_REPORT_PATH = DATA_DIR / "latest_comparison_report.json"
 
 SUPERMARKET_PRIVATE_LABELS = [
-    "tienda inglesa", "tata", "casino", "leader price", 
-    "great value", "el dorado", "disco", "devoto", "geant"
-]
-
-CONAPROLE_BRANDS = [
-    "polar food", "polar", "colet", "viva", "deleite", "sinfonia", "sinfonía", 
-    "conamigos", "blancanube", "baccanal", "conahorro", "lactoplus", 
-    "máxima", "maxima", "triffle", "orgullo celeste"
+    "casino", "ta-ta", "tata", "el clon", "kinko", "frog",
+    "leader price", "qualita", "bell's", "great value"
 ]
 
 SUBBRAND_CANONICAL = {
@@ -153,13 +158,13 @@ def check_feature_incompatibility(off_name: str, sup_name: str) -> bool:
     off_lower = off_name.lower()
     sup_lower = sup_name.lower()
 
-    # 1. Lactosa (ej. Deslactosada vs Normal)
+    # 1. Lactosa
     off_has_deslac = any(k in off_lower for k in LACTOSE_KEYWORDS)
     sup_has_deslac = any(k in sup_lower for k in LACTOSE_KEYWORDS)
     if off_has_deslac != sup_has_deslac:
         return True
 
-    # 2. Tipo de materia grasa (Descremada vs Entera vs Semidescremada)
+    # 2. Materia Grasa
     def get_fat_type(text):
         for fat_type, kw_list in FAT_KEYWORDS.items():
             if any(re.search(r'\b' + re.escape(kw) + r'\b', text) for kw in kw_list):
@@ -171,7 +176,7 @@ def check_feature_incompatibility(off_name: str, sup_name: str) -> bool:
     if fat_off and fat_sup and fat_off != fat_sup:
         return True
 
-    # 3. Sal (Con sal vs Sin sal)
+    # 3. Sal
     def get_salt_type(text):
         for salt_type, kw_list in SALT_KEYWORDS.items():
             if any(kw in text for kw in kw_list):
@@ -185,7 +190,7 @@ def check_feature_incompatibility(off_name: str, sup_name: str) -> bool:
     if (salt_off == "sin_sal" and not salt_sup) or (salt_sup == "sin_sal" and not salt_off):
         return True
 
-    # 4. Sabores (Durazno vs Frutilla, etc.)
+    # 4. Sabores
     def get_flavors(text):
         found = set()
         for fl in FLAVOR_KEYWORDS:
@@ -244,6 +249,18 @@ def calculate_match_score(official_name: str, official_category: str, supermarke
 
     final_score = (sort_score * 0.6) + (set_score * 0.4)
     return round(final_score, 2)
+
+def compare_descriptions(official_desc: str, supermarket_desc: str) -> dict:
+    if not official_desc or not supermarket_desc:
+        return {"has_discrepancy": False, "official_desc": official_desc, "supermarket_desc": supermarket_desc}
+    
+    score = fuzz.token_set_ratio(official_desc.lower(), supermarket_desc.lower())
+    return {
+        "has_discrepancy": score < 70,
+        "similarity_score": score,
+        "official_desc": official_desc,
+        "supermarket_desc": supermarket_desc
+    }
 
 def load_json(path: Path) -> dict | list | None:
     if not path.exists():
@@ -340,34 +357,33 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                     return ("REJECTED", sp_name, None)
 
                 verdict = ai_result.get("ai_verdict")
-                if verdict == "MATCH" and ai_result.get("is_same_presentation", True):
-                    pass
+                if verdict == "MATCH":
+                    discrepancy_type = None
                 elif verdict == "APOCRYPHAL_IMAGE":
                     discrepancy_type = "APOCRYPHAL_IMAGE"
                     alert_level = "RED"
-                elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE", "DIFFERENT_PRESENTATION"]:
+                elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE"]:
                     discrepancy_type = "DIFFERENT_IMAGE"
                     alert_level = "YELLOW"
-
-        if not discrepancy_type and img_cmp:
-            if img_cmp.get("status") == "APOCRYPHAL_IMAGE":
+                elif verdict == "DIFFERENT_PRESENTATION":
+                    if img_cmp and img_cmp.get("status") == "MATCH":
+                        discrepancy_type = None
+                    else:
+                        discrepancy_type = "NAME_DISCREPANCY"
+                        alert_level = "BLUE"
+        else:
+            if img_cmp and img_cmp.get("status") == "APOCRYPHAL_IMAGE":
                 discrepancy_type = "APOCRYPHAL_IMAGE"
                 alert_level = "RED"
-            elif img_cmp.get("status") == "DIFFERENT_IMAGE":
+            elif img_cmp and img_cmp.get("status") == "DIFFERENT_IMAGE":
                 discrepancy_type = "DIFFERENT_IMAGE"
                 alert_level = "YELLOW"
+            elif not img_cmp and score < 95.0:
+                discrepancy_type = "NAME_DISCREPANCY"
+                alert_level = "BLUE"
 
-        if discrepancy_type in ["DIFFERENT_IMAGE", "APOCRYPHAL_IMAGE"]:
-            pass
-        elif img_cmp and img_cmp.get("status") == "MATCH":
-            return ("MATCH", sp_name, None)
-        elif score >= 90.0:
-            return ("MATCH", sp_name, None)
-        else:
-            discrepancy_type = "NAME_DISCREPANCY"
-            alert_level = "BLUE"
 
-        discrepancy_item = {
+        match_item = {
             "supermarket": sp_name,
             "conaprole_product": {
                 "id": off_prod["id"],
@@ -386,21 +402,26 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                 "supermarket_name": sp_name_pub,
                 "similarity_score": score
             },
-            "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
-            "image_comparison": img_cmp,
-            "discrepancy_type": discrepancy_type,
-            "alert_level": alert_level
+            "image_comparison": img_cmp
         }
         if ai_result:
-            discrepancy_item["ai_verification"] = ai_result
+            match_item["ai_verification"] = ai_result
 
+        if not discrepancy_type:
+            return ("MATCH", sp_name, match_item)
+
+        discrepancy_item = dict(match_item)
+        discrepancy_item.update({
+            "description_comparison": compare_descriptions(off_prod.get("description", ""), best_sp_prod.get("description", "")),
+            "discrepancy_type": discrepancy_type,
+            "alert_level": alert_level
+        })
         return ("DISCREPANCY", sp_name, discrepancy_item)
 
     if evaluated_pairs:
         with ThreadPoolExecutor(max_workers=3 if ai_active else 12) as executor:
             processed_results = list(executor.map(_eval_pair_full, evaluated_pairs))
     else:
-
         processed_results = []
 
     report = {
@@ -409,27 +430,28 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
         "supermarkets_analyzed": list(supermarket_catalogs.keys()),
         "ai_enabled": ai_active,
         "discrepancies": [],
+        "matches_list": [],
         "matches_summary": summary
     }
 
-    for status, sp_name, discrepancy_item in processed_results:
-        if status == "MATCH":
+    for status, sp_name, item in processed_results:
+        if status == "MATCH" and item:
             summary[sp_name]["matches"] += 1
-        elif status == "DISCREPANCY" and discrepancy_item:
+            report["matches_list"].append(item)
+        elif status == "DISCREPANCY" and item:
             summary[sp_name]["discrepancies"] += 1
-            report["discrepancies"].append(discrepancy_item)
+            report["discrepancies"].append(item)
 
     report["matches_summary"] = summary
 
-    with open(REPORT_OUTPUT_PATH, "w", encoding="utf-8") as f:
+    OUTPUT_REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_REPORT_PATH, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"✅ Reporte inteligente generado en: {REPORT_OUTPUT_PATH}")
+    logger.info(f"\n✅ Reporte inteligente generado en: {OUTPUT_REPORT_PATH}")
     logger.info(f"   Total discrepancias encontradas: {len(report['discrepancies'])}")
+    logger.info(f"   Total coincidencias verificadas: {len(report['matches_list'])}")
     return report
 
 if __name__ == "__main__":
     run_matching(compare_images_flag=True, min_match_threshold=90.0, use_ai_flag=True)
-
-
-

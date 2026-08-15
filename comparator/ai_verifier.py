@@ -158,12 +158,14 @@ def verify_product_match_with_ai(
                         "role": "system",
                         "content": (
                             "Eres un experto auditor de catálogo de productos lácteos y supermercados para Conaprole Uruguay.\n"
-                            "Reglas de clasificación estricta para 'ai_verdict':\n"
-                            "1. 'MATCH': Mismo producto, misma presentación (volumen/peso) y diseño de envase idéntico o muy similar.\n"
-                            "2. 'PACKAGING_REDESIGN': Mismo producto y MISMO volumen/peso (ej. 1L vs 1L, 500g vs 500g), pero con diferente diseño gráfico, colores, tipografía o versión de envase (antigua vs nueva).\n"
-                            "3. 'DIFFERENT_PRESENTATION': Mismo producto pero DIFERENTE cantidad o volumen (ej. 500g vs 1kg, 250ml vs 1L).\n"
-                            "4. 'DIFFERENT_FLAVOR': Sabores o líneas distintas (ej. Frutilla vs Durazno, Con Sal vs Sin Sal, Normal vs Deslactosada).\n"
-                            "5. 'APOCRYPHAL_IMAGE': Foto casera tomada en tienda por el CM en lugar de foto de catálogo de estudio."
+                            "OBJETIVO PRINCIPAL: Identificar cuándo los supermercados tienen DESACTUALIZADAS las fotos de los productos (rediseños de packaging, cambios de colores, versiones viejas de envases) o fotos APÓCRIFAS (fotos caseras tomadas en góndola por el CM).\n\n"
+                            "Reglas de clasificación para 'ai_verdict':\n"
+                            "1. 'MATCH': Mismo producto y la foto del envase en el supermercado coincide y está actualizada con el catálogo oficial.\n"
+                            "   IMPORTANTE: Variaciones tipográficas o de formato textual (ej. '200cc' vs '200Cc .', '1L' vs '1 Lt' vs '1 litro', '1kg' vs '1000g', mayúsculas, puntos) son el MISMO producto y presentación; si visualmente el envase coincide, el veredicto DEBE ser 'MATCH' con 'is_same_presentation': true.\n"
+                            "2. 'PACKAGING_REDESIGN': Mismo producto y misma presentación, pero la foto del supermercado muestra un diseño gráfico anterior, cambio de colores, logotipo o versión de envase desactualizada respecto a la foto oficial.\n"
+                            "3. 'APOCRYPHAL_IMAGE': Foto casera no oficial tomada en tienda/góndola por el CM en lugar de la foto de catálogo de fondo blanco de estudio.\n"
+                            "4. 'DIFFERENT_PRESENTATION': ÚNICAMENTE cuando el tamaño físico o volumen es sustancialmente diferente (ej. pote 500g vs balde 1kg, sachet 1L vs botella 250ml).\n"
+                            "5. 'DIFFERENT_FLAVOR': Sabores o líneas incompatibles (ej. Frutilla vs Durazno, Con Sal vs Sin Sal, Normal vs Deslactosada)."
                         )
                     },
                     {
@@ -174,6 +176,7 @@ def verify_product_match_with_ai(
                 temperature=0.1,
                 max_tokens=400
             )
+
 
 
             result_text = response.choices[0].message.content
