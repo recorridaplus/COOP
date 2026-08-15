@@ -24,7 +24,10 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fuzzywuzzy import fuzz
+try:
+    from rapidfuzz import fuzz
+except ImportError:
+    from fuzzywuzzy import fuzz
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from comparator.image_comparator import compare_images

@@ -1,8 +1,8 @@
 """
 gdu_scraper.py — Scraper para supermercados de Grupo Disco Uruguay (Disco, Devoto, Géant).
 
-Utiliza Playwright para interactuar con la aplicación Blazor (.NET) Ecom.Gdu.Web,
-escribir en la barra de búsqueda y extraer productos de Conaprole y sus submarcas.
+Interactúa con la aplicación Blazor (.NET) Ecom.Gdu.Web a través del buscador dinámico
+del portal para extraer el catálogo completo de Conaprole y sus submarcas oficiales.
 """
 
 import json
@@ -37,7 +37,7 @@ CONFIGS = {
 }
 
 DEFAULT_QUERIES = [
-    "conaprole", "colet", "viva", "deleite", "polar food", "blancanube", 
+    "conaprole", "colet", "viva", "deleite", "polar", "blancanube", 
     "conamigos", "biotop", "alpazul", "magretto", "sinfonia", "maxima", 
     "triffle", "alpa", "lactolate", "conacrem", "conahorro", "baccanal"
 ]
@@ -55,82 +55,99 @@ class GduScraper(BaseSupermarketScraper):
         elif isinstance(queries, str):
             queries = [queries]
 
-        logger.info(f"🔎 [{self.supermarket_name}] Abriendo sitio: {self.base_url} (Submarcas: {len(queries)})")
+        logger.info(f"[INFO] [{self.supermarket_name}] Abriendo sitio: {self.base_url} ({len(queries)} consultas)")
         results: list[SupermarketProduct] = []
-        seen_urls: set[str] = set()
+        seen_names: set[str] = set()
         now_str = datetime.now(timezone.utc).isoformat()
 
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
             context = await browser.new_context(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+                viewport={"width": 1366, "height": 768}
             )
             page = await context.new_page()
 
             try:
+                await page.goto(self.base_url, wait_until="networkidle", timeout=35000)
+                await asyncio.sleep(2)
+
                 for q in queries:
-                    target_url = f"{self.base_url}buscar?text={q}"
-                    logger.info(f"  [{self.supermarket_name}] NAVEGANDO A: {target_url}")
+                    logger.info(f"  [{self.supermarket_name}] Buscando termino: '{q}'...")
+                    search_input = await page.query_selector("input.input-buscador, input#InputSearch, input[placeholder*='Busca' i], input[type='search'], input[type='text']")
+                    if not search_input:
+                        await page.goto(self.base_url, wait_until="networkidle", timeout=25000)
+                        search_input = await page.query_selector("input.input-buscador, input#InputSearch, input[placeholder*='Busca' i]")
+
+                    if not search_input:
+                        logger.warning(f"    [WARN] No se encontro input de busqueda en {self.supermarket_name}")
+                        continue
+
                     try:
-                        await page.goto(target_url, wait_until="domcontentloaded", timeout=25000)
-                        await asyncio.sleep(3)
-                    except Exception:
-                        pass
+                        await search_input.click()
+                        await search_input.fill("")
+                        await search_input.fill(q)
+                        await search_input.press("Enter")
+                        await asyncio.sleep(4)
 
-                    # Scroll gradual para cargar la grilla completa
-                    for _ in range(5):
-                        await page.evaluate("window.scrollBy(0, 900)")
-                        await asyncio.sleep(0.8)
+                        # Scroll para disparar el lazy load de Blazor
+                        for _ in range(4):
+                            await page.evaluate("window.scrollBy(0, 900)")
+                            await asyncio.sleep(0.6)
 
-                    raw_prods = await page.evaluate('''() => {
-                        const results = [];
-                        const cards = document.querySelectorAll(".product-item, .card, [class*='product-card'], [class*='product_'], .rz-g-col, article");
-                        const keywords = [
-                            "conaprole", "colet", "viva", "deleite", "polar", "blancanube", "sinfonia", 
-                            "sinfonía", "conamigos", "baccanal", "conahorro", "lacto", "maxima", "máxima", 
-                            "triffle", "biotop", "alpazul", "magretto", "alpa"
-                        ];
+                        raw_prods = await page.evaluate('''() => {
+                            const list = [];
+                            const cards = document.querySelectorAll(".prod-item-suggest-box, .product-item, .card, [class*='product_'], article, .rz-card, div");
+                            const seenInRun = new Set();
 
-                        cards.forEach(card => {
-                            const nameEl = card.querySelector("h1, h2, h3, h4, .product-title, .title, .name, span.name");
-                            const imgEl = card.querySelector("img");
-                            const linkEl = card.querySelector("a");
-                            const name = nameEl ? nameEl.innerText.trim() : "";
-                            const href = linkEl ? linkEl.getAttribute("href") : "";
-                            const img = imgEl ? (imgEl.src || imgEl.getAttribute("data-src") || "") : "";
+                            cards.forEach(card => {
+                                const txt = card.innerText || "";
+                                if (!txt.includes("$") || txt.length > 300 || txt.length < 8) return;
 
-                            const nameLow = name.toLowerCase();
-                            const isConaprole = keywords.some(kw => nameLow.includes(kw));
+                                const imgEl = card.querySelector("img");
+                                const linkEl = card.querySelector("a");
+                                const src = imgEl ? (imgEl.src || imgEl.getAttribute("data-src") || "") : "";
+                                const href = linkEl ? linkEl.getAttribute("href") : "";
 
-                            if (name && isConaprole && !results.some(r => r.name === name)) {
-                                results.push({
-                                    name: name,
-                                    image_url: img,
-                                    description: "",
-                                    product_url: href ? (href.startsWith("http") ? href : window.location.origin + href) : window.location.href,
-                                    supermarket: window.location.host
-                                });
-                            }
-                        });
-                        return results;
-                    }''')
+                                if (!src || src.includes("icon") || src.includes("logo") || src.includes("svg") || src.includes("user")) return;
 
-                    for p_item in raw_prods:
-                        url_p = p_item["product_url"]
-                        if p_item["name"] and url_p not in seen_urls:
-                            seen_urls.add(url_p)
-                            results.append({
-                                "name": p_item["name"],
-                                "image_url": p_item["image_url"],
-                                "description": "",
-                                "product_url": url_p,
-                                "supermarket": self.supermarket_name,
-                                "scraped_at": now_str
-                            })
+                                const lines = txt.split("\\n").map(s => s.trim()).filter(Boolean);
+                                const title = lines.find(l => l.length > 4 && !l.startsWith("$") && l !== "Agregar" && !l.toLowerCase().includes("online") && !l.toLowerCase().includes("descuento")) || lines[0];
 
-                logger.info(f"✅ [{self.supermarket_name}] Extraídos {len(results)} productos válidos de Conaprole y submarcas.")
+                                if (title && !seenInRun.has(title)) {
+                                    seenInRun.add(title);
+                                    list.push({
+                                        name: title,
+                                        image_url: src,
+                                        product_url: href ? (href.startsWith("http") ? href : window.location.origin + href) : window.location.href
+                                    });
+                                }
+                            });
+                            return list;
+                        }''')
+
+                        count_new = 0
+                        for p_item in raw_prods:
+                            name_clean = p_item["name"].strip()
+                            if name_clean and name_clean not in seen_names:
+                                seen_names.add(name_clean)
+                                results.append({
+                                    "name": name_clean,
+                                    "image_url": p_item["image_url"],
+                                    "description": "",
+                                    "product_url": p_item["product_url"],
+                                    "supermarket": self.supermarket_name,
+                                    "scraped_at": now_str
+                                })
+                                count_new += 1
+
+                        logger.info(f"    -> {len(raw_prods)} items detectados ({count_new} nuevos). Acumulados: {len(results)}")
+                    except Exception as e:
+                        logger.warning(f"    [WARN] Error procesando termino '{q}': {e}")
+
+                logger.info(f"[OK] [{self.supermarket_name}] Extraidos {len(results)} productos validos.")
             except Exception as e:
-                logger.error(f"❌ [{self.supermarket_name}] Error en scraping: {e}")
+                logger.error(f"[ERROR] [{self.supermarket_name}] Error en scraping: {e}")
             finally:
                 await browser.close()
 
@@ -153,7 +170,7 @@ def scrape_and_save_gdu(queries: list[str] | str = None):
         }
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        logger.info(f"💾 Guardado {out_file}")
+        logger.info(f"[OK] Guardado {out_file}")
 
 if __name__ == "__main__":
     scrape_and_save_gdu()
