@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T02:02:23.118140+00:00",
+  "generated_at": "2026-08-15T02:12:35.085115+00:00",
   "total_official_products": 296,
   "supermarkets_analyzed": [
     "Devoto",
@@ -139,39 +139,6 @@
         "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193607_1062195687.png",
         "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1165473/7730105001109.jpg?v=638536502573230000",
         "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 24)"
-      },
-      "discrepancy_type": "DIFFERENT_IMAGE",
-      "alert_level": "YELLOW"
-    },
-    {
-      "supermarket": "El Dorado",
-      "conaprole_product": {
-        "id": "producto-leche-leche-ultra-descremada",
-        "name": "Leche Ultrapasteurizada Descremada",
-        "category": "Leches",
-        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193551_910873013.png",
-        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-descremada/"
-      },
-      "supermarket_product": {
-        "name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l",
-        "image_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
-        "url": "https://eldoradouy.vtexcommercestable.com.br/leche-deslactosada-conaprole-ultrapasteurizada-descremada-1l/p"
-      },
-      "name_comparison": {
-        "official_name": "Leche Ultrapasteurizada Descremada",
-        "supermarket_name": "Leche Deslactosada Conaprole Ultrapasteurizada Descremada 1l",
-        "similarity_score": 90.37
-      },
-      "description_comparison": {
-        "similarity_score": 100.0,
-        "status": "official_missing"
-      },
-      "image_comparison": {
-        "status": "DIFFERENT_IMAGE",
-        "phash_distance": 30,
-        "official_url": "https://cdn.conaprole.uy/gallery/202201/20241130193551_910873013.png",
-        "supermarket_url": "https://eldoradouy.vteximg.com.br/arquivos/ids/1177900/7730105000461.jpg?v=638943213816630000",
-        "details": "🟡 Imagen diferente (fondo blanco de catálogo, pHash dist: 30)"
       },
       "discrepancy_type": "DIFFERENT_IMAGE",
       "alert_level": "YELLOW"
@@ -715,8 +682,8 @@
       "discrepancies": 1
     },
     "El Dorado": {
-      "matches": 7,
-      "discrepancies": 12
+      "matches": 5,
+      "discrepancies": 11
     },
     "Géant": {
       "matches": 10,

@@ -95,6 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const simScore = item.name_comparison ? item.name_comparison.similarity_score : 100;
 
+        const aiHtml = item.ai_verification && item.ai_verification.explanation ? `
+            <div class="ai-explanation-bar" style="margin-top: 12px; padding: 8px 12px; background: rgba(124, 58, 237, 0.12); border-left: 3px solid #a855f7; border-radius: 6px; font-size: 0.85rem; color: #e2e8f0; grid-column: 1 / -1;">
+                <strong style="color: #c084fc;">🤖 Dictamen IA:</strong> ${item.ai_verification.explanation}
+            </div>
+        ` : '';
+
         return `
             <div class="comparison-card ${cardBorderClass}" data-card-idx="${index}">
                 <div class="card-header-bar">
@@ -145,9 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         </a>
                     </div>
                 </div>
+                ${aiHtml}
             </div>
         `;
     }
+
 
     function attachCardInteractions() {
         document.querySelectorAll(".tight-img-box").forEach(box => {

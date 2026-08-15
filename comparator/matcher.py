@@ -126,10 +126,83 @@ def normalize_product_name(name: str) -> str:
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+LACTOSE_KEYWORDS = ["deslactosada", "sin lactosa", "zero lactosa", "0% lactosa"]
+FAT_KEYWORDS = {
+    "descremada": ["descremada", "skimm"],
+    "semidescremada": ["semidescremada", "semi-descremada", "semi descremada"],
+    "entera": ["entera"]
+}
+SALT_KEYWORDS = {
+    "sin_sal": ["sin sal", "unsalted"],
+    "con_sal": ["con sal", "salted"]
+}
+FLAVOR_KEYWORDS = [
+    "durazno", "frutilla", "vainilla", "chocolate", "manzana", "naranja", 
+    "anana", "ananá", "multifruta", "dulce de leche", "menta", "banana", 
+    "maracuya", "maracuyá", "ciruela", "pera", "uva", "frutos rojos"
+]
+
+def check_feature_incompatibility(off_name: str, sup_name: str) -> bool:
+    """Devuelve True si hay incompatibilidad crítica de atributos (ej. Deslactosada vs Normal)."""
+    off_lower = off_name.lower()
+    sup_lower = sup_name.lower()
+
+    # 1. Lactosa (ej. Deslactosada vs Normal)
+    off_has_deslac = any(k in off_lower for k in LACTOSE_KEYWORDS)
+    sup_has_deslac = any(k in sup_lower for k in LACTOSE_KEYWORDS)
+    if off_has_deslac != sup_has_deslac:
+        return True
+
+    # 2. Tipo de materia grasa (Descremada vs Entera vs Semidescremada)
+    def get_fat_type(text):
+        for fat_type, kw_list in FAT_KEYWORDS.items():
+            if any(re.search(r'\b' + re.escape(kw) + r'\b', text) for kw in kw_list):
+                return fat_type
+        return None
+
+    fat_off = get_fat_type(off_lower)
+    fat_sup = get_fat_type(sup_lower)
+    if fat_off and fat_sup and fat_off != fat_sup:
+        return True
+
+    # 3. Sal (Con sal vs Sin sal)
+    def get_salt_type(text):
+        for salt_type, kw_list in SALT_KEYWORDS.items():
+            if any(kw in text for kw in kw_list):
+                return salt_type
+        return None
+
+    salt_off = get_salt_type(off_lower)
+    salt_sup = get_salt_type(sup_lower)
+    if salt_off and salt_sup and salt_off != salt_sup:
+        return True
+    if (salt_off == "sin_sal" and not salt_sup) or (salt_sup == "sin_sal" and not salt_off):
+        return True
+
+    # 4. Sabores (Durazno vs Frutilla, etc.)
+    def get_flavors(text):
+        found = set()
+        for fl in FLAVOR_KEYWORDS:
+            if re.search(r'\b' + re.escape(fl) + r'\b', text):
+                found.add(fl.replace("ananá", "anana").replace("maracuyá", "maracuya"))
+        return found
+
+    flav_off = get_flavors(off_lower)
+    flav_sup = get_flavors(sup_lower)
+    if flav_off and flav_sup and flav_off != flav_sup:
+        return True
+    if (flav_off and not flav_sup) or (flav_sup and not flav_off):
+        return True
+
+    return False
+
 def is_valid_match_pair(official_name: str, official_category: str, supermarket_name: str) -> bool:
     off_lower = official_name.lower()
     cat_lower = (official_category or "").lower()
     sup_lower = supermarket_name.lower()
+
+    if check_feature_incompatibility(official_name, supermarket_name):
+        return False
 
     if not are_presentations_compatible(official_name, supermarket_name):
         return False
@@ -240,7 +313,7 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
     ai_active = use_ai_flag and is_openai_available()
     if ai_active:
-        logger.info("🤖 OpenAI Vision activado para auditar discrepancias de packagings y etiquetas.")
+        logger.info("🤖 OpenAI Vision activado para auditar candidatos y packagings.")
     else:
         logger.info("ℹ️ OpenAI Vision omitido (sin API Key o bandera en False). Funcionando en modo motor local.")
 
@@ -259,16 +332,50 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
         discrepancy_type = None
         alert_level = None
+        ai_result = None
 
-        if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
-            discrepancy_type = "APOCRYPHAL_IMAGE"
-            alert_level = "RED"
-        elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
-            discrepancy_type = "DIFFERENT_IMAGE"
-            alert_level = "YELLOW"
-        elif not img_cmp and score < 95.0:
-            discrepancy_type = "NAME_DISCREPANCY"
-            alert_level = "BLUE"
+        if ai_active:
+            logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
+            ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
+            
+            if ai_result.get("status") == "SUCCESS":
+                # Si la IA determina que NO es el mismo producto, descartar falsa coincidencia
+                if ai_result.get("is_same_product") is False:
+                    logger.info(f"   ❌ IA rechazó el match: {ai_result.get('explanation')}")
+                    continue
+
+                # Si es el mismo producto
+                verdict = ai_result.get("ai_verdict")
+                if verdict == "MATCH" and ai_result.get("is_same_presentation"):
+                    summary[sp_name]["matches"] += 1
+                    continue
+                elif verdict in ["PACKAGING_REDESIGN", "DIFFERENT_IMAGE"]:
+                    discrepancy_type = "DIFFERENT_IMAGE"
+                    alert_level = "YELLOW"
+                elif verdict == "APOCRYPHAL_IMAGE":
+                    discrepancy_type = "APOCRYPHAL_IMAGE"
+                    alert_level = "RED"
+                elif verdict == "DIFFERENT_PRESENTATION":
+                    discrepancy_type = "NAME_DISCREPANCY"
+                    alert_level = "BLUE"
+
+        if not discrepancy_type:
+            if img_cmp and img_cmp["status"] == "APOCRYPHAL_IMAGE":
+                discrepancy_type = "APOCRYPHAL_IMAGE"
+                alert_level = "RED"
+            elif img_cmp and img_cmp["status"] == "DIFFERENT_IMAGE":
+                discrepancy_type = "DIFFERENT_IMAGE"
+                alert_level = "YELLOW"
+            elif img_cmp and img_cmp["status"] == "MATCH":
+                # Misma imagen/envase verificado por pHash -> Es coincidencia perfecta
+                summary[sp_name]["matches"] += 1
+                continue
+            elif not img_cmp and score < 95.0:
+                discrepancy_type = "NAME_DISCREPANCY"
+                alert_level = "BLUE"
+            else:
+                summary[sp_name]["matches"] += 1
+                continue
 
         if discrepancy_type:
             summary[sp_name]["discrepancies"] += 1
@@ -298,14 +405,10 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
                 "alert_level": alert_level
             }
 
-            if ai_active:
-                logger.info(f"   🤖 Consultando OpenAI Vision para '{off_name}' vs '{sp_name_pub}'...")
-                ai_result = verify_product_match_with_ai(off_prod, best_sp_prod, img_cmp)
+            if ai_result:
                 discrepancy_item["ai_verification"] = ai_result
 
             report["discrepancies"].append(discrepancy_item)
-        else:
-            summary[sp_name]["matches"] += 1
 
     report["matches_summary"] = summary
 
@@ -318,4 +421,5 @@ def run_matching(compare_images_flag: bool = True, min_match_threshold: float = 
 
 if __name__ == "__main__":
     run_matching(compare_images_flag=True, min_match_threshold=90.0, use_ai_flag=True)
+
 

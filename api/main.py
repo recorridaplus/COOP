@@ -60,7 +60,7 @@ def get_conaprole_catalog():
 def get_latest_report():
     if not REPORT_PATH.exists():
         try:
-            return run_matching(compare_images_flag=False)
+            return run_matching(compare_images_flag=True, use_ai_flag=True)
         except Exception as e:
             return {"discrepancies": [], "matches_summary": {}, "error": str(e)}
 
@@ -75,7 +75,7 @@ def get_scraping_status():
 def trigger_comparison():
     """Ejecuta únicamente el motor de re-comparación rápida sobre los datos actuales."""
     try:
-        report = run_matching(compare_images_flag=False)
+        report = run_matching(compare_images_flag=True, use_ai_flag=True)
         return {"status": "ok", "message": "Re-comparación rápida completada.", "summary": report.get("matches_summary")}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -91,7 +91,7 @@ def _execute_full_rescrape_task():
         scrape_and_save_gdu()
 
         scraping_status["current_step"] = "Ejecutando motor de matching e imágenes..."
-        run_matching(compare_images_flag=False)
+        run_matching(compare_images_flag=True, use_ai_flag=True)
 
         scraping_status["current_step"] = "Finalizado"
     except Exception as e:
@@ -112,14 +112,14 @@ def trigger_full_rescrape(background_tasks: BackgroundTasks):
 @app.get("/api/export/excel")
 def download_excel():
     if not REPORT_PATH.exists():
-        run_matching(compare_images_flag=False)
+        run_matching(compare_images_flag=True, use_ai_flag=True)
     excel_path = export_to_excel(REPORT_PATH)
     return FileResponse(excel_path, filename="reporte_diferencias_conaprole.xlsx", media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
 @app.get("/api/export/pdf")
 def download_pdf():
     if not REPORT_PATH.exists():
-        run_matching(compare_images_flag=False)
+        run_matching(compare_images_flag=True, use_ai_flag=True)
     pdf_path = export_to_pdf(REPORT_PATH)
     return FileResponse(pdf_path, filename="reporte_diferencias_conaprole.pdf", media_type="application/pdf")
 

@@ -24,13 +24,17 @@ except ImportError:
     pass
 
 def get_openai_api_key() -> str:
-    if ENV_PATH.exists():
+    key = os.getenv("OPENAI_API_KEY", "").strip()
+    if not key and ENV_PATH.exists():
         try:
-            from dotenv import load_dotenv
-            load_dotenv(dotenv_path=ENV_PATH, override=True)
+            for line in ENV_PATH.read_text(encoding="utf-8").splitlines():
+                if line.startswith("OPENAI_API_KEY="):
+                    key = line.split("=", 1)[1].strip()
+                    break
         except Exception:
             pass
-    return os.getenv("OPENAI_API_KEY", "").strip()
+    return key
+
 
 def get_openai_model() -> str:
     return os.getenv("OPENAI_MODEL", "gpt-4o-mini").strip()
