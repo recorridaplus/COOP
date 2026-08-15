@@ -15,25 +15,26 @@ def test_ai_verifier_fallback():
     print(f"OpenAI API disponible en entorno: {available}")
 
     off_prod = {
-        "id": "test_1",
-        "name": "Colet Dulce de Leche 1L",
-        "category": "Bebidas Lácteas",
-        "description": "Bebida láctea Colet sabor Dulce de Leche tetra pak 1 litro.",
-        "images": ["https://conaprole.uy/wp-content/uploads/2020/05/colet-ddl-1l.png"],
-        "url": "https://conaprole.uy/producto/colet-ddl-1l"
+        "id": "producto-leche-leche-ultra-extra-calcio-semidescremada",
+        "name": "Leche Semidescremada Extra Calcio 1L",
+        "category": "Leches",
+        "description": "Leche semidescremada pasteurizada, calcio lácteo, vitaminas E, A y D3.",
+        "images": ["https://cdn.conaprole.uy/gallery/202201/20241130193553_1717833505.png"],
+        "url": "https://www.conaprole.uy/producto/producto-leche-leche-ultra-extra-calcio-semidescremada/"
     }
 
     sp_prod = {
-        "name": "Colet Dulce de Leche Tetra 1000ml",
-        "description": "Colet dulce de leche 1L",
-        "image_url": "https://tiendainglesa.com.uy/images/colet.png",
+        "name": "Leche Conaprole Semidescremada Extra Calcio Sachet 1L",
+        "description": "Leche Conaprole Semidescremada 1 litro extra calcio",
+        "image_url": "https://cdn.conaprole.uy/gallery/202201/20241130193553_1717833505.png",
         "product_url": "https://tiendainglesa.com.uy/producto/123"
     }
 
-    print("\n--- 2. Probando respuesta del módulo ai_verifier ---")
+    print("\n--- 2. Probando respuesta del módulo ai_verifier con OpenAI Vision real ---")
     res = verify_product_match_with_ai(off_prod, sp_prod)
-    print(f"Respuesta del módulo: {res}")
-    assert "status" in res, "La respuesta debe incluir el campo 'status'."
+    print(f"Respuesta del módulo AI: {res}")
+    assert res.get("status") == "SUCCESS", f"La llamada a la IA falló: {res}"
+
 
 def test_run_matching_dry_run():
     print("\n--- 3. Probando ejecucion de run_matching sin descarga pesada de imagenes ---")

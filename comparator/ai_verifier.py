@@ -45,6 +45,22 @@ def is_openai_available() -> bool:
     return bool(key and len(key) > 10 and not key.startswith("your_"))
 
 
+import base64
+import io
+from comparator.image_comparator import fetch_image
+
+def pil_to_base64_url(pil_img) -> str | None:
+    if not pil_img:
+        return None
+    try:
+        buffered = io.BytesIO()
+        pil_img.save(buffered, format="JPEG", quality=85)
+        img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
+        return f"data:image/jpeg;base64,{img_str}"
+    except Exception as e:
+        logger.warning(f"Error convirtiendo imagen a base64: {e}")
+        return None
+
 def verify_product_match_with_ai(
     official_prod: dict,
     supermarket_prod: dict,
@@ -74,7 +90,6 @@ def verify_product_match_with_ai(
             "status": "ERROR",
             "error": str(e)
         }
-
 
     off_name = official_prod.get("name", "")
     off_cat = official_prod.get("category", "")
@@ -114,16 +129,26 @@ def verify_product_match_with_ai(
     ]
 
     if off_img:
-        user_content.append({
-            "type": "image_url",
-            "image_url": {"url": off_img, "detail": "low"}
-        })
+        pil_off = fetch_image(off_img)
+        if pil_off:
+            b64_off = pil_to_base64_url(pil_off)
+            if b64_off:
+                user_content.append({
+                    "type": "image_url",
+                    "image_url": {"url": b64_off, "detail": "low"}
+                })
 
     if sup_img:
-        user_content.append({
-            "type": "image_url",
-            "image_url": {"url": sup_img, "detail": "low"}
-        })
+        pil_sup = fetch_image(sup_img)
+        if pil_sup:
+            b64_sup = pil_to_base64_url(pil_sup)
+            if b64_sup:
+                user_content.append({
+                    "type": "image_url",
+                    "image_url": {"url": b64_sup, "detail": "low"}
+                })
+
+
 
     try:
         response = client.chat.completions.create(
